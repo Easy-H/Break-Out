@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
 
     public void gameOver() {
         scoreProduct = 0;
+        Destroy (GameObject.FindWithTag("Player"));
         UIManager.instance.OpenWindow(0);
         UIManager.instance.OpenWindow(1);
 
