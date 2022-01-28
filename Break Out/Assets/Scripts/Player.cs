@@ -12,9 +12,10 @@ public class Player : MonoBehaviour
     static GameObject created;
     static Transform tr;
     Rigidbody2D rb;
-    
+
     [SerializeField] float movePower = 4;
     [SerializeField] float inputGravity = 3f;
+    [SerializeField] float deadGravity = 3f;
 
     float horizontal;
     [SerializeField] float horizontalFactor;
@@ -27,20 +28,25 @@ public class Player : MonoBehaviour
 
     bool beforeInput = false;
 
-    public static void AddHP() {
-        if (hp < maxHp) {
+    public static void AddHP()
+    {
+        if (hp < maxHp)
+        {
             hp++;
             UIManager.instance.GaugeImage(1, maxHp, hp);
         }
     }
 
-    public static void GetDamage(int damage) {
-        if (hp > -5) {
+    public static void GetDamage(int damage)
+    {
+        if (hp > -5)
+        {
 
             hp -= damage;
             UIManager.instance.GaugeImage(1, maxHp, hp);
 
-            if (hp <= 0) {
+            if (hp <= 0)
+            {
                 GameManager.instance.gameOver();
                 return;
             }
@@ -72,7 +78,8 @@ public class Player : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
 
         tr = gameObject.transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -90,43 +97,43 @@ public class Player : MonoBehaviour
     {
         //#if UNITY_STANDALONE_WIN
 #if (UNITY_EDITOR || UNITY_STANDALONE_WIN)
-        horizontal = Input.GetAxis("Horizontal");
+        horizontalFactor = Input.GetAxisRaw("Horizontal");
+#endif
 
-#else
-        if (!beforeInput)
+        if (horizontalFactor == 0)
         {
-            if (horizontalFactor == 0)
-            {
-
-                if (Mathf.Abs(inputGravity * Time.deltaTime) > Mathf.Abs(horizontal))
-                {
-                    horizontal = 0;
-                    return;
-                }
-
-                horizontal -= Mathf.Sign(horizontal) * inputGravity * Time.deltaTime;
-
-                return;
+            if (Mathf.Abs(inputGravity * Time.deltaTime) > Mathf.Abs(horizontal)) {
+                horizontal = 0;
             }
-            else if (Mathf.Sign(horizontal) != Mathf.Sign(horizontalFactor))
-            {
-                horizontal += horizontalFactor * inputGravity * Time.deltaTime * 2;
+            else {
+                horizontal -= Mathf.Sign(horizontal) * deadGravity * Time.deltaTime;
             }
+        }
+        else if (Mathf.Sign(horizontal) != Mathf.Sign(horizontalFactor))
+        {
+            horizontal += horizontalFactor * (inputGravity + deadGravity) * Time.deltaTime;
+        }
+        else {
             horizontal += horizontalFactor * inputGravity * Time.deltaTime;
         }
-#endif
+
+        if (Mathf.Abs(horizontal) > 1)
+            horizontal = Mathf.Sign(horizontal);
+
         rb.velocity = new Vector3(horizontal * movePower, 0, 0);
 
+        horizontalFactor = 0;
     }
 
-    public void HorizontalIn(float f) {
+    public void HorizontalIn(float f)
+    {
         horizontalFactor += f;
 
         if (Mathf.Abs(horizontalFactor) > 1)
             horizontalFactor = Mathf.Sign(horizontalFactor);
 
     }
-    
+
 
 
 }

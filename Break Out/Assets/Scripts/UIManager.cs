@@ -56,7 +56,6 @@ public class UIManager : MonoBehaviour
     }
 
     public void OpenWindow(int idxImage) {
-        Debug.Log(idxImage);
         if (windowImages[idxImage]) {
             windowImages[idxImage].gameObject.SetActive(true);
         }
