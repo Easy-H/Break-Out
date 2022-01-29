@@ -19,18 +19,16 @@ public class GameManager : MonoBehaviour
     public static int enemyCount = 0;
 
     public static int phase = 0;
-    public static bool coll = false;
     [SerializeField] float phaseFactor = 20;
     [SerializeField] int[] phaseChangeScore = null;
     [SerializeField] int[] phaseMaxEnemy = null;
     [SerializeField] GameObject[] phaseCreator = null;
-
-
+    
     int ballCount = 0;                  // 볼의 갯수: 0개 이하로 떨어지면 체력이 1 감소
+    static public int coll = 0;                // 못 넘어가는 지점에 닿은 적의 개수, 0이 아니면 적을 생성할 수 없음
 
     public bool CheckCreateEnemy() {
-
-        if (phaseMaxEnemy[phase] > enemyCount)
+        if (phaseMaxEnemy[phase] > enemyCount && coll == 0)
             return true;
         else
             return false;
@@ -57,6 +55,11 @@ public class GameManager : MonoBehaviour
 
     public void BallCreate() {
         ballCount++;
+    }
+
+    public void Log1() {
+        Debug.Log(1);
+
     }
 
     public void BallDestroy() {
@@ -87,6 +90,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GL.Clear(true, true, Color.black);
+        coll = 0;
     }
 
     private void Update()
@@ -97,13 +101,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
-
-    private void FixedUpdate()
-    {
-
-        coll = false;
-    }
-
+    
     public void gotoScene(int idxScene) {
         SceneManager.LoadScene(idxScene);
     }

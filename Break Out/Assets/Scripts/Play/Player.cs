@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-
-    [SerializeField] GameObject beforeContact = null;
-    [SerializeField] GameObject ball;
+    [SerializeField] GameObject ball = null;
 
     static GameObject created;
     static Transform tr;
@@ -53,26 +51,16 @@ public class Player : MonoBehaviour
         }
         Instantiate(created, tr.position + Vector3.up, Quaternion.identity);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Enemy") && !GameObject.Equals(beforeContact, collision.gameObject))
-        {
-            GetDamage(1);
-            Destroy(collision.gameObject);
-            beforeContact = collision.gameObject;
-
-        }
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet") && !GameObject.Equals(beforeContact, collision.gameObject))
+        if (collision.CompareTag("Bullet") )
         {
             collision.gameObject.SetActive(false);
             Destroy(collision.gameObject);
-            GetDamage(1);
-            beforeContact = collision.gameObject;
+            int damage = collision.gameObject.GetComponent<Bullet>().GetDamage();
+            if (damage > 0)
+                GetDamage(damage);
 
         }
     }
@@ -121,8 +109,7 @@ public class Player : MonoBehaviour
             horizontal = Mathf.Sign(horizontal);
 
         rb.velocity = new Vector3(horizontal * movePower, 0, 0);
-
-        horizontalFactor = 0;
+        
     }
 
     public void HorizontalIn(float f)
@@ -133,7 +120,6 @@ public class Player : MonoBehaviour
             horizontalFactor = Mathf.Sign(horizontalFactor);
 
     }
-
-
+    
 
 }

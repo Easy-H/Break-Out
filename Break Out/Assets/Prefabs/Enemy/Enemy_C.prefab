@@ -50,7 +50,7 @@ MonoBehaviour:
   createTime: 8
   spendTime: 0
   goalCreateCount: 1
-  createEnemy: 0
+  createSound: {fileID: 0}
 --- !u!1 &3853486595483877078
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   createTime: 8
   spendTime: 0
   goalCreateCount: 1
-  createEnemy: 0
+  createSound: {fileID: 0}
 --- !u!1 &3853486595618242592
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 4193100119921549400}
   - component: {fileID: 1698823730677641736}
   - component: {fileID: 945127997403653778}
+  - component: {fileID: 7223406700007689963}
   m_Layer: 8
   m_Name: Enemy_C
   m_TagString: Enemy
@@ -248,3 +249,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &7223406700007689963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3853486595618242592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d127c8678cfc2a48a84acb01d59058b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touched: 0

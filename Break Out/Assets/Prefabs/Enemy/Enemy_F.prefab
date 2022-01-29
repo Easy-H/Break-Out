@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2663787084284049581}
   - component: {fileID: 6524242769419888974}
   - component: {fileID: 120297360495005006}
+  - component: {fileID: 8377007342776117781}
   m_Layer: 8
   m_Name: Enemy_F
   m_TagString: Enemy
@@ -104,7 +105,7 @@ MonoBehaviour:
   createTime: 8
   spendTime: 0
   goalCreateCount: 1
-  createEnemy: 0
+  createSound: {fileID: 0}
 --- !u!114 &7942906753332199044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +180,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65d3c39baa365f408323ab6b460f499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8377007342776117781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021226616323235580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d127c8678cfc2a48a84acb01d59058b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touched: 0
 --- !u!1 &7021226616457224202
 GameObject:
   m_ObjectHideFlags: 0

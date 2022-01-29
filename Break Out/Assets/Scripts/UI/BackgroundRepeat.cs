@@ -12,7 +12,7 @@ public class BackgroundRepeat : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.coll)
+        if (GameManager.coll != 0)
             return;
         Vector2 newOffset = thisMaterial.mainTextureOffset;
         newOffset.Set(0, newOffset.y + (scrollSpeed * Time.deltaTime * GameManager.level));

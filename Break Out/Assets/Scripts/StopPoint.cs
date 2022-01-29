@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class StopPoint : MonoBehaviour
 {
-    private void OnTriggerStay2D (Collider2D collision)
+    private void OnTriggerEnter2D (Collider2D collision)
     {
         if (collision.CompareTag("Enemy")) {
-            GameManager.coll = true;
+            GameManager.coll++;
+            collision.gameObject.GetComponent<Enemy>().touched = true;
         }
     }
     
-    
+
+
 }

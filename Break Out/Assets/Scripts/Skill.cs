@@ -20,6 +20,9 @@ public class Skill : MonoBehaviour
     }
     */
     public void UseSkill() {
+        if ((skillPoint < needSkillPoint))
+            return;
+
         Player.AddHP();
         skillPoint = 0;
     }
@@ -39,7 +42,7 @@ public class Skill : MonoBehaviour
         }
         UIManager.instance.GaugeImage(0, needSkillPoint, skillPoint);
 
-        if (Input.GetKeyDown(KeyCode.Space) && (skillPoint >= needSkillPoint))
+        if (Input.GetKeyDown(KeyCode.Space))
             UseSkill();
             
     }

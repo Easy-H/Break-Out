@@ -19,7 +19,7 @@ public class Go : MonoBehaviour
     protected virtual void Update()
     {
         if (level) {
-            if (enemy && GameManager.coll)
+            if (enemy && GameManager.coll != 0)
             {
                 rb.velocity = Vector3.zero;
                 return;

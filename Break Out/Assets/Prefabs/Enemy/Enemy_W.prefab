@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2870164502500593839}
   - component: {fileID: 4672047618154102252}
   - component: {fileID: 5341825881679243011}
+  - component: {fileID: 5710300957165445038}
   m_Layer: 8
   m_Name: Enemy_W
   m_TagString: Enemy
@@ -144,3 +145,16 @@ MonoBehaviour:
   level: 1
   enemy: 1
   direct: {x: 0, y: -0.2, z: 0}
+--- !u!114 &5710300957165445038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377710704607535751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d127c8678cfc2a48a84acb01d59058b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touched: 0
