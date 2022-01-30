@@ -1,49 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &897689292
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 897689293}
-  - component: {fileID: 897689294}
-  m_Layer: 0
-  m_Name: Skill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &897689293
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897689292}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.75, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3271662891708891586}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &897689294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897689292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46ac6cccb3b1b1447bc57589a6f21400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setSkillPoint: 16
 --- !u!1 &778566211880838713
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +788,6 @@ Transform:
   - {fileID: 3271662890684947281}
   - {fileID: 1748352995852495476}
   - {fileID: 4802861460715085571}
-  - {fileID: 897689293}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -848,7 +803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836a63a3364b3014a8003907e17b546a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beforeContact: {fileID: 0}
   ball: {fileID: 23, guid: 368aecd3ba0aaa04a8aea417ffe53937, type: 3}
   movePower: 8
   inputGravity: 6

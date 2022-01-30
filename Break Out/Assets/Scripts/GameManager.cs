@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int[] phaseChangeScore = null;
     [SerializeField] int[] phaseMaxEnemy = null;
     [SerializeField] GameObject[] phaseCreator = null;
+    [SerializeField] AudioSource gameOverMusic;
     
     int ballCount = 0;                  // 볼의 갯수: 0개 이하로 떨어지면 체력이 1 감소
     static public int coll = 0;                // 못 넘어가는 지점에 닿은 적의 개수, 0이 아니면 적을 생성할 수 없음
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
         Destroy (GameObject.FindWithTag("Player"));
         UIManager.instance.OpenWindow(0);
         UIManager.instance.OpenWindow(1);
+        gameOverMusic.Play();
 
     }
 

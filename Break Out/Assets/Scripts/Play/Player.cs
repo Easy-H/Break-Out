@@ -23,9 +23,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] int setMaxHp = 5;
     [SerializeField] int setHP = 3;
-
-    bool beforeInput = false;
-
+    
     public static void AddHP()
     {
         if (hp < maxHp)
