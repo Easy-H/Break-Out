@@ -7,7 +7,7 @@ public class EnemyCreator : Creator
 
     protected override void AddTime()
     {
-        if (!GameManager.instance.CheckCreateEnemy())
+        if (!PhaseManager.instance.CheckCreateEnemy())
             return;
 
         base.AddTime();
@@ -19,6 +19,6 @@ public class EnemyCreator : Creator
 
         base.Create();
 
-        GameManager.enemyCount += goalCreateCount;
+        PhaseManager.instance.EnemyCreated();
     }
 }

@@ -23,7 +23,7 @@ public class Skill : MonoBehaviour
         if ((skillPoint < needSkillPoint))
             return;
 
-        Player.AddHP();
+        Player.instance.AddHP();
         skillPoint = 0;
     }
 

@@ -13,7 +13,7 @@ public class Go : MonoBehaviour
     protected virtual void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        rb.velocity = direct * GameManager.level;
+        rb.velocity = direct * PhaseManager.level;
     }
 
     protected virtual void Update()
@@ -24,7 +24,8 @@ public class Go : MonoBehaviour
                 rb.velocity = Vector3.zero;
                 return;
             }
-            rb.velocity = direct * GameManager.level;
+            Debug.Log(PhaseManager.level);
+            rb.velocity = direct * PhaseManager.level;
         }
         else {
             rb.velocity = direct;

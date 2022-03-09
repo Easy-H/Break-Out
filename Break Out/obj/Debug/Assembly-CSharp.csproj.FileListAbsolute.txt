@@ -562,5 +562,3 @@ C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\obj\Debug\Assembly-CSharp.cs
 C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\obj\Debug\Assembly-CSharp.dll
 C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\obj\Debug\Assembly-CSharp.pdb
-C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll
-C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.xml

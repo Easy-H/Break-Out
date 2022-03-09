@@ -33,7 +33,7 @@ public class Creator : MonoBehaviour
     }
 
     protected virtual void AddTime() {
-        spendTime += Time.deltaTime * GameManager.level;
+        spendTime += Time.deltaTime * PhaseManager.level;
     }
 
     protected virtual void Create() {

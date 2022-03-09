@@ -803,13 +803,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836a63a3364b3014a8003907e17b546a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userInput:
+    movePower: 8
+    inputGravity: 6
+    deadGravity: 10
+  hp:
+    hp: 3
+    maxHp: 5
   ball: {fileID: 23, guid: 368aecd3ba0aaa04a8aea417ffe53937, type: 3}
-  movePower: 8
-  inputGravity: 6
-  deadGravity: 10
-  horizontalFactor: 0
-  setMaxHp: 5
-  setHP: 3
 --- !u!50 &3271662891708891585
 Rigidbody2D:
   serializedVersion: 4

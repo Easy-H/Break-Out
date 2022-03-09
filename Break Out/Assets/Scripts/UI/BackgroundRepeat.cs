@@ -15,7 +15,7 @@ public class BackgroundRepeat : MonoBehaviour
         if (GameManager.coll != 0)
             return;
         Vector2 newOffset = thisMaterial.mainTextureOffset;
-        newOffset.Set(0, newOffset.y + (scrollSpeed * Time.deltaTime * GameManager.level));
+        newOffset.Set(0, newOffset.y + (scrollSpeed * Time.deltaTime * PhaseManager.level));
         thisMaterial.mainTextureOffset = newOffset;
     }
 }

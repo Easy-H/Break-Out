@@ -17,7 +17,7 @@ public class StopPoint : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             Instantiate(boom, collision.gameObject.transform.position, Quaternion.identity);
-            GameManager.enemyCount--;
+            PhaseManager.instance.EnemyCreated();
             Destroy(collision.gameObject);
         }
 

@@ -3,51 +3,88 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
-{
-    [SerializeField] GameObject ball = null;
+[System.Serializable]
+public class UserInput {
+    [SerializeField] float movePower = 8f;
+    [SerializeField] float inputGravity = 6f;
+    [SerializeField] float deadGravity = 10f;
 
-    static GameObject created;
-    static Transform tr;
-    Rigidbody2D rb;
+    float horizontal = 0;
 
-    [SerializeField] float movePower = 4;
-    [SerializeField] float inputGravity = 3f;
-    [SerializeField] float deadGravity = 3f;
-
-    float horizontal;
-    [SerializeField] float horizontalFactor;
-
-    static int maxHp;
-    static int hp = 3;
-
-    [SerializeField] int setMaxHp = 5;
-    [SerializeField] int setHP = 3;
-    
-    public static void AddHP()
-    {
-        if (hp < maxHp)
+    public float GetHorizontal(float horizontalFactor) {
+        if (horizontalFactor == 0)
         {
+            if (Mathf.Abs(inputGravity * Time.deltaTime) > Mathf.Abs(horizontal))
+            {
+                horizontal = 0;
+            }
+            else
+            {
+                horizontal -= Mathf.Sign(horizontal) * deadGravity * Time.deltaTime;
+            }
+        }
+        else if (Mathf.Sign(horizontal) != Mathf.Sign(horizontalFactor))
+        {
+            horizontal += horizontalFactor * (inputGravity + deadGravity) * Time.deltaTime;
+        }
+        else
+        {
+            horizontal += horizontalFactor * inputGravity * Time.deltaTime;
+        }
+
+        if (Mathf.Abs(horizontal) > 1)
+            horizontal = Mathf.Sign(horizontal);
+
+        return horizontal * movePower;
+    }
+}
+
+[System.Serializable]
+public class HP {
+    [SerializeField] int hp = 3;
+    [SerializeField] int maxHp = 5;
+
+    public void AddHP() {
+        if (hp < maxHp) {
             hp++;
             UIManager.instance.GaugeImage(1, maxHp, hp);
         }
     }
-
-    public static void GetDamage(int damage)
-    {
-        if (hp > -5)
-        {
-
+    public void GetDamaged(int damage) {
+        if (hp > -5) {
             hp -= damage;
             UIManager.instance.GaugeImage(1, maxHp, hp);
 
-            if (hp <= 0)
-            {
+            if (hp <= 0) {
                 GameManager.instance.gameOver();
                 return;
             }
         }
-        Instantiate(created, tr.position + Vector3.up, Quaternion.identity);
+    }
+}
+
+public class Player : MonoBehaviour
+{
+    public static Player instance = null;
+    
+    static Transform tr;
+    Rigidbody2D rb;
+
+    [SerializeField] UserInput userInput = null;
+    [SerializeField] HP hp = null;
+    [SerializeField] GameObject ball = null;
+
+    float horizontalFactor;
+    
+    public void AddHP()
+    {
+        hp.AddHP();
+    }
+
+    public void GetDamage(int damage)
+    {
+        hp.GetDamaged(damage);
+        Gong.Create();
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,17 +100,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-
         tr = gameObject.transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
-        created = ball;
-
-        hp = setHP;
-        maxHp = setMaxHp;
-        horizontal = 0;
+        Gong.created = ball;
+        
         horizontalFactor = 0;
 
     }
@@ -85,28 +123,8 @@ public class Player : MonoBehaviour
 #if (UNITY_EDITOR || UNITY_STANDALONE_WIN)
         horizontalFactor = Input.GetAxisRaw("Horizontal");
 #endif
-
-        if (horizontalFactor == 0)
-        {
-            if (Mathf.Abs(inputGravity * Time.deltaTime) > Mathf.Abs(horizontal)) {
-                horizontal = 0;
-            }
-            else {
-                horizontal -= Mathf.Sign(horizontal) * deadGravity * Time.deltaTime;
-            }
-        }
-        else if (Mathf.Sign(horizontal) != Mathf.Sign(horizontalFactor))
-        {
-            horizontal += horizontalFactor * (inputGravity + deadGravity) * Time.deltaTime;
-        }
-        else {
-            horizontal += horizontalFactor * inputGravity * Time.deltaTime;
-        }
-
-        if (Mathf.Abs(horizontal) > 1)
-            horizontal = Mathf.Sign(horizontal);
-
-        rb.velocity = new Vector3(horizontal * movePower, 0, 0);
+        
+        rb.velocity = new Vector3(userInput.GetHorizontal(horizontalFactor), 0, 0);
         
     }
 

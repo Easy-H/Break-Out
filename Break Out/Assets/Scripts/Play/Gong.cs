@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Gong : MonoBehaviour
 {
+    public static GameObject created;
+
+    public static void Create() {
+        Instantiate(created, Player.instance.transform.position + Vector3.up, Quaternion.identity);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,7 +34,7 @@ public class Gong : MonoBehaviour
                 GameManager.instance.addScore(1000);
 
             GameManager.scoreProduct *= 1.2f;
-            GameManager.enemyCount--;
+            PhaseManager.instance.EnemyOut();
 
             return;
             
