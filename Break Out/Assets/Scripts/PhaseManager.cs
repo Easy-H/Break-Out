@@ -11,43 +11,38 @@ public class PhaseManager : MonoBehaviour
 
     public static float level;          // 레벨이 올라갈수록 게임의 진행도가 빨라짐
 
-    int enemyCount = 0;
+    [SerializeField] int enemyCount = 0;
 
     public static int phase = 0;
     [SerializeField] float phaseFactor = 20;
     [SerializeField] Phase[] phases = null;
 
     public bool CheckCreateEnemy() {
-        if (phases[phase].maxEnemy > enemyCount)
+        if (phases[phase].maxEnemy > EnemyManager.NowEnemyCount())
             return true;
         else
             return false;
     }
-
-    public void EnemyCreated() {
-        enemyCount++;
-    }
-
-    public void PhaseSet(float score, float time)
+    
+    public void PhaseSet()
     {
-        if (phases[phase].PhaseEndCheck(score))
-        {
+        if (phases[phase].EndCheck()) {
             phases[phase++].gameObject.SetActive(false);
             phases[phase].gameObject.SetActive(true);
         }
+        
+    }
 
-        level = Mathf.Log(time - phase * phaseFactor, log);
+    public void PhaseEnd() {
+        phases[phase++].gameObject.SetActive(false);
+        phases[phase].gameObject.SetActive(true);
 
-
+        level = Mathf.Log(GameManager.instance.GetTime() - phase * phaseFactor + log, log);
     }
 
     public void EnemyOut() {
         enemyCount--;
-        if (phases[phase].PhaseEndCheck())
-        {
-            phases[phase++].gameObject.SetActive(false);
-            phases[phase].gameObject.SetActive(true);
-        }
+        phases[phase].EndCheck();
 
     }
 

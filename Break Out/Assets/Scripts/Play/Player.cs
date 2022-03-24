@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class UserInput {
@@ -43,6 +42,7 @@ public class UserInput {
 public class HP {
     [SerializeField] int hp = 3;
     [SerializeField] int maxHp = 5;
+    
 
     public void AddHP() {
         if (hp < maxHp) {
@@ -50,16 +50,16 @@ public class HP {
             UIManager.instance.GaugeImage(1, maxHp, hp);
         }
     }
-    public void GetDamaged(int damage) {
+    public bool GetDamaged(int damage) {
         if (hp > -5) {
             hp -= damage;
             UIManager.instance.GaugeImage(1, maxHp, hp);
 
             if (hp <= 0) {
-                GameManager.instance.gameOver();
-                return;
+                return false;
             }
         }
+        return true;
     }
 }
 
@@ -83,8 +83,13 @@ public class Player : MonoBehaviour
 
     public void GetDamage(int damage)
     {
-        hp.GetDamaged(damage);
-        Gong.Create();
+        if (hp.GetDamaged(damage)) {
+            GongManager.instance.Create();
+
+        }
+        else {
+            GameManager.instance.gameOver();
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -110,7 +115,6 @@ public class Player : MonoBehaviour
     {
         tr = gameObject.transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
-        Gong.created = ball;
         
         horizontalFactor = 0;
 

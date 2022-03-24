@@ -1,31 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Phase : MonoBehaviour
+public class Phase: MonoBehaviour
 {
-    
-    [SerializeField] float phaseEndScore = 0;
-    [SerializeField] int endEnemyKill = 0;
-    [SerializeField] int  killedEnemy = 0;
-
+    [SerializeField] ConditionChecker conditionCheck = null;
     public int maxEnemy;
 
-    public bool PhaseEndCheck(float endScore) {
-        if (endScore >= phaseEndScore)
-            return true;
-        else
-            return false;
+    public bool EndCheck() {
+        return conditionCheck.ConditionCheck();
     }
 
-    public bool PhaseEndCheck()
-    {
-        killedEnemy++;
-        if (killedEnemy >= endEnemyKill) {
-            return true;
-        }
-        else
-            return false;
-    }
+
     
 }

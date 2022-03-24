@@ -16,9 +16,6 @@ public class EnemyCreator : Creator
     // Update is called once per frame
     protected override void Create()
     {
-
         base.Create();
-
-        PhaseManager.instance.EnemyCreated();
     }
 }

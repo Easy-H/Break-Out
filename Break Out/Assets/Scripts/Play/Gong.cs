@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Gong : MonoBehaviour
 {
-    public static GameObject created;
-
-    public static void Create() {
-        Instantiate(created, Player.instance.transform.position + Vector3.up, Quaternion.identity);
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         /*
@@ -27,17 +21,16 @@ public class Gong : MonoBehaviour
         }
         */
 
-        if (collision.collider.CompareTag("Enemy")) {
+        if (collision.collider.CompareTag("Enemy"))
+        {
 
-            Destroy(collision.collider.gameObject);
-            
-                GameManager.instance.addScore(1000);
-
+            GameManager.instance.Score = 1000;
             GameManager.scoreProduct *= 1.2f;
-            PhaseManager.instance.EnemyOut();
+
+            collision.collider.GetComponent<Enemy>().Destroy("Gong");
 
             return;
-            
+
         }
 
         if (GameManager.scoreProduct != 0)
@@ -57,7 +50,7 @@ public class Gong : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.BallCreate();
+        GongManager.instance.nowBallCount++;
     }
 
 }

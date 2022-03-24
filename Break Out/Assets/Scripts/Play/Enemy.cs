@@ -2,14 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy: MonoBehaviour
 {
-    public bool touched = false;
+    public void Start () {
+        EnemyManager.CreateCount++;
+    }
 
-    private void OnDestroy()
+    public void Destroy(string killedBy)
     {
-        if (touched)
-            GameManager.coll--;
+        switch (killedBy) {
+            case "Gong":
+                EnemyManager.DestroyByGongCount++;
+                break;
+            default:
+                EnemyManager.DestroyByLaserCount++;
+                break;
+        }
+
+        Destroy(gameObject);
     }
 
 }

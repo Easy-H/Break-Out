@@ -17,12 +17,10 @@ public class StopPoint : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             Instantiate(boom, collision.gameObject.transform.position, Quaternion.identity);
-            PhaseManager.instance.EnemyCreated();
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Enemy>().Destroy("other");
         }
 
     }
     
-
-
+    
 }

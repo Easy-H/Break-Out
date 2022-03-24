@@ -11,7 +11,7 @@ public class Break : MonoBehaviour
             Destroy(collision.gameObject);
         else if (collision.collider.CompareTag("Ball"))
         {
-            GameManager.instance.BallDestroy();
+            GongManager.instance.BallDestroyed();
             Destroy(collision.gameObject);
         }
 
