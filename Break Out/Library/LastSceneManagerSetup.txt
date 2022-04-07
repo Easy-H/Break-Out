@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/1_Scoring.unity
+- path: Assets/Scenes/2_Stage/0_Tutorial/01_This game is Break Out.unity
   isLoaded: 1
   isActive: 1

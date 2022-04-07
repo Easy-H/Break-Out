@@ -16,7 +16,7 @@ public class ConditionChecker
     public bool ConditionCheck() {
         bool result = true;
 
-        if (conditions == null)
+        if (conditions.Length == 0)
             return false;
 
         for (int i = 0; i < conditions.Length && result; i++) {

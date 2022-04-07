@@ -54,8 +54,7 @@ public class EnemyManager
     public static int NowEnemyCount()
     {
         nowEnemyCount = createCount - destroyByGongCount - destroyByLaserCount;
-
-        Debug.Log(nowEnemyCount);
+        
         return nowEnemyCount;
     }
 

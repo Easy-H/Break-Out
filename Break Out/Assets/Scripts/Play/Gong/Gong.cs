@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Gong : MonoBehaviour
 {
+    Rigidbody2D rb;
+
+    [SerializeField] Vector3 direct;
+
+    float value;
+    float speed;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         /*
@@ -23,12 +30,11 @@ public class Gong : MonoBehaviour
 
         if (collision.collider.CompareTag("Enemy"))
         {
+            collision.collider.GetComponent<Enemy>().Destroy("Gong");
 
             GameManager.instance.Score = 1000;
             GameManager.scoreProduct *= 1.2f;
-
-            collision.collider.GetComponent<Enemy>().Destroy("Gong");
-
+            
             return;
 
         }
@@ -51,6 +57,23 @@ public class Gong : MonoBehaviour
     private void Start()
     {
         GongManager.instance.nowBallCount++;
+        value = Mathf.PI - 0.5f;
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        rb.velocity = direct;
+        speed = direct.magnitude;
+
+    }
+
+    private void Update() {
+        
+        if (Mathf.Abs(Mathf.Atan2(rb.velocity.y, rb.velocity.x)) < 0.5f || Mathf.Abs(Mathf.Atan2(rb.velocity.y, rb.velocity.x)) > value)
+        {
+            direct = new Vector3(Mathf.Cos(0.5f) * Mathf.Sign(rb.velocity.x), Mathf.Sin(0.5f) * Mathf.Sign(rb.velocity.y), 0).normalized;
+        }
+        else
+            direct = rb.velocity.normalized;
+
+        rb.velocity = direct * speed;
     }
 
 }

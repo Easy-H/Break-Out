@@ -6,7 +6,7 @@ public class GongManager: MonoBehaviour
 {
     public static GongManager instance;
 
-    [SerializeField] GameObject gong;
+    [SerializeField] GameObject gong = null;
 
     public int nowBallCount { get; set; }
     [SerializeField] int minBallCount = 0;
@@ -19,8 +19,9 @@ public class GongManager: MonoBehaviour
 
     public void BallDestroyed() {
         nowBallCount--;
-        if (nowBallCount <= minBallCount)
+        if (nowBallCount <= minBallCount) {
             Player.instance.GetDamage(playerDamage);
+        }
     }
 
     private void Awake()

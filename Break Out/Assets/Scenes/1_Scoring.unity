@@ -3449,7 +3449,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 936496499}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9885a198581331c46bb00b34a2f01cbb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4658,7 +4658,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1260819760}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9885a198581331c46bb00b34a2f01cbb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5015,7 +5015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 46, guid: 368aecd3ba0aaa04a8aea417ffe53937, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 46, guid: 368aecd3ba0aaa04a8aea417ffe53937, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6804,7 +6804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84e0f62de227c349a3fab7ad8c2929d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 10
+  log: 5
   enemyCount: 0
   phaseFactor: 10
   phases:
@@ -7486,7 +7486,7 @@ PrefabInstance:
     - target: {fileID: 4188772772618705244, guid: 158a51fc44096a64bbdb57e4daa243e3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4188772772618705244, guid: 158a51fc44096a64bbdb57e4daa243e3,
         type: 3}

@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] AudioSource gameOverMusic = null;
     
-    int ballCount = 0;                  // 볼의 갯수: 0개 이하로 떨어지면 체력이 1 감소
     static public int coll = 0;                // 못 넘어가는 지점에 닿은 적의 개수, 0이 아니면 적을 생성할 수 없음
     
     public void Log1() {

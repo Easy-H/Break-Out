@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 90}
   - component: {fileID: 64}
   - component: {fileID: 72}
-  - component: {fileID: 106}
   - component: {fileID: 105}
   - component: {fileID: 84}
   m_Layer: 10
-  m_Name: Ball
+  m_Name: Gong
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,21 +121,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.23437497
---- !u!114 &106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e82affa3a163f4d46a1b8df978a3e029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
-  enemy: 0
-  direct: {x: 0, y: 6, z: 0}
 --- !u!114 &105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae03b89ecf2001747afe3a095732fb5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direct: {x: 0, y: 6, z: 0}
 --- !u!96 &84
 TrailRenderer:
   serializedVersion: 2

@@ -43,7 +43,6 @@ public class HP {
     [SerializeField] int hp = 3;
     [SerializeField] int maxHp = 5;
     
-
     public void AddHP() {
         if (hp < maxHp) {
             hp++;
@@ -61,6 +60,9 @@ public class HP {
         }
         return true;
     }
+    public void Clear() {
+        hp = -10;
+    }
 }
 
 public class Player : MonoBehaviour
@@ -72,7 +74,6 @@ public class Player : MonoBehaviour
 
     [SerializeField] UserInput userInput = null;
     [SerializeField] HP hp = null;
-    [SerializeField] GameObject ball = null;
 
     float horizontalFactor;
     
@@ -90,6 +91,10 @@ public class Player : MonoBehaviour
         else {
             GameManager.instance.gameOver();
         }
+    }
+
+    public void Clear() {
+        hp.Clear();
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

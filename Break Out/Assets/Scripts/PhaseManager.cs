@@ -40,12 +40,6 @@ public class PhaseManager : MonoBehaviour
         level = Mathf.Log(GameManager.instance.GetTime() - phase * phaseFactor + log, log);
     }
 
-    public void EnemyOut() {
-        enemyCount--;
-        phases[phase].EndCheck();
-
-    }
-
     private void Awake()
     {
         instance = this;
