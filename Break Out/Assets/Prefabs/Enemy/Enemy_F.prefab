@@ -118,9 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed961640a9d1e84d9b089ad8f3715fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
-  enemy: 1
-  direct: {x: 0, y: -0.2, z: 0}
+  direct: {x: 0, y: -0.4, z: 0}
 --- !u!50 &2663787084284049581
 Rigidbody2D:
   serializedVersion: 4
@@ -192,7 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d127c8678cfc2a48a84acb01d59058b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touched: 0
 --- !u!1 &7021226616457224202
 GameObject:
   m_ObjectHideFlags: 0

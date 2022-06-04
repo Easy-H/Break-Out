@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] UserInput userInput = null;
     [SerializeField] HP hp = null;
+    [SerializeField] Vector2 range;
 
     float horizontalFactor;
     
@@ -128,12 +129,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         //#if UNITY_STANDALONE_WIN
 #if (UNITY_EDITOR || UNITY_STANDALONE_WIN)
         horizontalFactor = Input.GetAxisRaw("Horizontal");
 #endif
         
-        rb.velocity = new Vector3(userInput.GetHorizontal(horizontalFactor), 0, 0);
+        rb.velocity = new Vector3(userInput.GetHorizontal(horizontalFactor), 0, 0);*/
+
+        tr.position = new Vector3(Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, range.x, range.y), tr.position.y, tr.position.z);
         
     }
 

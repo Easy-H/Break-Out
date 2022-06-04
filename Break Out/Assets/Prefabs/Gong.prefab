@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae03b89ecf2001747afe3a095732fb5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direct: {x: 0, y: 6, z: 0}
+  direct: {x: 0, y: 8, z: 0}
 --- !u!96 &84
 TrailRenderer:
   serializedVersion: 2
@@ -180,8 +180,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.005466461
-        value: 0.5
+        time: 0
+        value: 0.40410995
         inSlope: 0
         outSlope: 0
         tangentMode: 0

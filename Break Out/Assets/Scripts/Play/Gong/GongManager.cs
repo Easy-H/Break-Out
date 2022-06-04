@@ -6,6 +6,8 @@ public class GongManager: MonoBehaviour
 {
     public static GongManager instance;
 
+    public Skill skill = null;
+
     [SerializeField] GameObject gong = null;
 
     public int nowBallCount { get; set; }

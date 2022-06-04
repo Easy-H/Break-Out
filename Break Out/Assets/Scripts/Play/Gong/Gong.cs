@@ -34,7 +34,7 @@ public class Gong : MonoBehaviour
 
             GameManager.instance.Score = 1000;
             GameManager.scoreProduct *= 1.2f;
-            
+            GongManager.instance.skill.UseSkill();
             return;
 
         }

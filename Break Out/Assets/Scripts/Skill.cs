@@ -20,8 +20,7 @@ public class Skill : MonoBehaviour
     }
     */
     public void UseSkill() {
-        if ((skillPoint < needSkillPoint))
-            return;
+        //if ((skillPoint < needSkillPoint)) return;
 
         Player.instance.AddHP();
         skillPoint = 0;
@@ -32,6 +31,7 @@ public class Skill : MonoBehaviour
     {
         skillPoint = 0;
         needSkillPoint = setSkillPoint;
+        GongManager.instance.skill = this;
     }
 
     // Update is called once per frame
