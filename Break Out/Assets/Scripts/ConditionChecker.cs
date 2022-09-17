@@ -39,7 +39,7 @@ public class ConditionChecker
 
     public bool CheckScore(float endScore)
     {
-        if (GameManager.instance.Score >= endScore)
+        if (GameManager.Instance.Score >= endScore)
             return true;
         else
             return false;

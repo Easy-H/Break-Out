@@ -32,15 +32,14 @@ public class Gong : MonoBehaviour
         {
             collision.collider.GetComponent<Enemy>().Destroy("Gong");
 
-            GameManager.instance.Score = 1000;
-            GameManager.scoreProduct *= 1.2f;
-            GongManager.instance.skill.UseSkill();
+            GameManager.Instance.Score = 1000;
+            GameManager.Instance.ScoreProduct *= 1.2f;
             return;
 
         }
 
-        if (GameManager.scoreProduct != 0)
-            GameManager.scoreProduct = 1;
+        if (GameManager.Instance.ScoreProduct != 0)
+            GameManager.Instance.ScoreProduct = 1;
 
     }
 
@@ -56,7 +55,7 @@ public class Gong : MonoBehaviour
 
     private void Start()
     {
-        GongManager.instance.nowBallCount++;
+        GongManager.Instance.NowBallCount++;
         value = Mathf.PI - 0.5f;
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = direct;

@@ -3,46 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class UserInput {
-    [SerializeField] float movePower = 8f;
-    [SerializeField] float inputGravity = 6f;
-    [SerializeField] float deadGravity = 10f;
-
-    float horizontal = 0;
-
-    public float GetHorizontal(float horizontalFactor) {
-        if (horizontalFactor == 0)
-        {
-            if (Mathf.Abs(inputGravity * Time.deltaTime) > Mathf.Abs(horizontal))
-            {
-                horizontal = 0;
-            }
-            else
-            {
-                horizontal -= Mathf.Sign(horizontal) * deadGravity * Time.deltaTime;
-            }
-        }
-        else if (Mathf.Sign(horizontal) != Mathf.Sign(horizontalFactor))
-        {
-            horizontal += horizontalFactor * (inputGravity + deadGravity) * Time.deltaTime;
-        }
-        else
-        {
-            horizontal += horizontalFactor * inputGravity * Time.deltaTime;
-        }
-
-        if (Mathf.Abs(horizontal) > 1)
-            horizontal = Mathf.Sign(horizontal);
-
-        return horizontal * movePower;
-    }
-}
-
-[System.Serializable]
 public class HP {
     [SerializeField] int hp = 3;
     [SerializeField] int maxHp = 5;
-    
+
     public void AddHP() {
         if (hp < maxHp) {
             hp++;
@@ -65,43 +29,37 @@ public class HP {
     }
 }
 
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour {
     public static Player instance = null;
-    
-    static Transform tr;
+
+    Transform tr;
     Rigidbody2D rb;
 
-    [SerializeField] UserInput userInput = null;
     [SerializeField] HP hp = null;
-    [SerializeField] Vector2 range;
+    [SerializeField] Vector2 range = Vector2.one;
 
     float horizontalFactor;
-    
-    public void AddHP()
-    {
+
+    public void AddHP() {
         hp.AddHP();
     }
 
-    public void GetDamage(int damage)
-    {
+    public void GetDamage(int damage) {
         if (hp.GetDamaged(damage)) {
-            GongManager.instance.Create();
+            GongManager.Instance.Create();
 
         }
         else {
-            GameManager.instance.gameOver();
+            GameManager.Instance.gameOver();
         }
     }
 
     public void Clear() {
         hp.Clear();
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Bullet") )
-        {
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("Bullet")) {
             collision.gameObject.SetActive(false);
             Destroy(collision.gameObject);
             int damage = collision.gameObject.GetComponent<Bullet>().GetDamage();
@@ -111,44 +69,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        instance = this;
-    }
-
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         tr = gameObject.transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
-        
-        horizontalFactor = 0;
 
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        /*
-        //#if UNITY_STANDALONE_WIN
-#if (UNITY_EDITOR || UNITY_STANDALONE_WIN)
-        horizontalFactor = Input.GetAxisRaw("Horizontal");
-#endif
-        
-        rb.velocity = new Vector3(userInput.GetHorizontal(horizontalFactor), 0, 0);*/
+    void Update() {
 
         tr.position = new Vector3(Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, range.x, range.y), tr.position.y, tr.position.z);
-        
-    }
-
-    public void HorizontalIn(float f)
-    {
-        horizontalFactor += f;
-
-        if (Mathf.Abs(horizontalFactor) > 1)
-            horizontalFactor = Mathf.Sign(horizontalFactor);
 
     }
-    
+
 
 }

@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill : MonoBehaviour
-{
+public class Skill : MonoBehaviour {
 
     protected static float skillPoint;
     static float needSkillPoint;
@@ -27,23 +26,19 @@ public class Skill : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         skillPoint = 0;
         needSkillPoint = setSkillPoint;
-        GongManager.instance.skill = this;
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (skillPoint < needSkillPoint) {
             skillPoint += Time.deltaTime;
         }
-        UIManager.instance.GaugeImage(0, needSkillPoint, skillPoint);
 
         if (Input.GetKeyDown(KeyCode.Space))
             UseSkill();
-            
+
     }
 }

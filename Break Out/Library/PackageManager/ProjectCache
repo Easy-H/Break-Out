@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637983289855817231
-    m_Hash: 3231020453
+      ticks: 637987405601814256
+    m_Hash: 909202471
   m_LockFileStatus:
     m_FilePath: C:/Users/isaac/Documents/GitHub/Break-Out/Break Out/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637983290338000316
-    m_Hash: 4213765051
+      ticks: 637987406203110067
+    m_Hash: 3705029528
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -401,12 +401,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.analytics.git
         revision: 16fe75b69f168b066926595ade9b0473c3b32c5f
         path: 
-    - packageId: com.unity.collab-proxy@1.15.18
+    - packageId: com.unity.collab-proxy@1.17.2
       testable: 0
       isDirectDependency: 1
-      version: 1.15.18
+      version: 1.17.2
       source: 1
-      resolvedPath: C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Library\PackageCache\com.unity.collab-proxy@1.15.18
+      resolvedPath: C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Library\PackageCache\com.unity.collab-proxy@1.17.2
       assetPath: Packages/com.unity.collab-proxy
       name: com.unity.collab-proxy
       displayName: Version Control
@@ -485,9 +485,6 @@ m_PackageAssets:
         - 2.1.0-preview.5
         - 2.1.0-preview.6
         compatible:
-        - 1.15.18
-        - 1.17.0
-        - 1.17.1
         - 1.17.2
         - 2.0.0-preview.6
         - 2.0.0-preview.8
@@ -499,14 +496,18 @@ m_PackageAssets:
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
-        verified: 1.15.18
+        verified: 1.17.2
       dependencies:
       - name: com.unity.services.core
         version: 1.0.1
       resolvedDependencies:
       - name: com.unity.services.core
-        version: 1.0.1
+        version: 1.4.0
       - name: com.unity.modules.unitywebrequest
+        version: 1.0.0
+      - name: com.unity.nuget.newtonsoft-json
+        version: 3.0.2
+      - name: com.unity.modules.androidjni
         version: 1.0.0
       keywords:
       - backup
@@ -534,13 +535,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637888962690000000
+      datePublishedTicks: 637937432480000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-        revision: 611215dcd30048fa921b4be160048bad4022d65f
+        revision: 14d129dcc778f8ea2fdf9d0240b47924e4f0dbb1
         path: 
     - packageId: com.unity.ide.rider@2.0.7
       testable: 0
@@ -661,12 +662,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
         revision: abb44f053e9a41d2e00e149e32a19bcec76e98b4
         path: 
-    - packageId: com.unity.ide.visualstudio@2.0.15
+    - packageId: com.unity.ide.visualstudio@2.0.16
       testable: 0
       isDirectDependency: 1
-      version: 2.0.15
+      version: 2.0.16
       source: 1
-      resolvedPath: C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Library\PackageCache\com.unity.ide.visualstudio@2.0.15
+      resolvedPath: C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Library\PackageCache\com.unity.ide.visualstudio@2.0.16
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -748,13 +749,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637841884840000000
+      datePublishedTicks: 637914298680000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-        revision: ca1ece42f5a2c5484ba15a15bb975ccc1f6a1a3c
+        revision: c01855ef6461b821ab0226135e96a4ee86de96be
         path: 
     - packageId: com.unity.ide.vscode@1.2.5
       testable: 0
@@ -829,12 +830,12 @@ m_PackageAssets:
         url: https://github.com/Unity-Technologies/com.unity.ide.vscode.git
         revision: b0740c80bfc2440527c317109f7c3d9100132722
         path: 
-    - packageId: com.unity.purchasing@4.1.5
+    - packageId: com.unity.purchasing@4.3.0
       testable: 0
       isDirectDependency: 1
-      version: 4.1.5
+      version: 4.3.0
       source: 1
-      resolvedPath: C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Library\PackageCache\com.unity.purchasing@4.1.5
+      resolvedPath: C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Library\PackageCache\com.unity.purchasing@4.3.0
       assetPath: Packages/com.unity.purchasing
       name: com.unity.purchasing
       displayName: In App Purchasing
@@ -969,7 +970,7 @@ m_PackageAssets:
         - 4.3.0
         - 4.4.0
         - 4.4.1
-        verified: 4.1.5
+        verified: 4.3.0
       dependencies:
       - name: com.unity.ugui
         version: 1.0.0
@@ -982,7 +983,9 @@ m_PackageAssets:
       - name: com.unity.modules.androidjni
         version: 1.0.0
       - name: com.unity.services.core
-        version: 1.0.1
+        version: 1.3.1
+      - name: com.unity.services.analytics
+        version: 4.0.1
       resolvedDependencies:
       - name: com.unity.ugui
         version: 1.0.0
@@ -999,7 +1002,11 @@ m_PackageAssets:
       - name: com.unity.modules.androidjni
         version: 1.0.0
       - name: com.unity.services.core
-        version: 1.0.1
+        version: 1.4.0
+      - name: com.unity.nuget.newtonsoft-json
+        version: 3.0.2
+      - name: com.unity.services.analytics
+        version: 4.0.1
       keywords:
       - purchasing
       - iap
@@ -1016,13 +1023,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637888998470000000
+      datePublishedTicks: 637937531460000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.purchasing.git
-        revision: e85a08b1c40e0237d1455cd2032430b72b82d183
+        revision: 22afb8218d24e44d7eaa04f57aed2bebe79b82e8
         path: 
     - packageId: com.unity.test-framework@1.1.31
       testable: 0
@@ -3423,12 +3430,110 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git
         revision: 29ea4d6504a5f58fb3a6934db839aa80ae6d9d88
         path: 
-    - packageId: com.unity.services.core@1.0.1
+    - packageId: com.unity.services.analytics@4.0.1
       testable: 0
       isDirectDependency: 0
-      version: 1.0.1
+      version: 4.0.1
       source: 1
-      resolvedPath: C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Library\PackageCache\com.unity.services.core@1.0.1
+      resolvedPath: C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Library\PackageCache\com.unity.services.analytics@4.0.1
+      assetPath: Packages/com.unity.services.analytics
+      name: com.unity.services.analytics
+      displayName: Analytics
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: The Unity Analytics package automatically collects core events
+        and user properties when someone uses your game or application, and enables
+        you to track specific in-game actions your user performs by defining custom
+        events. The data collected from this package is surfaced in the Unity dashboard
+        where you can use it to gather user insights, segment your player base and
+        make informed decisions around the optimization of your game.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 1.0.3
+        - 1.0.4
+        - 1.0.5
+        - 2.0.7-pre.4
+        - 2.0.7-pre.6
+        - 2.0.7-pre.7
+        - 3.0.0-pre.2
+        - 3.0.0-pre.3
+        - 3.0.0-pre.4
+        - 4.0.0-pre.2
+        - 4.0.0-pre.3
+        - 4.0.0
+        - 4.0.1
+        - 4.1.0
+        - 4.2.0
+        compatible:
+        - 1.0.3
+        - 1.0.4
+        - 1.0.5
+        - 2.0.7-pre.4
+        - 2.0.7-pre.6
+        - 2.0.7-pre.7
+        - 3.0.0-pre.2
+        - 3.0.0-pre.3
+        - 3.0.0-pre.4
+        - 4.0.0-pre.2
+        - 4.0.0-pre.3
+        - 4.0.0
+        - 4.0.1
+        - 4.1.0
+        - 4.2.0
+        verified: 4.1.0
+      dependencies:
+      - name: com.unity.ugui
+        version: 1.0.0
+      - name: com.unity.services.core
+        version: 1.4.0
+      resolvedDependencies:
+      - name: com.unity.ugui
+        version: 1.0.0
+      - name: com.unity.modules.ui
+        version: 1.0.0
+      - name: com.unity.modules.imgui
+        version: 1.0.0
+      - name: com.unity.services.core
+        version: 1.4.0
+      - name: com.unity.modules.unitywebrequest
+        version: 1.0.0
+      - name: com.unity.nuget.newtonsoft-json
+        version: 3.0.2
+      - name: com.unity.modules.androidjni
+        version: 1.0.0
+      keywords: []
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637889192380000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.cds.internal.unity3d.com/unity/operate-services-sdk.git
+        revision: dac564bca5dae194afa944a6b22849513d412ec2
+        path: 
+    - packageId: com.unity.services.core@1.4.0
+      testable: 0
+      isDirectDependency: 0
+      version: 1.4.0
+      source: 1
+      resolvedPath: C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Library\PackageCache\com.unity.services.core@1.4.0
       assetPath: Packages/com.unity.services.core
       name: com.unity.services.core
       displayName: Services Core
@@ -3442,7 +3547,7 @@ m_PackageAssets:
         Service packages.
 
         These are standardized and aim to unify the overall
-        experience of working with Game Services packages.'
+        experience of working with Game Services SDK.'
       status: 4
       errors: []
       versions:
@@ -3482,8 +3587,16 @@ m_PackageAssets:
       dependencies:
       - name: com.unity.modules.unitywebrequest
         version: 1.0.0
+      - name: com.unity.nuget.newtonsoft-json
+        version: 3.0.2
+      - name: com.unity.modules.androidjni
+        version: 1.0.0
       resolvedDependencies:
       - name: com.unity.modules.unitywebrequest
+        version: 1.0.0
+      - name: com.unity.nuget.newtonsoft-json
+        version: 3.0.2
+      - name: com.unity.modules.androidjni
         version: 1.0.0
       keywords: []
       registry:
@@ -3498,15 +3611,95 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637604883250000000
+      datePublishedTicks: 637871962570000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/operate-services-sdk.git
-        revision: 4cd880d4fd5c60597629249bf4f324e4c8d7aa2e
+        revision: 92e281deb97a96f7b32464b6874de73a17c140ff
+        path: 
+    - packageId: com.unity.nuget.newtonsoft-json@3.0.2
+      testable: 0
+      isDirectDependency: 0
+      version: 3.0.2
+      source: 1
+      resolvedPath: C:\Users\isaac\Documents\GitHub\Break-Out\Break Out\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2
+      assetPath: Packages/com.unity.nuget.newtonsoft-json
+      name: com.unity.nuget.newtonsoft-json
+      displayName: Newtonsoft Json
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: library
+      description: 'Newtonsoft Json for use in Unity projects and Unity packages.
+        Currently synced to version 13.0.1.
+
+
+        This package is used for advanced
+        json serialization and deserialization. Most Unity users will be better suited
+        using the existing json tools built into Unity.
+
+        To avoid assembly
+        clashes, please use this package if you intend to use Newtonsoft Json.'
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.1-preview.1
+        - 1.1.2
+        - 2.0.0-preview
+        - 2.0.0-preview.1
+        - 2.0.0-preview.2
+        - 2.0.0
+        - 2.0.1-preview.1
+        - 2.0.2
+        - 3.0.1
+        - 3.0.2
+        compatible:
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.1-preview.1
+        - 1.1.2
+        - 2.0.0-preview
+        - 2.0.0-preview.1
+        - 2.0.0-preview.2
+        - 2.0.0
+        - 2.0.1-preview.1
+        - 2.0.2
+        - 3.0.1
+        - 3.0.2
+        verified: 3.0.2
+      dependencies: []
+      resolvedDependencies: []
+      keywords: []
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637846828220000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.cds.internal.unity3d.com/unity/com.unity.nuget.newtonsoft-json.git
+        revision: 8f66870a71ad3f2cdd46330b5c482dfd138ffc64
         path: 
   m_LocalPackages:
     m_LocalFileStatus: []
 m_ProjectPath: C:/Users/isaac/Documents/GitHub/Break-Out/Break Out/Packages
-m_EditorVersion: 2020.3.36f1 (71f96b79b9f0)
+m_EditorVersion: 2020.3.38f1 (8f5fde82e2dc)

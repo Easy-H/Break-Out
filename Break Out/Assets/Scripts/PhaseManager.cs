@@ -37,7 +37,7 @@ public class PhaseManager : MonoBehaviour
         phases[phase++].gameObject.SetActive(false);
         phases[phase].gameObject.SetActive(true);
 
-        level = Mathf.Log(GameManager.instance.GetTime() - phase * phaseFactor + log, log);
+        level = Mathf.Log(GameManager.Instance.GetTime() - phase * phaseFactor + log, log);
     }
 
     private void Awake()

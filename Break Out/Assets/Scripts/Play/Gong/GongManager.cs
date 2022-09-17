@@ -2,34 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GongManager: MonoBehaviour
-{
-    public static GongManager instance;
+public class GongManager : MonoBehaviour {
+    public static GongManager Instance;
 
-    public Skill skill = null;
+    public Skill _skill = null;
 
-    [SerializeField] GameObject gong = null;
+    [SerializeField] GameObject _gong = null;
 
-    public int nowBallCount { get; set; }
-    [SerializeField] int minBallCount = 0;
+    public int NowBallCount { get; set; }
+    [SerializeField] int _minBallCount = 0;
 
-    [SerializeField] int playerDamage = 1;
+    [SerializeField] int _playerDamage = 1;
 
     public void Create() {
-        Instantiate(gong, Player.instance.transform.position + Vector3.up, Quaternion.identity);
+        Instantiate(_gong, Player.instance.transform.position + Vector3.up, Quaternion.identity);
     }
 
     public void BallDestroyed() {
-        nowBallCount--;
-        if (nowBallCount <= minBallCount) {
-            Player.instance.GetDamage(playerDamage);
+        NowBallCount--;
+        if (NowBallCount <= _minBallCount) {
+            Player.instance.GetDamage(_playerDamage);
         }
     }
 
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
+    private void Awake() {
+        Instance = this;
     }
 
 
