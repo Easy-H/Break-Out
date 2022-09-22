@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Gong : MonoBehaviour
-{
+public class Gong : MonoBehaviour {
     Rigidbody2D rb;
 
     [SerializeField] Vector3 direct;
@@ -12,8 +11,7 @@ public class Gong : MonoBehaviour
     float value;
     float speed;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnCollisionEnter2D(Collision2D collision) {
         /*
         if (collision.collider.CompareTag("Player"))
         {
@@ -28,8 +26,7 @@ public class Gong : MonoBehaviour
         }
         */
 
-        if (collision.collider.CompareTag("Enemy"))
-        {
+        if (collision.collider.CompareTag("Enemy")) {
             collision.collider.GetComponent<Enemy>().Destroy("Gong");
 
             GameManager.Instance.Score = 1000;
@@ -43,18 +40,15 @@ public class Gong : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Bullet"))
-        {
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("Bullet")) {
             Destroy(collision.gameObject);
             return;
 
         }
     }
 
-    private void Start()
-    {
+    private void Start() {
         GongManager.Instance.NowBallCount++;
         value = Mathf.PI - 0.5f;
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -64,9 +58,8 @@ public class Gong : MonoBehaviour
     }
 
     private void Update() {
-        
-        if (Mathf.Abs(Mathf.Atan2(rb.velocity.y, rb.velocity.x)) < 0.5f || Mathf.Abs(Mathf.Atan2(rb.velocity.y, rb.velocity.x)) > value)
-        {
+
+        if (Mathf.Abs(Mathf.Atan2(rb.velocity.y, rb.velocity.x)) < 0.5f || Mathf.Abs(Mathf.Atan2(rb.velocity.y, rb.velocity.x)) > value) {
             direct = new Vector3(Mathf.Cos(0.5f) * Mathf.Sign(rb.velocity.x), Mathf.Sin(0.5f) * Mathf.Sign(rb.velocity.y), 0).normalized;
         }
         else

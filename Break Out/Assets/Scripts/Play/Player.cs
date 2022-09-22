@@ -4,68 +4,58 @@ using UnityEngine;
 
 [System.Serializable]
 public class HP {
-    [SerializeField] int hp = 3;
-    [SerializeField] int maxHp = 5;
 
-    public void AddHP() {
-        if (hp < maxHp) {
-            hp++;
-            UIManager.instance.GaugeImage(1, maxHp, hp);
-        }
-    }
-    public bool GetDamaged(int damage) {
-        if (hp > -5) {
-            hp -= damage;
-            UIManager.instance.GaugeImage(1, maxHp, hp);
-
-            if (hp <= 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-    public void Clear() {
-        hp = -10;
-    }
 }
 
 public class Player : MonoBehaviour {
-    public static Player instance = null;
+    public static Player Instance { get; private set; }
 
     Transform tr;
     Rigidbody2D rb;
 
-    [SerializeField] HP hp = null;
+    [SerializeField] int hp = 3;
+    [SerializeField] int maxHp = 5;
+
     [SerializeField] Vector2 range = Vector2.one;
 
     float horizontalFactor;
 
     public void AddHP() {
-        hp.AddHP();
+        hp += 1;
+        if (hp > maxHp)
+            hp = maxHp;
+        InforUi.Instance.SetHp(maxHp, hp);
     }
 
     public void GetDamage(int damage) {
-        if (hp.GetDamaged(damage)) {
-            GongManager.Instance.Create();
+        hp -= damage;
 
-        }
-        else {
-            GameManager.Instance.gameOver();
-        }
+        InforUi.Instance.SetHp(maxHp, hp);
+
+        if (hp > 0) { GongManager.Instance.Create(); }
+        else { GameManager.Instance.gameOver(); }
+        
     }
 
     public void Clear() {
-        hp.Clear();
+        hp = -10;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Bullet")) {
+
             collision.gameObject.SetActive(false);
             Destroy(collision.gameObject);
+
             int damage = collision.gameObject.GetComponent<Bullet>().GetDamage();
+
             if (damage > 0)
                 GetDamage(damage);
 
+        }
+        else if (collision.CompareTag("Item")) {
+            AddHP();
+            Destroy(collision.gameObject);
         }
     }
 
@@ -73,6 +63,8 @@ public class Player : MonoBehaviour {
     void Start() {
         tr = gameObject.transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        Instance = this;
 
     }
 

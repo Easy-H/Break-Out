@@ -7,8 +7,10 @@ public class EnemyCreator : Creator
 
     protected override void AddTime()
     {
-        if (!PhaseManager.instance.CheckCreateEnemy())
+        if (!PhaseManager.instance.CheckCreateEnemy()) {
+            spendTime = 0;
             return;
+        }
 
         base.AddTime();
     }

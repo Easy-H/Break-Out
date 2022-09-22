@@ -9,7 +9,7 @@ public class Clear : MonoBehaviour
 
     void OnEnable()
     {
-        Player.instance.Clear();
+        Player.Instance.Clear();
 
         for (int i = 0; i < clearActiveObject.Length; i++) {
             clearActiveObject[i].SetActive(true);

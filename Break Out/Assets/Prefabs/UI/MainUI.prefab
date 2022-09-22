@@ -546,6 +546,7 @@ GameObject:
   - component: {fileID: 8106060495755118086}
   - component: {fileID: 8106060495755118085}
   - component: {fileID: 8106060495755118084}
+  - component: {fileID: 3571880204687358582}
   m_Layer: 5
   m_Name: MainUI
   m_TagString: UI
@@ -646,6 +647,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f28d550ce0508a41bd0bb667f51a9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texts: []
-  gaugeImages: []
-  windowImages: []
+  _score: {fileID: 0}
+  _hp: {fileID: 0}
+--- !u!114 &3571880204687358582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8106060495755118083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc102ecf1b4e8f499df6b4a460d967a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

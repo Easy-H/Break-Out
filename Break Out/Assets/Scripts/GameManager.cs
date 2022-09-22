@@ -4,10 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-    private static GameManager _instance;
-    public static GameManager Instance { get { return _instance; } }
+
+    public static GameManager Instance { get; private set; }
 
     float score = 0;
+    public float ScoreProduct { get; set; }     // 연속 충돌시 보너스 점수
+
+    [SerializeField] GameObject[] items;
+
+    float time;
+
+    static public int coll = 0;                // 못 넘어가는 지점에 닿은 적의 개수, 0이 아니면 적을 생성할 수 없음
 
     public float Score {
         get {
@@ -15,41 +22,35 @@ public class GameManager : MonoBehaviour {
         }
         set {
             score += value * ScoreProduct;
-            UIManager.instance.ChangeText(0, score.ToString("000000"));
+            InforUi.Instance.SetScore(score.ToString("000000"));
 
             PhaseManager.instance.PhaseSet();
         }
 
     }
 
-    public float ScoreProduct { get; set; }     // 연속 충돌시 보너스 점수
+    public void CreateItem(Vector3 pos) {
+        int random = Random.Range(0, items.Length);
 
-    float time;
+        Instantiate(items[random], pos, Quaternion.identity);
+    }
 
     public float GetTime() {
         return time;
     }
 
-    [SerializeField] AudioSource gameOverMusic = null;
-
-    static public int coll = 0;                // 못 넘어가는 지점에 닿은 적의 개수, 0이 아니면 적을 생성할 수 없음
-
-    public void Log1() {
-        Debug.Log(1);
-
-    }
 
     public void gameOver() {
         ScoreProduct = 0;
+
+        UiManager.Instance.StartAnimation("GameOver");
+
         Destroy(GameObject.FindWithTag("Player"));
-        UIManager.instance.OpenWindow(0);
-        UIManager.instance.OpenWindow(1);
-        gameOverMusic.Play();
 
     }
 
     private void Awake() {
-        _instance = this;
+        Instance = this;
         time = 0;
         score = 0;
         ScoreProduct = 1;

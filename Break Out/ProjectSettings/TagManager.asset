@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - Deleter
   - UI
+  - Item
   layers:
   - Default
   - TransparentFX

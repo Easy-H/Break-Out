@@ -9,7 +9,7 @@ public class Creator : MonoBehaviour
     [SerializeField] Transform[] createPos = null;
 
     [SerializeField] float createTime = 2;
-    [SerializeField] float spendTime = 0;
+    [SerializeField] protected float spendTime = 0;
 
     [SerializeField] protected int goalCreateCount = 1;
 
@@ -52,4 +52,5 @@ public class Creator : MonoBehaviour
         if (createSound)
             createSound.Play();
     }
+
 }

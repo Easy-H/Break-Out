@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637987405601814256
-    m_Hash: 909202471
+      ticks: 637990222895311045
+    m_Hash: 3013453999
   m_LockFileStatus:
     m_FilePath: C:/Users/isaac/Documents/GitHub/Break-Out/Break Out/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637987406203110067
-    m_Hash: 3705029528
+      ticks: 637990222895321054
+    m_Hash: 784214440
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GongManager : MonoBehaviour {
-    public static GongManager Instance;
 
-    public Skill _skill = null;
-
+    public static GongManager Instance { get; private set; }
+    
     [SerializeField] GameObject _gong = null;
 
     public int NowBallCount { get; set; }
@@ -15,13 +14,13 @@ public class GongManager : MonoBehaviour {
     [SerializeField] int _playerDamage = 1;
 
     public void Create() {
-        Instantiate(_gong, Player.instance.transform.position + Vector3.up, Quaternion.identity);
+        Instantiate(_gong, Player.Instance.transform.position + Vector3.up, Quaternion.identity);
     }
 
     public void BallDestroyed() {
         NowBallCount--;
         if (NowBallCount <= _minBallCount) {
-            Player.instance.GetDamage(_playerDamage);
+            Player.Instance.GetDamage(_playerDamage);
         }
     }
 

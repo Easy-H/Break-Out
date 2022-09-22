@@ -21,7 +21,7 @@ public class Skill : MonoBehaviour {
     public void UseSkill() {
         //if ((skillPoint < needSkillPoint)) return;
 
-        Player.instance.AddHP();
+        Player.Instance.AddHP();
         skillPoint = 0;
     }
 
