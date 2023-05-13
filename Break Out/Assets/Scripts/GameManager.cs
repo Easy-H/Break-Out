@@ -1,70 +1,62 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
-public class GameManager : MonoBehaviour {
+public enum GateState { 
+    pause, play
+}
 
-    public static GameManager Instance { get; private set; }
+public delegate void ScoreAct(int score);
 
-    float score = 0;
-    public float ScoreProduct { get; set; }     // 연속 충돌시 보너스 점수
+public class GameManager : Singleton<GameManager>
+{
+    GateState _state;
 
-    [SerializeField] GameObject[] items;
+    int _score;
+    ScoreAct _actor;
+    Player _player;
 
-    float time;
+    int _ballCount;
 
-    static public int coll = 0;                // 못 넘어가는 지점에 닿은 적의 개수, 0이 아니면 적을 생성할 수 없음
-
-    public float Score {
-        get {
-            return score;
-        }
-        set {
-            score += value * ScoreProduct;
-            InforUi.Instance.SetScore(score.ToString("000000"));
-
-            PhaseManager.instance.PhaseSet();
-        }
+    public bool IsPlaying()
+    {
+        return _state == GateState.play;
 
     }
 
-    public void CreateItem(Vector3 pos) {
-        int random = Random.Range(0, items.Length);
-
-        Instantiate(items[random], pos, Quaternion.identity);
+    public void AddScore(int amount) {
+        _score += amount;
+        _actor.Invoke(_score);
     }
 
-    public float GetTime() {
-        return time;
+    public int GetScore() {
+        return _score;
     }
 
+    public void SetScoreView(ScoreAct act) {
+        _actor = act;
+    }
 
-    public void gameOver() {
-        ScoreProduct = 0;
+    public void SetPlayer(Player player) {
+        _player = player;
+    }
 
-        UiManager.Instance.StartAnimation("GameOver");
+    public void BallIn() {
+        _ballCount++;
+    }
 
-        Destroy(GameObject.FindWithTag("Player"));
+    public void BallOut()
+    {
+        if (--_ballCount == 0)
+            _player.GetDamaged(1);
 
     }
 
-    private void Awake() {
-        Instance = this;
-        time = 0;
-        score = 0;
-        ScoreProduct = 1;
-    }
-
-    private void Start() {
-        coll = 0;
-    }
-
-    private void Update() {
-        time += Time.deltaTime;
-        if (Input.GetKey(KeyCode.R)) {
-            SceneManager.LoadScene(1);
-        }
+    public void StartGame() {
+        _score = 0;
+        _state = GateState.play;
+        _ballCount = 0;
     }
 
 }
