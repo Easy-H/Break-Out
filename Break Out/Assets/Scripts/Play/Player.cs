@@ -39,5 +39,13 @@ public class Player : Character
         _play.GameOver();
         Destroy(gameObject);
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            GetDamaged(1);
+            Destroy(other.gameObject);
+        }
+    }
 
 }

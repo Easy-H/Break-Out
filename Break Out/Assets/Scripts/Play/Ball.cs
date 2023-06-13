@@ -27,6 +27,15 @@ public class Ball : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            Destroy(other.gameObject);
+            return;
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         _rb.velocity = _rb.velocity.normalized * _power;

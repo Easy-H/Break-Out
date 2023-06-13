@@ -48,6 +48,9 @@ public class GameManager : Singleton<GameManager>
 
     public void BallOut()
     {
+        if (_player == null)
+            return;
+
         if (--_ballCount == 0)
             _player.GetDamaged(1);
 

@@ -376,6 +376,7 @@
 "Assets/Scripts/Play/Enemy.cs"
 "Assets/Scripts/Play/GUIPlay.cs"
 "Assets/Scripts/Play/HPBar.cs"
+"Assets/Scripts/Play/Move.cs"
 "Assets/Scripts/Play/Player.cs"
 "Assets/Scripts/Rotate.cs"
 "Assets/Scripts/UI/GUICustomFullScreen.cs"
