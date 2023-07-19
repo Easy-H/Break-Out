@@ -10,6 +10,7 @@ TagManager:
   - Deleter
   - UI
   - Item
+  - InforLine
   layers:
   - Default
   - TransparentFX

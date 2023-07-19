@@ -441,7 +441,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: da6f4d43b343a9b4aad92d2627062b8e, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.7882353, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -986,7 +986,11 @@ MonoBehaviour:
   _stat:
     _maxHP: 5
     _nowHP: 3
+  _hpBar: {fileID: 0}
+  _deadEffect: {fileID: 653534949192074067, guid: b4ea28d48b6bfbe42a442b8b3c995975,
+    type: 3}
   _ballCreatePos: {fileID: 274745537957799552}
+  _play: {fileID: 0}
   _ball: {fileID: 23, guid: 368aecd3ba0aaa04a8aea417ffe53937, type: 3}
   _maxX: 2.6
   _minX: -2.6
@@ -1123,7 +1127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4302915052340612749
 Transform:
   m_ObjectHideFlags: 0
@@ -1216,7 +1220,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 780994b10fd8d8e49af5f3338f5dc35b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.7882353, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1409,7 +1413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &159751920369568939
 Transform:
   m_ObjectHideFlags: 0

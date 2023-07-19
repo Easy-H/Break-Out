@@ -3,13 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class GUICustomFullScreen : GUIFullScreen {
 
+    [SerializeField] Transform _inforLine;
     protected override void Open()
     {
+        _inforLine.SetParent(GameObject.FindWithTag("InforLine").transform);
         UIManager.Instance.EnrollmentGUI(this);
 
     }
 
     public override void Close() {
+        _inforLine.SetParent(transform);
         base.Close();
     }
 
