@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour {
 
-    [SerializeField] GUIScoringPlay _play;
+    [SerializeField] GUIPlay _play;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

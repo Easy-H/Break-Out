@@ -6,6 +6,9 @@ public class Move : MonoBehaviour
 {
     [SerializeField] Vector3 _dir;
 
+    [SerializeField] float minY;
+    [SerializeField] UnityEngine.Events.UnityEvent _goalPointAction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +19,16 @@ public class Move : MonoBehaviour
     void Update()
     {
         transform.Translate(_dir * Time.deltaTime);
+        if (transform.position.y < minY)
+            _goalPointAction.Invoke();
+    }
+
+    public void DestroyScript()
+    {
+        Destroy(this);
+    }
+
+    public void DestroyGameObject() { 
+        
     }
 }

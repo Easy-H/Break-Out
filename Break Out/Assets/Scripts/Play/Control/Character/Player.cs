@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : Character
 {
     [SerializeField] Transform _ballCreatePos;
-    [SerializeField] GUIScoringPlay _play;
+    [SerializeField] GUIPlay _play;
 
     [SerializeField] GameObject _ball;
 
@@ -44,7 +44,10 @@ public class Player : Character
     {
         if (other.CompareTag("Bullet"))
         {
+            if (!other.gameObject.activeInHierarchy)
+                return;
             GetDamaged(1);
+            other.gameObject.SetActive(false);
             Destroy(other.gameObject);
         }
     }

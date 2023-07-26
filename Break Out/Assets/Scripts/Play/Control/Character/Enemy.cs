@@ -21,6 +21,7 @@ public class Enemy : Character {
 
     protected override void DieAct()
     {
+        GameManager.Instance.EnemyKill();
         GameManager.Instance.AddScore(1000);
         base.DieAct();
         Destroy(gameObject);

@@ -3,35 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-public enum GateState { 
-    pause, play
+public enum GameState { 
+    pause, play, clear
 }
 
 public delegate void ScoreAct(int score);
 
 public class GameManager : Singleton<GameManager>
 {
-    GateState _state;
+    GameState _state;
 
-    int _score;
     ScoreAct _actor;
+
     Player _player;
+
+    public int Score { get; private set; }
+    public int BossKillCount { get; private set; }
+    public int KillCount { get; private set; }
 
     int _ballCount;
 
     public bool IsPlaying()
     {
-        return _state == GateState.play;
+        return _state == GameState.play;
 
     }
 
     public void AddScore(int amount) {
-        _score += amount;
-        _actor.Invoke(_score);
+        Score += amount;
+        if (_actor == null)
+            return;
+        _actor.Invoke(Score);
     }
 
-    public int GetScore() {
-        return _score;
+    public void BossKill()
+    {
+        BossKillCount++;
+
+    }
+    
+    public void EnemyKill() {
+        KillCount++;
     }
 
     public void SetScoreView(ScoreAct act) {
@@ -48,17 +60,29 @@ public class GameManager : Singleton<GameManager>
 
     public void BallOut()
     {
+
         if (_player == null)
             return;
 
-        if (--_ballCount == 0)
-            _player.GetDamaged(1);
+        if (--_ballCount >= 0)
+            return;
+
+        if (_state == GameState.clear) {
+            _player.GetDamaged(0);
+            return;
+        }
+
+        _player.GetDamaged(1);
 
     }
 
-    public void StartGame() {
-        _score = 0;
-        _state = GateState.play;
+    public void StartGame()
+    {
+        _state = GameState.play;
+
+        Score = 0;
+        KillCount = 0;
+
         _ballCount = 0;
     }
 

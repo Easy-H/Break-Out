@@ -405,6 +405,7 @@
 "Assets/Scripts/ObjectPool.cs"
 "Assets/Scripts/Play/Control/Ball.cs"
 "Assets/Scripts/Play/Control/Bounceable.cs"
+"Assets/Scripts/Play/Control/Character/BossEnemy.cs"
 "Assets/Scripts/Play/Control/Character/Character.cs"
 "Assets/Scripts/Play/Control/Character/Enemy.cs"
 "Assets/Scripts/Play/Control/Character/Player.cs"

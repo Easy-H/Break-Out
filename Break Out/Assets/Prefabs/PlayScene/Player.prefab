@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 4885094974171121816}
   - component: {fileID: 5096789434292388751}
   - component: {fileID: 1448902755134374834}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,7 +613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1748352995852495476
 Transform:
   m_ObjectHideFlags: 0
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 9132642457855265997}
   - component: {fileID: 3397268290648787494}
   - component: {fileID: 7137460848305274124}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ContactWithBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1682,7 +1682,7 @@ GameObject:
   - component: {fileID: 6763286161766831078}
   - component: {fileID: 2158248282886561210}
   - component: {fileID: 7154612260882662429}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
