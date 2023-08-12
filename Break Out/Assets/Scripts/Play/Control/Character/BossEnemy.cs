@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossEnemy : Enemy
 {
+
     protected override void DieAct()
     {
         GameManager.Instance.BossKill();

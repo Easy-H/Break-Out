@@ -19,27 +19,38 @@ public class Ball : MonoBehaviour {
             return;
         }
 
-        if (collision.collider.CompareTag("Finish")) {
-            GameManager.Instance.BallOut();
-            Destroy(_collideEffect.gameObject);
-            Destroy(gameObject);
-            return;
-        }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bullet"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<PoolTarget>().Return();
             return;
         }
     }
 
-    private void Start()
+    private void OnEnable()
     {
         _collideEffect.transform.SetParent(null);
+
+    }
+
+    public static Ball CreateBall(Vector3 pos) {
+
+        Transform trBall = ObjectPool.Instance.GetGameObject("Ball").transform;
+        trBall.transform.position = pos;
+
+        GameManager.Instance.BallIn();
+
+        return trBall.GetComponent<Ball>();
+    }
+
+    public void BallOut()
+    {
+        GameManager.Instance.BallOut();
+        Debug.Log(GameManager.Instance.BallCount);
+        _collideEffect.transform.SetParent(transform);
     }
 
 }

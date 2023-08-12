@@ -10,21 +10,9 @@ public class Finish : MonoBehaviour {
     {
         if (collision.collider.CompareTag("Enemy"))
         {
-            Destroy(collision.gameObject);
             _play.GameOver();
             return;
         }
-        if (collision.collider.CompareTag("Bullet")) {
-        }
 
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Bullet"))
-        {
-            Destroy(collision.gameObject);
-            return;
-
-        }
     }
 }

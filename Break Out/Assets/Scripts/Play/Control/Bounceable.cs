@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bounceable : MonoBehaviour
+public class Bounceable : Move
 {
 
     static readonly float value = Mathf.PI - 0.5f;
@@ -11,27 +11,36 @@ public class Bounceable : MonoBehaviour
 
     Rigidbody2D _rb;
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public void SetDir(Vector3 dir)
     {
-        Vector3 direct;
+        if (!_rb)
+            _rb = GetComponent<Rigidbody2D>();
 
-        if (Mathf.Abs(Mathf.Atan2(_rb.velocity.y, _rb.velocity.x)) < 0.5f || Mathf.Abs(Mathf.Atan2(_rb.velocity.y, _rb.velocity.x)) > value)
-        {
-            direct = new Vector3(Mathf.Cos(0.5f) * Mathf.Sign(_rb.velocity.x), Mathf.Sin(0.5f) * Mathf.Sign(_rb.velocity.y), 0).normalized;
-        }
-        else
-            direct = _rb.velocity.normalized;
-
-        _rb.velocity = direct * _power;
+        _rb.velocity = dir.normalized * _power;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
-        _rb.velocity = Vector3.up * _power;
+        if (!_rb)
+        {
+            _rb = GetComponent<Rigidbody2D>();
+            _rb.velocity = _dir * _power;
+        }
+    }
 
-        GameManager.Instance.BallIn();
+    protected override void DoMove()
+    {
+        Vector3 direct;
+
+        if (Mathf.Abs(Mathf.Atan2(_rb.velocity.y, _rb.velocity.x)) < 0.5f || Mathf.Abs(Mathf.Atan2(_rb.velocity.y, _rb.velocity.x)) > value)
+        {
+            direct = new Vector3(Mathf.Cos(0.5f) * Mathf.Sign(_rb.velocity.x), Mathf.Sin(0.5f) * Mathf.Sign(_rb.velocity.y), 0);
+        }
+        else
+            direct = _rb.velocity;
+
+        SetDir(direct);
     }
 
 }

@@ -21,6 +21,7 @@ public class Player : Character
     // Update is called once per frame
     void Update()
     {
+
         float xPos = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
         xPos = Mathf.Clamp(xPos, _minX, _maxX);
 
@@ -29,9 +30,16 @@ public class Player : Character
 
     protected override void DamageAct() {
 
+        Ball.CreateBall(_ballCreatePos.position).GetComponent<Bounceable>().SetDir(Vector3.up);
+        
+
+        if (!GameManager.Instance.IsPlaying())
+        {
+            return;
+        }
+
         base.DamageAct();
 
-        Instantiate(_ball, _ballCreatePos.position, Quaternion.identity);
     }
 
     protected override void DieAct()

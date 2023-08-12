@@ -76,5 +76,6 @@ public class GUIStagePlay : GUIPlay
 
     void StageClear() {
         _stageClear.SetActive(true);
+        GameManager.Instance.EndGame();
     }
 }

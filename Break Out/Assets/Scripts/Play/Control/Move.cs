@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    [SerializeField] Vector3 _dir;
+    [SerializeField] protected Vector3 _dir;
 
     [SerializeField] float minY;
     [SerializeField] UnityEngine.Events.UnityEvent _goalPointAction;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(_dir * Time.deltaTime);
         if (transform.position.y < minY)
             _goalPointAction.Invoke();
+
+        DoMove();
+    }
+
+    protected virtual void DoMove()
+    {
+        transform.Translate(_dir * Time.deltaTime);
+
     }
 
     public void DestroyScript()

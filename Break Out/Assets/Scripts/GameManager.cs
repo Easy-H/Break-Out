@@ -21,7 +21,7 @@ public class GameManager : Singleton<GameManager>
     public int BossKillCount { get; private set; }
     public int KillCount { get; private set; }
 
-    int _ballCount;
+    public int BallCount { get; private set;  }
 
     public bool IsPlaying()
     {
@@ -55,7 +55,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     public void BallIn() {
-        _ballCount++;
+        BallCount++;
     }
 
     public void BallOut()
@@ -64,7 +64,7 @@ public class GameManager : Singleton<GameManager>
         if (_player == null)
             return;
 
-        if (--_ballCount >= 0)
+        if (--BallCount >= 0)
             return;
 
         if (_state == GameState.clear) {
@@ -83,7 +83,11 @@ public class GameManager : Singleton<GameManager>
         Score = 0;
         KillCount = 0;
 
-        _ballCount = 0;
+        BallCount = 0;
+    }
+    public void EndGame()
+    {
+        _state = GameState.clear;
     }
 
 }

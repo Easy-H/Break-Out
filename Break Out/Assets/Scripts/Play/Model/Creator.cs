@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Creator{
 
-    [SerializeField] GameObject[] _created;
+    [SerializeField] string[] _created;
     [SerializeField] int _goalCreateCount = 1;
 
     [SerializeField] Transform[] createPos = null;
@@ -38,7 +38,8 @@ public class Creator{
 
             if (_goalCreateCount - j == createPos.Length - i || Random.Range(0, createPos.Length) < _goalCreateCount)
             {
-                GameObject created = Object.Instantiate(_created[Random.Range(0, _created.Length)], createPos[i].position, Quaternion.identity);
+                GameObject created = ObjectPool.Instance.GetGameObject(_created[Random.Range(0, _created.Length)]);
+                created.transform.position = createPos[i].position;
                 created.transform.SetParent(_createdParent);
                 j++;
 
