@@ -16,6 +16,11 @@
   <Element name="Bullet_Green_135"	  path="Prefabs/PlayScene/Bullet/Bullet_Green_135" />
 
   <Element name="Ball"	              path="Prefabs/PlayScene/Ball" />
+
+  <!-- 배경-->
   <Element name="BackgroundUnit_1"	  path="Prefabs/Background/BackgroundUnit_1" />
   <Element name="BackgroundUnit_2"	  path="Prefabs/Background/BackgroundUnit_2" />
+
+  <!-- 이펙트 -->
+  <Element name="CollideEffect"	      path="Prefabs/PlayScene/Effect/CollideEffect" />
 </List>

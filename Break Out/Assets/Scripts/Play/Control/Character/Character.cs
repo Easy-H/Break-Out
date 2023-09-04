@@ -41,7 +41,7 @@ public class Character : MonoBehaviour
     protected virtual void DieAct() {
         Effect effect = Instantiate(_deadEffect);
         effect.On(transform.position);
-        effect.transform.SetParent(null);
+        effect.transform.SetParent(transform.parent);
     }
 
 }

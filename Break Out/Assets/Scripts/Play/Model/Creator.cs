@@ -46,13 +46,11 @@ public class Creator{
         {
 
             if (_goalCreateCount - createdCount != createPos.Length - i && Random.Range(0, createPos.Length) >= _goalCreateCount) continue;
-            {
-                GameObject created = ObjectPool.Instance.GetGameObject(_created[Random.Range(0, _created.Length)]);
-                created.transform.position = createPos[i].position;
-                created.transform.SetParent(_createdParent);
-                createdCount++;
 
-            }
+            GameObject created = ObjectPool.Instance.GetGameObject(_created[Random.Range(0, _created.Length)]);
+            created.transform.position = createPos[i].position;
+            created.transform.SetParent(_createdParent);
+            createdCount++;
 
         }
 

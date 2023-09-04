@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.ComponentModel.Design;
 
 public class GUIPlay : GUICustomFullScreen {
 
@@ -30,6 +31,10 @@ public class GUIPlay : GUICustomFullScreen {
     public void Pause()
     {
         _pause.SetActive(true);
+    }
+
+    public virtual void Retry() {
+
     }
 
 }

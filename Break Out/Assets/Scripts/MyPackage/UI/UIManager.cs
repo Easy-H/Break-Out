@@ -55,13 +55,11 @@ public class UIManager : Singleton<UIManager> {
 
     protected override void OnCreate()
     {
-        return;
         NowPopUp = null;
         uiStack = new List<GUIFullScreen>();
 
         _dic = new Dictionary<string, GUIData>();
-        XmlDocument xmlDoc = new XmlDocument();
-        xmlDoc.Load("Assets/XML/GUIInfor.xml");
+        XmlDocument xmlDoc = AssetOpener.ReadXML("GUIInfor");
 
         XmlNodeList nodes = xmlDoc.SelectNodes("GUIInfor/GUIData");
 

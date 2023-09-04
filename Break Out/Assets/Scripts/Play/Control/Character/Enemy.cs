@@ -23,6 +23,7 @@ public class Enemy : Character {
 
         _creators = new Creator[_count];
         _creators[0] = _creatorReference;
+        _creators[0].SetCreatedParent(transform.parent);
 
         for (int i = 1; i < _count; i++)
         {
@@ -45,7 +46,7 @@ public class Enemy : Character {
     protected override void DieAct()
     {
         GameManager.Instance.EnemyKill();
-        GameManager.Instance.AddScore(1000);
+        GameManager.Instance.AddScore(100);
         base.DieAct();
         Destroy(gameObject);
     }

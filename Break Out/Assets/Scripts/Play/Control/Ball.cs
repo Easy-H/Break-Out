@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-    [SerializeField] Effect _collideEffect;
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _collideEffect.On(collision.contacts[0].point);
+        Effect effect = ObjectPool.Instance.GetGameObject("CollideEffect").GetComponent<Effect>();
+        effect.On(collision.contacts[0].point);
+        effect.transform.SetParent(transform.parent);
 
         if (collision.collider.CompareTag("Enemy")) {
 
@@ -30,12 +30,6 @@ public class Ball : MonoBehaviour {
         }
     }
 
-    private void OnEnable()
-    {
-        _collideEffect.transform.SetParent(null);
-
-    }
-
     public static Ball CreateBall(Vector3 pos) {
 
         Transform trBall = ObjectPool.Instance.GetGameObject("Ball").transform;
@@ -49,7 +43,6 @@ public class Ball : MonoBehaviour {
     public void BallOut()
     {
         GameManager.Instance.BallOut();
-        _collideEffect.transform.SetParent(transform);
     }
 
 }

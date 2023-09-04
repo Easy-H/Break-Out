@@ -6,6 +6,7 @@ public class GUICustomFullScreen : GUIFullScreen {
     [SerializeField] Transform _inforLine;
     protected override void Open()
     {
+        transform.SetParent(GameObject.FindWithTag("Canvas").transform);
         _inforLine.SetParent(GameObject.FindWithTag("InforLine").transform);
         UIManager.Instance.EnrollmentGUI(this);
 

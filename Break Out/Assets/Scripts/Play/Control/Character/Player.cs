@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Character
-{
+public class Player : Character {
     [SerializeField] Transform _ballCreatePos;
     [SerializeField] GUIPlay _play;
 
@@ -28,10 +27,13 @@ public class Player : Character
         transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
     }
 
-    protected override void DamageAct() {
+    protected override void DamageAct()
+    {
 
-        Ball.CreateBall(_ballCreatePos.position).GetComponent<Bounceable>().SetDir(Vector3.up);
-        
+        Ball newBall = Ball.CreateBall(_ballCreatePos.position);
+        newBall.GetComponent<Bounceable>().SetDir(Vector3.up);
+        newBall.transform.SetParent(transform.parent);
+
 
         if (!GameManager.Instance.IsPlaying())
         {

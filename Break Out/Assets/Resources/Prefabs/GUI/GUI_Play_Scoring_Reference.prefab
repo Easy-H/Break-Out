@@ -1222,8 +1222,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creator:
-    _created: {fileID: 8221559934308457474, guid: 4f4361a054151864abe847b4b75138db,
-      type: 3}
+    _created:
+    - 8221559934308457474
+    - 4f4361a054151864abe847b4b75138db
+    - 3
     _goalCreateCount: 4
     createPos:
     - {fileID: 492808196481921785}
