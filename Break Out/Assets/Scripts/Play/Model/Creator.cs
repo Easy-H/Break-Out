@@ -17,6 +17,15 @@ public class Creator{
 
     [SerializeField] Transform _createdParent;
 
+    public Creator(Creator reference) { 
+        _created = reference._created;
+        _goalCreateCount = reference._goalCreateCount;
+        createPos = reference.createPos;
+        createSound = reference.createSound;
+        _createCycleTime = reference._createCycleTime;
+        _spendTimeAfterLastCreate = reference._spendTimeAfterLastCreate;
+    }
+
     public void SetCreatedParent(Transform parent) {
         _createdParent = parent;
     }
@@ -33,15 +42,15 @@ public class Creator{
 
     public void Create()
     {
-        for (int i = 0, j = 0; i < createPos.Length && j < _goalCreateCount; i++)
+        for (int i = 0, createdCount = 0; i < createPos.Length && createdCount < _goalCreateCount; i++)
         {
 
-            if (_goalCreateCount - j == createPos.Length - i || Random.Range(0, createPos.Length) < _goalCreateCount)
+            if (_goalCreateCount - createdCount != createPos.Length - i && Random.Range(0, createPos.Length) >= _goalCreateCount) continue;
             {
                 GameObject created = ObjectPool.Instance.GetGameObject(_created[Random.Range(0, _created.Length)]);
                 created.transform.position = createPos[i].position;
                 created.transform.SetParent(_createdParent);
-                j++;
+                createdCount++;
 
             }
 

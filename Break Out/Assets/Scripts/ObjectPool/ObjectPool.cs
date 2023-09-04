@@ -47,7 +47,6 @@ public class Pool {
 
     public void ReturnObject(GameObject obj) {
         _pool.Push(obj);
-        Debug.Log("반환됨");
         obj.transform.SetParent(tr);
         obj.SetActive(false);
     }

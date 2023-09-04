@@ -49,7 +49,6 @@ public class Ball : MonoBehaviour {
     public void BallOut()
     {
         GameManager.Instance.BallOut();
-        Debug.Log(GameManager.Instance.BallCount);
         _collideEffect.transform.SetParent(transform);
     }
 

@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 5876862502521832616}
   - component: {fileID: 2363030711512724120}
   m_Layer: 8
-  m_Name: Enemy_Green
+  m_Name: Enemy_Dual_Green
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -440,14 +440,17 @@ MonoBehaviour:
   _hpBar: {fileID: 5657147782217045629}
   _deadEffect: {fileID: 653534949192074067, guid: b4ea28d48b6bfbe42a442b8b3c995975,
     type: 3}
-  _creator:
+  _creatorReference:
     _created: []
-    _goalCreateCount: 1
+    _goalCreateCount: 0
     createPos: []
     createSound: {fileID: 0}
-    _createCycleTime: 1000
+    _createCycleTime: 0
     _spendTimeAfterLastCreate: 0
     _createdParent: {fileID: 0}
+  _count: 4
+  _turm: 0.2
+  _creators: []
 --- !u!1 &4636247864841182730
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +724,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8557486627320867407}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -809,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201de7bbdcb959f4d8c2210e9e49caa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GuageColor: {r: 0, g: 0.2627451, b: 0, a: 1}
+  GuageColor: {r: 0, g: 0, b: 0, a: 1}
   _gauge: {fileID: 2365958011284096586}
   _frame: {fileID: 179562719801730833}
   _slice: {fileID: 8543182670179785284}

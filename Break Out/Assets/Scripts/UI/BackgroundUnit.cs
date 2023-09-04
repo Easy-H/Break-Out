@@ -15,6 +15,7 @@ public class BackgroundUnit : MonoBehaviour
     void Start()
     {
         transform.localScale = Vector3.one * Random.Range(_minSize, _maxSize);
+        transform.position += Vector3.right * Random.Range(-1.4f, 1.4f);
         _targetRenderer.color = _colors[Random.Range(0, _colors.Length)];
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 337025361193014706}
   - component: {fileID: 6671112143108042873}
   m_Layer: 0
-  m_Name: BackgroundUnit
+  m_Name: BackgroundUnit_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,9 +91,9 @@ MonoBehaviour:
   _minSize: 0.7
   _maxSize: 1.5
   _colors:
-  - {r: 1, g: 0.3647059, b: 0, a: 0.34117648}
-  - {r: 0, g: 1, b: 0, a: 0.34117648}
-  - {r: 0, g: 1, b: 1, a: 0.34117648}
+  - {r: 1, g: 0.3647059, b: 0, a: 0.1254902}
+  - {r: 0, g: 1, b: 0, a: 0.1254902}
+  - {r: 0, g: 1, b: 1, a: 0.1254902}
   _targetRenderer: {fileID: 7062102284630509938}
 --- !u!1 &7062102284630509941
 GameObject:
@@ -105,9 +105,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7062102284630509939}
   - component: {fileID: 7062102284630509938}
-  - component: {fileID: 7062102284630509936}
+  - component: {fileID: 72866518737117068}
   m_Layer: 0
-  m_Name: Star
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,7 @@ Transform:
   m_GameObject: {fileID: 7062102284630509941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6137200122744909157}
@@ -169,8 +169,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: f77cc62775b73c2408d308164ca43341, type: 3}
-  m_Color: {r: 1, g: 0.36509785, b: 0, a: 0.34117648}
+  m_Sprite: {fileID: 21300000, guid: a92fcf65b8984944e8e14e644d793ede, type: 3}
+  m_Color: {r: 1, g: 0.36509785, b: 0, a: 0.1254902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -180,7 +180,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
---- !u!114 &7062102284630509936
+--- !u!114 &72866518737117068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,4 +192,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4de2d1cbbbb8034a9fbaebdc22d112c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 30
+  _speed: -30

@@ -4,18 +4,41 @@ using UnityEngine;
 
 public class Enemy : Character {
 
-    [SerializeField] Creator _creator;
+    [SerializeField] Creator _creatorReference;
+    [SerializeField] int _count = 4;
+    [SerializeField] float _turm = .2f;
+
+    [SerializeField] Creator[] _creators;
 
     // Start is called before the first frame update
     void Start()
     {
         InstantiateHP();
-        _creator.SetCreatedParent(transform.parent);
+        SetCreator();
+    }
+
+    void SetCreator()
+    {
+        if (_count == 0) return;
+
+        _creators = new Creator[_count];
+        _creators[0] = _creatorReference;
+
+        for (int i = 1; i < _count; i++)
+        {
+            _creators[i] = new Creator(_creatorReference);
+            _creators[i].SetCreatedParent(transform.parent);
+            _creators[i].SpendTime(i * -_turm);
+        }
+
     }
 
     void Update()
     {
-        _creator.SpendTime(Time.deltaTime);
+        for (int i = 0; i < _count; i++)
+        {
+            _creators[i].SpendTime(Time.deltaTime);
+        }
 
     }
 
