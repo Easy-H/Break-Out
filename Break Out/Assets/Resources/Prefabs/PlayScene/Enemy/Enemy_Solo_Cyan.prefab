@@ -102,8 +102,7 @@ MonoBehaviour:
     _maxHP: 1
     _nowHP: 1
   _hpBar: {fileID: 6640388597733750978}
-  _deadEffect: {fileID: 653534949192074067, guid: b4ea28d48b6bfbe42a442b8b3c995975,
-    type: 3}
+  _dieEffectKey: Eft_Pop
   _creatorReference:
     _created:
     - Bullet_Cyan

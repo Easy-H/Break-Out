@@ -101,8 +101,7 @@ MonoBehaviour:
     _maxHP: 3
     _nowHP: 3
   _hpBar: {fileID: 4963253939096921369}
-  _deadEffect: {fileID: 653534949192074067, guid: b4ea28d48b6bfbe42a442b8b3c995975,
-    type: 3}
+  _dieEffectKey: Eft_Pop
   _creatorReference:
     _created: []
     _goalCreateCount: 0

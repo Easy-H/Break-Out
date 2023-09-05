@@ -7,9 +7,7 @@ public class Ball : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Effect effect = ObjectPool.Instance.GetGameObject("CollideEffect").GetComponent<Effect>();
-        effect.On(collision.contacts[0].point);
-        effect.transform.SetParent(transform.parent);
+        Effect.PlayEffect("Eft_Collide", transform);
 
         if (collision.collider.CompareTag("Enemy")) {
 
@@ -42,6 +40,7 @@ public class Ball : MonoBehaviour {
 
     public void BallOut()
     {
+        Effect.PlayEffect("Eft_BallOut", transform.position + Vector3.up, transform.parent);
         GameManager.Instance.BallOut();
     }
 

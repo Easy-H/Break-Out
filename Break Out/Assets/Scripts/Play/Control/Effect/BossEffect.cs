@@ -13,5 +13,6 @@ public class BossEffect : Effect
         {
             Ball.CreateBall(pos).GetComponent<Bounceable>().SetDir(Random.insideUnitCircle);
         }
+        EndEffect();
     }
 }

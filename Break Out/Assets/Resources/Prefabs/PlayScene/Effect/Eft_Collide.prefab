@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 375014819860800655}
   - component: {fileID: 6724116727782181906}
   m_Layer: 0
-  m_Name: CollideEffect
+  m_Name: Eft_Collide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _effectTime: 0.5
+  _eventWhenEffectEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6724116727782181906}
+        m_TargetAssemblyTypeName: PoolTarget, Assembly-CSharp
+        m_MethodName: Return
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _targetImage: {fileID: 9039914660526942862}
   _minSize: {x: 0, y: 0, z: 0}
   _maxSize: {x: 2, y: 2, z: 2}

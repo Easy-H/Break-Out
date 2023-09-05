@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 55456029999100816}
   - component: {fileID: 6017766206132160738}
   - component: {fileID: 653534949192074067}
+  - component: {fileID: 5147786380872696204}
   m_Layer: 5
-  m_Name: TextPopEffect
+  m_Name: Eft_Pop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +87,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6017766206132160738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,13 +117,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f7bc348bc3664449866458763d7511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _effectTime: 0.2
+  _effectTime: 0.1
+  _eventWhenEffectEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5147786380872696204}
+        m_TargetAssemblyTypeName: PoolTarget, Assembly-CSharp
+        m_MethodName: Return
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _targetText:
   - {fileID: 8457951116557858678}
   - {fileID: 2321553448466455416}
   - {fileID: 7915367322222055432}
   _minSize: 0.2
-  _maxSize: 1.2
+  _maxSize: 1
+  _maintainTime: 0.2
+--- !u!114 &5147786380872696204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966371678282043140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a189a03773156f4ab3c79e6338490c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1593595089534091507
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +221,7 @@ MonoBehaviour:
   m_text: P
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: d75b8f41e959450c84ac6e967084d3e1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -329,7 +358,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: d75b8f41e959450c84ac6e967084d3e1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -466,7 +495,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: d75b8f41e959450c84ac6e967084d3e1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

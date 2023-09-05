@@ -1471,8 +1471,7 @@ MonoBehaviour:
     _maxHP: 5
     _nowHP: 5
   _hpBar: {fileID: 0}
-  _deadEffect: {fileID: 653534949192074067, guid: b4ea28d48b6bfbe42a442b8b3c995975,
-    type: 3}
+  _dieEffectKey: Eft_GameOver
   _ballCreatePos: {fileID: 274745537957799552}
   _play: {fileID: 0}
   _ball: {fileID: 23, guid: 368aecd3ba0aaa04a8aea417ffe53937, type: 3}

@@ -31,7 +31,7 @@ public class PopEffect : Effect {
             _targetImage.color = new Color(_targetImage.color.r, _targetImage.color.g, _targetImage.color.b, 1 - spendTime / _effectTime);
 
         }
-        gameObject.SetActive(false);
+        EndEffect();
 
     }
 

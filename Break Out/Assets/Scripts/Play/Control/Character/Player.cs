@@ -34,11 +34,12 @@ public class Player : Character {
         newBall.GetComponent<Bounceable>().SetDir(Vector3.up);
         newBall.transform.SetParent(transform.parent);
 
-
         if (!GameManager.Instance.IsPlaying())
         {
             return;
         }
+
+        Effect.PlayEffect("Eft_Damaged", transform);
 
         base.DamageAct();
 
@@ -57,6 +58,7 @@ public class Player : Character {
             if (!other.gameObject.activeInHierarchy)
                 return;
             GetDamaged(1);
+            
             other.gameObject.SetActive(false);
             Destroy(other.gameObject);
         }

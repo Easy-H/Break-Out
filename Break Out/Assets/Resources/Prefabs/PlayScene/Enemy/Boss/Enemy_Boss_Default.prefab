@@ -84,14 +84,17 @@ MonoBehaviour:
   _hpBar: {fileID: 6709929049791949499}
   _deadEffect: {fileID: 3034089471310809861, guid: ebea7d726870a484f8a701ffaf854623,
     type: 3}
-  _creator:
+  _creatorReference:
     _created: []
     _goalCreateCount: 0
     createPos: []
     createSound: {fileID: 0}
-    _createCycleTime: 100
+    _createCycleTime: 0
     _spendTimeAfterLastCreate: 0
     _createdParent: {fileID: 0}
+  _count: 4
+  _turm: 0.2
+  _creators: []
 --- !u!61 &8916057306792017331
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,6 +192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2783864530054814711, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
         type: 3}
+      propertyPath: _frameSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783864530054814711, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
+        type: 3}
       propertyPath: GuageColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -200,7 +208,7 @@ PrefabInstance:
     - target: {fileID: 2783864530054814711, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
         type: 3}
       propertyPath: GuageColor.r
-      value: 0.54901963
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6303917665689066523, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
         type: 3}
@@ -320,7 +328,27 @@ PrefabInstance:
     - target: {fileID: 7664441237733829275, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.54901963
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978826657201013582, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978826657201013582, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978826657201013582, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978826657201013582, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d34e44fbe20bff4bb83ee242d8bf91e, type: 3}

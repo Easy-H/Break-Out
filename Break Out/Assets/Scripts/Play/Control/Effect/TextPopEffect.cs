@@ -9,6 +9,7 @@ public class TextPopEffect : Effect
 
     [SerializeField] float _minSize;
     [SerializeField] float _maxSize;
+    [SerializeField] float _maintainTime;
 
     public override void On(Vector3 pos) {
         GetComponent<RectTransform>().position = pos;
@@ -22,6 +23,8 @@ public class TextPopEffect : Effect
     IEnumerator _On() {
         for (int i = 0; i < _targetText.Length; i++)
         {
+            _targetText[i].fontSize = _minSize;
+            _targetText[i].alpha = 1;
             float spendTime = 0;
             while (_effectTime > spendTime)
             {
@@ -29,12 +32,27 @@ public class TextPopEffect : Effect
                 yield return null;
 
                 _targetText[i].fontSize = Mathf.Lerp(_minSize, _maxSize, spendTime / _effectTime);
+
+            }
+
+        }
+        yield return new WaitForSeconds(_maintainTime);
+
+        for (int i = 0; i < _targetText.Length; i++)
+        {
+            float spendTime = 0;
+            while (_effectTime > spendTime)
+            {
+                spendTime += Time.deltaTime;
+                yield return null;
+
                 _targetText[i].alpha = 1 - spendTime / _effectTime;
 
             }
 
         }
-        Destroy(gameObject);
+
+        EndEffect();
     }
 
 }

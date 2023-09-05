@@ -8,7 +8,7 @@ public class Character : MonoBehaviour
     [SerializeField] Status _stat;
     [SerializeField] HpBar _hpBar;
 
-    [SerializeField] Effect _deadEffect;
+    [SerializeField] string _dieEffectKey;
 
     public void GetDamaged(int amount) {
         _stat.GetDamage(amount);
@@ -39,9 +39,7 @@ public class Character : MonoBehaviour
     }
 
     protected virtual void DieAct() {
-        Effect effect = Instantiate(_deadEffect);
-        effect.On(transform.position);
-        effect.transform.SetParent(transform.parent);
+        Effect.PlayEffect(_dieEffectKey, transform);
     }
 
 }

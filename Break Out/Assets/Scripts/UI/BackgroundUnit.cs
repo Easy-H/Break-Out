@@ -9,14 +9,18 @@ public class BackgroundUnit : MonoBehaviour
     [SerializeField] float _maxSize;
 
     [SerializeField] Color[] _colors;
-    [SerializeField] SpriteRenderer _targetRenderer;
+    [SerializeField] SpriteRenderer[] _targetRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.localScale = Vector3.one * Random.Range(_minSize, _maxSize);
         transform.position += Vector3.right * Random.Range(-1.4f, 1.4f);
-        _targetRenderer.color = _colors[Random.Range(0, _colors.Length)];
+        Color color = _colors[Random.Range(0, _colors.Length)];
+
+        for (int i = 0; i < _targetRenderer.Length; i++) {
+            _targetRenderer[i].color = color;
+        }
     }
 
 }
