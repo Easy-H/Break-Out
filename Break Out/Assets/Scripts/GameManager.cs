@@ -1,70 +1,93 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
-public class GameManager : MonoBehaviour {
+public enum GameState { 
+    pause, play, clear
+}
 
-    public static GameManager Instance { get; private set; }
+public delegate void ScoreAct(int score);
 
-    float score = 0;
-    public float ScoreProduct { get; set; }     // 연속 충돌시 보너스 점수
+public class GameManager : Singleton<GameManager>
+{
+    GameState _state;
 
-    [SerializeField] GameObject[] items;
+    ScoreAct _actor;
 
-    float time;
+    Player _player;
 
-    static public int coll = 0;                // 못 넘어가는 지점에 닿은 적의 개수, 0이 아니면 적을 생성할 수 없음
+    public int Score { get; private set; }
+    public int BossKillCount { get; private set; }
+    public int KillCount { get; private set; }
 
-    public float Score {
-        get {
-            return score;
+    public int BallCount { get; private set;  }
+
+    public bool IsPlaying()
+    {
+        return _state == GameState.play;
+
+    }
+
+    public void AddScore(int amount) {
+        Score += amount;
+        if (_actor == null)
+            return;
+        _actor.Invoke(Score);
+    }
+
+    public void BossKill()
+    {
+        BossKillCount++;
+
+    }
+    
+    public void EnemyKill() {
+        KillCount++;
+    }
+
+    public void SetScoreView(ScoreAct act) {
+        _actor = act;
+    }
+
+    public void SetPlayer(Player player) {
+        _player = player;
+    }
+
+    public void BallIn() {
+        BallCount++;
+    }
+
+    public void BallOut()
+    {
+
+        if (_player == null)
+            return;
+
+        if (--BallCount >= 0)
+            return;
+
+        if (_state == GameState.clear) {
+            _player.GetDamaged(0);
+            return;
         }
-        set {
-            score += value * ScoreProduct;
-            InforUi.Instance.SetScore(score.ToString("000000"));
 
-            PhaseManager.instance.PhaseSet();
-        }
+        _player.GetDamaged(1);
 
     }
 
-    public void CreateItem(Vector3 pos) {
-        int random = Random.Range(0, items.Length);
+    public void StartGame()
+    {
+        _state = GameState.play;
 
-        Instantiate(items[random], pos, Quaternion.identity);
+        Score = 0;
+        KillCount = 0;
+
+        BallCount = 0;
     }
-
-    public float GetTime() {
-        return time;
-    }
-
-
-    public void gameOver() {
-        ScoreProduct = 0;
-
-        UiManager.Instance.StartAnimation("GameOver");
-
-        Destroy(GameObject.FindWithTag("Player"));
-
-    }
-
-    private void Awake() {
-        Instance = this;
-        time = 0;
-        score = 0;
-        ScoreProduct = 1;
-    }
-
-    private void Start() {
-        coll = 0;
-    }
-
-    private void Update() {
-        time += Time.deltaTime;
-        if (Input.GetKey(KeyCode.R)) {
-            SceneManager.LoadScene(1);
-        }
+    public void EndGame()
+    {
+        _state = GameState.clear;
     }
 
 }

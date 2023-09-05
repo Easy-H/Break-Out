@@ -1,0 +1,62 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class Creator{
+
+    [SerializeField] string[] _created;
+    [SerializeField] int _goalCreateCount = 1;
+
+    [SerializeField] Transform[] createPos = null;
+
+    [SerializeField] AudioSource createSound;
+
+    [SerializeField] float _createCycleTime;
+    [SerializeField] float _spendTimeAfterLastCreate = 0;
+
+    [SerializeField] Transform _createdParent;
+
+    public Creator(Creator reference) { 
+        _created = reference._created;
+        _goalCreateCount = reference._goalCreateCount;
+        createPos = reference.createPos;
+        createSound = reference.createSound;
+        _createCycleTime = reference._createCycleTime;
+        _spendTimeAfterLastCreate = reference._spendTimeAfterLastCreate;
+    }
+
+    public void SetCreatedParent(Transform parent) {
+        _createdParent = parent;
+    }
+
+    public void SpendTime(float timeDelta) {
+        _spendTimeAfterLastCreate += timeDelta;
+
+        if (_spendTimeAfterLastCreate < _createCycleTime) return;
+
+        _spendTimeAfterLastCreate -= _createCycleTime;
+
+        Create();
+    }
+
+    public void Create()
+    {
+        for (int i = 0, createdCount = 0; i < createPos.Length && createdCount < _goalCreateCount; i++)
+        {
+
+            if (_goalCreateCount - createdCount != createPos.Length - i && Random.Range(0, createPos.Length) >= _goalCreateCount) continue;
+
+            GameObject created = ObjectPool.Instance.GetGameObject(_created[Random.Range(0, _created.Length)]);
+            created.transform.position = createPos[i].position;
+            created.transform.SetParent(_createdParent);
+            createdCount++;
+
+        }
+
+        if (createSound)
+            createSound.Play();
+
+    }
+
+}
