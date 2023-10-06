@@ -1,41 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField] Status _stat;
-    [SerializeField] HpBar _hpBar;
+    [SerializeField] public Status _stat;
+
+    [SerializeField] private UnityEvent damageEvent;
 
     [SerializeField] string _dieEffectKey;
 
     public void GetDamaged(int amount) {
         _stat.GetDamage(amount);
-        ShowHP();
+
+        damageEvent.Invoke();
 
         if (!_stat.isAlive())
         {
             DieAct();
             return;
         }
-        DamageAct();
-    }
-
-    protected virtual void DamageAct()
-    {
-    }
-
-    protected void InstantiateHP()
-    {
-        _hpBar.InstantiateSet(_stat._nowHP, _stat._maxHP);
-
-    }
-
-    protected void ShowHP()
-    {
-        _hpBar.SetHP(_stat._nowHP, _stat._maxHP);
-
     }
 
     protected virtual void DieAct() {

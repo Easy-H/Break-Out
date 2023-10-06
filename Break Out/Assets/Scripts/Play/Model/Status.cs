@@ -2,6 +2,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class Status {
+
     public int _maxHP;
     public int _nowHP;
 

@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201de7bbdcb959f4d8c2210e9e49caa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _target: {fileID: 0}
   GuageColor: {r: 0.40392157, g: 0.6, b: 0.98039216, a: 1}
   _gauge: {fileID: 5257369427049024448}
   _frame: {fileID: 7664441237733829275}

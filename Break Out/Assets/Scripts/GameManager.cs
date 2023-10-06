@@ -54,28 +54,6 @@ public class GameManager : Singleton<GameManager>
         _player = player;
     }
 
-    public void BallIn() {
-        BallCount++;
-    }
-
-    public void BallOut()
-    {
-
-        if (_player == null)
-            return;
-
-        if (--BallCount >= 0)
-            return;
-
-        if (_state == GameState.clear) {
-            _player.GetDamaged(0);
-            return;
-        }
-
-        _player.GetDamaged(1);
-
-    }
-
     public void StartGame()
     {
         _state = GameState.play;

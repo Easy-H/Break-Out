@@ -1,20 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : Character {
-    [SerializeField] Transform _ballCreatePos;
-    [SerializeField] GUIPlay _play;
 
-    [SerializeField] GameObject _ball;
+    [SerializeField] Transform _ballCreatePos;
+    [SerializeField] UnityEvent _dieEvent;
 
     [SerializeField] float _maxX = 1;
     [SerializeField] float _minX = -1;
 
+    [SerializeField] int _goalBallCount;
+    private int _nowBallCount;
+    private int _ballQueueCount;
+
+    [SerializeField] float _ballCreateTime;
+
     private void Start()
     {
-        InstantiateHP();
         GameManager.Instance.SetPlayer(this);
+        _ballQueueCount = _goalBallCount;
+        StartCoroutine(_CreateBall());
     }
 
     // Update is called once per frame
@@ -27,12 +34,13 @@ public class Player : Character {
         transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
     }
 
-    protected override void DamageAct()
+    public void DamageAct()
     {
+        if (_ballQueueCount == 0) {
+            StartCoroutine(_CreateBall());
+        }
 
-        Ball newBall = Ball.CreateBall(_ballCreatePos.position);
-        newBall.GetComponent<Bounceable>().SetDir(Vector3.up);
-        newBall.transform.SetParent(transform.parent);
+        _ballQueueCount++;
 
         if (!GameManager.Instance.IsPlaying())
         {
@@ -41,16 +49,38 @@ public class Player : Character {
 
         Effect.PlayEffect("Eft_Damaged", transform);
 
-        base.DamageAct();
+    }
 
+    IEnumerator _CreateBall() {
+
+        yield return null;
+
+        while (_ballQueueCount > 0)
+        {
+            Ball newBall = Ball.CreateBall(_ballCreatePos.position, this);
+            newBall.GetComponent<Bounceable>().SetDir(Vector3.up);
+            newBall.transform.SetParent(transform.parent);
+
+            _nowBallCount++;
+            _ballQueueCount--;
+
+            yield return new WaitForSeconds(_ballCreateTime);
+        }
     }
 
     protected override void DieAct()
     {
         base.DieAct();
-        _play.GameOver();
+        _dieEvent.Invoke();
         Destroy(gameObject);
     }
+
+    public void BallOut() {
+        if (--_nowBallCount < _goalBallCount) {
+            GetDamaged(1);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bullet"))

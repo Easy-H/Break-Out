@@ -276,6 +276,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8045739195895880120, guid: 91862f57f7b4de74286b7210bba5a5fc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8045739195895880123, guid: 91862f57f7b4de74286b7210bba5a5fc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8045739196223700236, guid: 91862f57f7b4de74286b7210bba5a5fc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8045739197122271387, guid: 91862f57f7b4de74286b7210bba5a5fc,
         type: 3}
       propertyPath: m_Name
@@ -284,7 +299,7 @@ PrefabInstance:
     - target: {fileID: 8045739197122271389, guid: 91862f57f7b4de74286b7210bba5a5fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8045739197122271389, guid: 91862f57f7b4de74286b7210bba5a5fc,
         type: 3}
@@ -404,7 +419,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &715828688 stripped
 GameObject:
@@ -533,7 +548,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2023155446
 Transform:

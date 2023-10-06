@@ -87,7 +87,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6017766206132160738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,11 +133,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _view: {fileID: 0}
   _targetText:
   - {fileID: 7915367322222055432}
   - {fileID: 4701923935318900055}
   - {fileID: 488835750655543305}
-  _minSize: 0.2
+  _text: 
   _maxSize: 1
   _maintainTime: 0.2
 --- !u!114 &5147786380872696204

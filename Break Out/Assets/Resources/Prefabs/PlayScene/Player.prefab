@@ -1470,13 +1470,30 @@ MonoBehaviour:
   _stat:
     _maxHP: 5
     _nowHP: 5
-  _hpBar: {fileID: 0}
+  damageEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5699865495839520275}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: DamageAct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _dieEffectKey: Eft_GameOver
   _ballCreatePos: {fileID: 274745537957799552}
-  _play: {fileID: 0}
-  _ball: {fileID: 23, guid: 368aecd3ba0aaa04a8aea417ffe53937, type: 3}
-  _maxX: 2.6
-  _minX: -2.6
+  _dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxX: 3.3
+  _minX: -3.3
+  _goalBallCount: 1
+  _ballCreateTime: 0.2
 --- !u!1 &3610937187760143395
 GameObject:
   m_ObjectHideFlags: 0

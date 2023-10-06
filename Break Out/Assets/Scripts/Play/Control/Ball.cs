@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
+    Player _player;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Effect.PlayEffect("Eft_Collide", transform);
@@ -28,20 +30,24 @@ public class Ball : MonoBehaviour {
         }
     }
 
-    public static Ball CreateBall(Vector3 pos) {
+    public static Ball CreateBall(Vector3 pos, Player player) {
 
         Transform trBall = ObjectPool.Instance.GetGameObject("Ball").transform;
         trBall.transform.position = pos;
 
-        GameManager.Instance.BallIn();
+        Ball retval = trBall.GetComponent<Ball>();
+        retval._player = player;
 
-        return trBall.GetComponent<Ball>();
+        return retval;
     }
 
     public void BallOut()
     {
+        if (_player)
+            _player.BallOut();
+
         Effect.PlayEffect("Eft_BallOut", transform.position + Vector3.up, transform.parent);
-        GameManager.Instance.BallOut();
+
     }
 
 }

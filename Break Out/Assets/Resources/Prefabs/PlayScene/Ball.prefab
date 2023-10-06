@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f68b6d80538fcd4abcdb7863eeb2a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collideEffect: {fileID: 4294286659580931263}
 --- !u!114 &8261741315140101775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,9 +258,9 @@ MonoBehaviour:
   _goalPointAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5701503489762481738}
-        m_TargetAssemblyTypeName: Ball, Assembly-CSharp
-        m_MethodName: BallOut
+      - m_Target: {fileID: 5028023469887861069}
+        m_TargetAssemblyTypeName: PoolTarget, Assembly-CSharp
+        m_MethodName: Return
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -271,9 +270,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5028023469887861069}
-        m_TargetAssemblyTypeName: PoolTarget, Assembly-CSharp
-        m_MethodName: Return
+      - m_Target: {fileID: 5701503489762481738}
+        m_TargetAssemblyTypeName: Ball, Assembly-CSharp
+        m_MethodName: BallOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -572,15 +571,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4516001066789783600}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4294286659580931263 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 375014819860800655, guid: 2935759e1b2b8034d83635315dd5d14d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4516001066789783600}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 659bc98ba083f684a90c4246ce5df6d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class HpBar : MonoBehaviour {
 
+    [SerializeField] Character _target;
+
     [SerializeField] Color GuageColor;
     [SerializeField] Image _gauge;
 
@@ -13,20 +15,28 @@ public class HpBar : MonoBehaviour {
 
     [SerializeField] float _frameSize;
 
-    public void InstantiateSet(Color color, int amount, int max) {
-        GuageColor = color;
-        InstantiateSet(amount, max);
+    Status _targetStat;
+
+    private void Start()
+    {
+        if (_target == null) {
+            Destroy(gameObject);
+            return;
+        }
+
+        _targetStat = _target._stat;
+        InstantiateSet();
     }
 
-    public void InstantiateSet(int amount, int max) {
-        _gauge.fillAmount = (float)amount / max;
+    public void InstantiateSet() {
+        _gauge.fillAmount = (float)_targetStat._nowHP / _targetStat._maxHP;
 
         _frame.color = GuageColor;
         _slice.color = GuageColor;
 
-        if (max == 1) return;
+        if (_targetStat._maxHP == 1) return;
 
-        RectTransform[] slices = new RectTransform[max - 1];
+        RectTransform[] slices = new RectTransform[_targetStat._maxHP - 1];
         slices[0] = _slice.GetComponent<RectTransform>();
 
         for (int i = 1; i < slices.Length; i++)
@@ -37,8 +47,8 @@ public class HpBar : MonoBehaviour {
 
         for (int i = 0; i < slices.Length; i++)
         {
-            slices[i].anchorMin = new Vector2((1f / max) * (i + 1), 0);
-            slices[i].anchorMax = new Vector2((1f / max) * (i + 1), 1);
+            slices[i].anchorMin = new Vector2((1f / _targetStat._maxHP) * (i + 1), 0);
+            slices[i].anchorMax = new Vector2((1f / _targetStat._maxHP) * (i + 1), 1);
             slices[i].anchoredPosition = Vector2.zero;
             slices[i].sizeDelta = new Vector2(_frameSize, 0);
             slices[i].gameObject.SetActive(true);
@@ -46,8 +56,8 @@ public class HpBar : MonoBehaviour {
 
     }
 
-    public void SetHP(int amount, int max) {
-        _gauge.fillAmount = (float)amount / max;
+    public void SetHP() {
+        _gauge.fillAmount = (float)_targetStat._nowHP / _targetStat._maxHP;
 
     }
 
