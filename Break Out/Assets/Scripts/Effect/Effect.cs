@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.Events;
+using ObjectPool;
 
 public abstract class Effect : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public abstract class Effect : MonoBehaviour
 
     public static void PlayEffect(string key, Vector3 position, Transform parent)
     {
-        Effect effect = ObjectPool.Instance.GetGameObject(key).GetComponent<Effect>();
+        Effect effect = ObjectPoolManager.Instance.GetGameObject(key).GetComponent<Effect>();
         effect.On(position);
         effect.transform.SetParent(parent);
 

@@ -44,16 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c712ce49548770143a925ed66d6f9387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _creator:
-    _created:
-    - Bullet_Green_135
-    _goalCreateCount: 1
-    createPos:
-    - {fileID: 8447483756382575161}
-    createSound: {fileID: 0}
-    _createCycleTime: 10
-    _spendTimeAfterLastCreate: 2
-    _createdParent: {fileID: 3773615628246460529}
+  _routineEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _timeCycle: 10
+  _spendTime: 0
 --- !u!1 &3109872334326488944
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +165,7 @@ Transform:
   - {fileID: 907384371690303228}
   - {fileID: 6564786075937988344}
   m_Father: {fileID: 3773615628246460529}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3773615628246460540
 GameObject:
@@ -186,6 +181,7 @@ GameObject:
   - component: {fileID: 5437823450391137362}
   - component: {fileID: 5876862502521832616}
   - component: {fileID: 2363030711512724120}
+  - component: {fileID: -3456422235870478450}
   m_Layer: 8
   m_Name: Enemy_Dual_Green
   m_TagString: Enemy
@@ -206,8 +202,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1550373940318456154}
-  - {fileID: 8447483756382575161}
   - {fileID: 838135718837478084}
+  - {fileID: 8447483756382575161}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -330,17 +326,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _dieEffectKey: Eft_Pop
-  _creatorReference:
-    _created: []
-    _goalCreateCount: 0
-    createPos: []
-    createSound: {fileID: 0}
-    _createCycleTime: 0
-    _spendTimeAfterLastCreate: 0
-    _createdParent: {fileID: 0}
-  _count: 4
-  _turm: 0.2
-  _creators: []
+  _creatorReference: {fileID: 0}
+--- !u!114 &-3456422235870478450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773615628246460540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c712ce49548770143a925ed66d6f9387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6466830560932837006}
+        m_TargetAssemblyTypeName: Creator, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _timeCycle: 10
+  _spendTime: 0
 --- !u!1 &5773246194930588765
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8447483756382575161}
+  - component: {fileID: 6466830560932837006}
   m_Layer: 8
   m_Name: BulletCreatePos
   m_TagString: Untagged
@@ -372,8 +388,25 @@ Transform:
   - {fileID: 1587146297527384051}
   - {fileID: 8412801927586841124}
   m_Father: {fileID: 3773615628246460529}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6466830560932837006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5773246194930588765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3af7363185707459856d5a801bb73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _created: []
+  _goalCreateCount: 0
+  createPos: []
+  createSound: {fileID: 0}
+  _createdParent: {fileID: 0}
 --- !u!1 &6290273314747002587
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,16 +535,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c712ce49548770143a925ed66d6f9387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _creator:
-    _created:
-    - Bullet_Green_45
-    _goalCreateCount: 1
-    createPos:
-    - {fileID: 8447483756382575161}
-    createSound: {fileID: 0}
-    _createCycleTime: 10
-    _spendTimeAfterLastCreate: 2
-    _createdParent: {fileID: 3773615628246460529}
+  _routineEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _timeCycle: 10
+  _spendTime: 0
 --- !u!1 &8893118345832905240
 GameObject:
   m_ObjectHideFlags: 0

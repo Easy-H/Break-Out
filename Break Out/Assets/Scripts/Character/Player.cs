@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class Player : Character {
 
     [SerializeField] Transform _ballCreatePos;
-    [SerializeField] UnityEvent _dieEvent;
 
     [SerializeField] float _maxX = 1;
     [SerializeField] float _minX = -1;
@@ -71,7 +70,6 @@ public class Player : Character {
     protected override void DieAct()
     {
         base.DieAct();
-        _dieEvent.Invoke();
         Destroy(gameObject);
     }
 
