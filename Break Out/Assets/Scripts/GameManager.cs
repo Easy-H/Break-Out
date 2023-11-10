@@ -15,8 +15,6 @@ public class GameManager : Singleton<GameManager>
 
     ScoreAct _actor;
 
-    Player _player;
-
     public int Score { get; private set; }
     public int BossKillCount { get; private set; }
     public int KillCount { get; private set; }
@@ -48,10 +46,6 @@ public class GameManager : Singleton<GameManager>
 
     public void SetScoreView(ScoreAct act) {
         _actor = act;
-    }
-
-    public void SetPlayer(Player player) {
-        _player = player;
     }
 
     public void StartGame()

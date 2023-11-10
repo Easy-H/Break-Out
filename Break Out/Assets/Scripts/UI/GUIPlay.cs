@@ -22,7 +22,7 @@ public class GUIPlay : GUICustomFullScreen {
         GameManager.Instance.SetScoreView(SetScore);
     }
 
-    public void GameOver()
+    public virtual void GameOver()
     {
         _gameOver.SetActive(true);
         GameManager.Instance.SetScoreView(null);

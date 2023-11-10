@@ -15,17 +15,21 @@ public class GUICustomFullScreen : GUIFullScreen {
 
     }
 
-    public override void Close() {
+    public override void Close()
+    {
         _inforLine.SetParent(transform);
         base.Close();
     }
 
     public void OpenScene(int idx)
     {
+        _inforLine.SetParent(transform);
         SceneManager.LoadScene(idx);
     }
 
-    public override void OpenWindow(string key) {
+    public override void OpenWindow(string key)
+    {
+        _inforLine.SetParent(transform);
         base.OpenWindow(key);
     }
     public void PlayAnim(GUIAnimatedOpen gui)

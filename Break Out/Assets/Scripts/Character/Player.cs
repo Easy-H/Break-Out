@@ -18,7 +18,6 @@ public class Player : Character {
 
     private void Start()
     {
-        GameManager.Instance.SetPlayer(this);
         _ballQueueCount = _goalBallCount;
         StartCoroutine(_CreateBall());
     }
