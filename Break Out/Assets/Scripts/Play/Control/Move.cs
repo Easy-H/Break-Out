@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    [SerializeField] protected Vector3 _dir;
+    [SerializeField] protected Vector2 _defaultDir;
+    [SerializeField] protected float _power; 
 
     [SerializeField] float minY;
     [SerializeField] UnityEngine.Events.UnityEvent _goalPointAction;
@@ -20,7 +21,7 @@ public class Move : MonoBehaviour
 
     protected virtual void DoMove()
     {
-        transform.Translate(_dir * Time.deltaTime);
+        transform.Translate(_defaultDir * _power * Time.deltaTime);
 
     }
 

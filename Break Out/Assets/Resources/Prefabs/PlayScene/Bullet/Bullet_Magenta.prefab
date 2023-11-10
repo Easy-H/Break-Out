@@ -64,7 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b19f4019a3f6704ead465a4aa05c51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dir: {x: 0, y: -3, z: 0}
+  _defaultDir: {x: 0, y: -1}
+  _power: 3
   minY: -8.5
   _goalPointAction:
     m_PersistentCalls:

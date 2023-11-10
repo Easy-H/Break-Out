@@ -1,14 +1,17 @@
+using ObjectPool;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GUICustomFullScreen : GUIFullScreen {
 
     [SerializeField] Transform _inforLine;
+    [SerializeField] Transform _poolBudget;
     protected override void Open()
     {
         transform.SetParent(GameObject.FindWithTag("Canvas").transform);
         _inforLine.SetParent(GameObject.FindWithTag("InforLine").transform);
         UIManager.Instance.EnrollmentGUI(this);
+        ObjectPoolManager.Instance.SetBudget(_poolBudget);
 
     }
 

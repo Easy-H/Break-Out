@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <List>
   <!-- 잡몹 -->
-  <Element name="Enemy_Gray"	          path="Prefabs/PlayScene/Enemy/Enemy_Gray" />
+  <Element name="Enemy_Solo_Gray"       path="Prefabs/PlayScene/Enemy/Enemy_Solo_Gray" />
   <Element name="Enemy_Solo_Cyan"	      path="Prefabs/PlayScene/Enemy/Enemy_Solo_Cyan" />
   <Element name="Enemy_Solo_Magenta"	  path="Prefabs/PlayScene/Enemy/Enemy_Solo_Magenta" />
   <Element name="Enemy_Dual_Magenta"	  path="Prefabs/PlayScene/Enemy/Enemy_Dual_Magenta" />
-  <Element name="Enemy_Green"           path="Prefabs/PlayScene/Enemy/Enemy_Green" />
+  <Element name="Enemy_Dual_Green"      path="Prefabs/PlayScene/Enemy/Enemy_Dual_Green" />
 
 
   <!-- 총알 -->

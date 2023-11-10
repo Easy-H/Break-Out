@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4689438361794641718}
   - component: {fileID: 6624218396695279564}
   m_Layer: 8
-  m_Name: Enemy_Gray
+  m_Name: Enemy_Solo_Gray
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3836856414188397301}
-  - {fileID: 9176156251800824157}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,7 +99,7 @@ MonoBehaviour:
   _stat:
     _maxHP: 3
     _nowHP: 3
-  damageEvent:
+  _damageEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4963253939096921369}
@@ -115,18 +114,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _dieEffectKey: Eft_Pop
-  _creatorReference:
-    _created: []
-    _goalCreateCount: 0
-    createPos: []
-    createSound: {fileID: 0}
-    _createCycleTime: 0
-    _spendTimeAfterLastCreate: 0
-    _createdParent: {fileID: 0}
-  _count: 0
-  _turm: 0.2
-  _creators: []
 --- !u!114 &4689438361794641718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b19f4019a3f6704ead465a4aa05c51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dir: {x: 0, y: -0.2, z: 0}
+  _defaultDir: {x: 0, y: -1}
+  _power: 0.2
   minY: -8.5
   _goalPointAction:
     m_PersistentCalls:
@@ -168,37 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a189a03773156f4ab3c79e6338490c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6520521860155125561
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9176156251800824157}
-  m_Layer: 8
-  m_Name: BulletCreatePos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9176156251800824157
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6520521860155125561}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4484933963667708693}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7080576857318637294
 PrefabInstance:
   m_ObjectHideFlags: 0

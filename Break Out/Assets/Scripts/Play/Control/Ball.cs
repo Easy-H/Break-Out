@@ -1,7 +1,5 @@
-using Newtonsoft.Json.Linq;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using ObjectPool;
 
 public class Ball : MonoBehaviour {
 
@@ -11,28 +9,25 @@ public class Ball : MonoBehaviour {
     {
         Effect.PlayEffect("Eft_Collide", transform);
 
-        if (collision.collider.CompareTag("Enemy")) {
-
-            Character hit = collision.collider.GetComponent<Character>();
-            hit.GetDamaged(1);
-
+        if (!collision.collider.CompareTag("Enemy")) {
             return;
         }
+        Character hit = collision.collider.GetComponent<Character>();
+        hit.GetDamaged(1);
 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bullet"))
-        {
-            other.gameObject.GetComponent<PoolTarget>().Return();
+        if (!other.CompareTag("Bullet"))
             return;
-        }
+
+        other.gameObject.GetComponent<PoolTarget>().Return();
     }
 
     public static Ball CreateBall(Vector3 pos, Player player) {
 
-        Transform trBall = ObjectPool.Instance.GetGameObject("Ball").transform;
+        Transform trBall = ObjectPoolManager.Instance.GetGameObject("Ball").transform;
         trBall.transform.position = pos;
 
         Ball retval = trBall.GetComponent<Ball>();

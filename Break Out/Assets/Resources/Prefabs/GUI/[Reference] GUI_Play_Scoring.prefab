@@ -1129,7 +1129,7 @@ GameObject:
   - component: {fileID: 5052197698418434179}
   - component: {fileID: 5052197698418434178}
   m_Layer: 0
-  m_Name: GUI_Play_Scoring_Reference
+  m_Name: '[Reference] GUI_Play_Scoring'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1167,6 +1167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priority: 0
   _inforLine: {fileID: 4536822623362858865}
+  _poolBudget: {fileID: 8923555366377610593}
   _pause: {fileID: 7021537620686961710}
   _gameOver: {fileID: 4246133261340638489}
   _scoreView: {fileID: 7600103597478701371}
@@ -1221,24 +1222,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c712ce49548770143a925ed66d6f9387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _creator:
-    _created:
-    - 8221559934308457474
-    - 4f4361a054151864abe847b4b75138db
-    - 3
-    _goalCreateCount: 4
-    createPos:
-    - {fileID: 492808196481921785}
-    - {fileID: 2382461233878579052}
-    - {fileID: 4240938089354510713}
-    - {fileID: 1153178065830694205}
-    - {fileID: 589618111555571746}
-    - {fileID: 4288749014821719251}
-    - {fileID: 3225598562917164120}
-    createSound: {fileID: 0}
-    _createCycleTime: 6
-    _spendTimeAfterLastCreate: 6
-    _createdParent: {fileID: 8923555366377610593}
+  _routineEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _timeCycle: 10
+  _spendTime: 0
 --- !u!1 &5522319880167427249
 GameObject:
   m_ObjectHideFlags: 0
