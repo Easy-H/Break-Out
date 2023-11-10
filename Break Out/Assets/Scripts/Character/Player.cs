@@ -57,8 +57,6 @@ public class Player : Character {
         while (_ballQueueCount > 0)
         {
             Ball newBall = Ball.CreateBall(_ballCreatePos.position, this);
-            newBall.GetComponent<Bounceable>().SetDir(Vector3.up);
-            newBall.transform.SetParent(transform.parent);
 
             _nowBallCount++;
             _ballQueueCount--;

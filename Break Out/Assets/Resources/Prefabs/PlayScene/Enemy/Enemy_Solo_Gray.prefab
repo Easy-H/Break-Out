@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4689438361794641718}
   - component: {fileID: 6624218396695279564}
   m_Layer: 8
-  m_Name: Enemy_Gray
+  m_Name: Enemy_Solo_Gray
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   _stat:
     _maxHP: 3
     _nowHP: 3
-  damageEvent:
+  _damageEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4963253939096921369}
@@ -114,8 +114,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _dieEffectKey: Eft_Pop
-  _creatorReference: {fileID: 0}
 --- !u!114 &4689438361794641718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b19f4019a3f6704ead465a4aa05c51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dir: {x: 0, y: -0.2, z: 0}
+  _defaultDir: {x: 0, y: -1}
+  _power: 0.2
   minY: -8.5
   _goalPointAction:
     m_PersistentCalls:

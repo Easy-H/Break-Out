@@ -62,6 +62,11 @@ namespace ObjectPool {
     public class ObjectPoolManager : MonoSingleton<ObjectPoolManager> {
 
         Dictionary<string, Pool> _dic;
+        Transform _createdBudget;
+
+        public void SetBudget(Transform tr) {
+            _createdBudget = tr;
+        }
 
         protected override void OnCreate()
         {
@@ -91,14 +96,21 @@ namespace ObjectPool {
             }
         }
 
-        public GameObject GetGameObject(string key)
-        {
-            if (_dic.ContainsKey(key))
-            {
-                return _dic[key].GetObject();
-            }
+        public GameObject GetGameObject(string key) {
+            return GetGameObject(_createdBudget, key);
+        }
 
-            return _dic[key].GetObject();
+        public GameObject GetGameObject(Transform parent, string key)
+        {
+            if (!_dic.ContainsKey(key))
+            {
+                return null;
+            }
+            GameObject retval = _dic[key].GetObject();
+            retval.transform.SetParent(parent);
+
+            return retval;
+
         }
     }
 }

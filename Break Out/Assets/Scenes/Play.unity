@@ -276,21 +276,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8045739195895880120, guid: 91862f57f7b4de74286b7210bba5a5fc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 8045739195895880123, guid: 91862f57f7b4de74286b7210bba5a5fc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8045739196223700236, guid: 91862f57f7b4de74286b7210bba5a5fc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8045739197122271387, guid: 91862f57f7b4de74286b7210bba5a5fc,
         type: 3}
       propertyPath: m_Name
@@ -480,6 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priority: 0
   _inforLine: {fileID: 2023155446}
+  _poolBudget: {fileID: 0}
 --- !u!1 &2023155444
 GameObject:
   m_ObjectHideFlags: 0

@@ -102,7 +102,7 @@ MonoBehaviour:
   _stat:
     _maxHP: 1
     _nowHP: 1
-  damageEvent:
+  _damageEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6640388597733750978}
@@ -117,8 +117,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _dieEffectKey: Eft_Pop
-  _creatorReference: {fileID: 0}
 --- !u!114 &6472332707409732333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b19f4019a3f6704ead465a4aa05c51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dir: {x: 0, y: -0.2, z: 0}
+  _defaultDir: {x: 0, y: -1}
+  _power: 0.2
   minY: -8.5
   _goalPointAction:
     m_PersistentCalls:
@@ -187,7 +190,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _timeCycle: 10
+  _timeCycle: 5
   _spendTime: 0
 --- !u!1 &3522178930232430068
 GameObject:
@@ -351,11 +354,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3af7363185707459856d5a801bb73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _created: []
-  _goalCreateCount: 0
-  createPos: []
-  createSound: {fileID: 0}
-  _createdParent: {fileID: 0}
+  _created:
+  - Bullet_Cyan
+  _goalCreateCount: 1
+  _createPos:
+  - {fileID: 7466443064236979334}
+  _createSound: {fileID: 0}
 --- !u!1 &5747129952590529934
 GameObject:
   m_ObjectHideFlags: 0

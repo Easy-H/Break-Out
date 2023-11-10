@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Bounceable : Move
 {
-
-    static readonly float value = Mathf.PI - 0.5f;
-
-    [SerializeField] float _power;
+    static readonly float valueMin = 0.5f;
+    static readonly float valueMax = Mathf.PI - valueMin;
 
     Rigidbody2D _rb;
 
-    public void SetDir(Vector3 dir)
+    public void SetDir(Vector2 dir)
     {
         if (!_rb)
             _rb = GetComponent<Rigidbody2D>();
@@ -19,28 +17,23 @@ public class Bounceable : Move
         _rb.velocity = dir.normalized * _power;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        if (!_rb)
-        {
-            _rb = GetComponent<Rigidbody2D>();
-            _rb.velocity = _dir * _power;
-        }
+        SetDir(_defaultDir);
     }
 
     protected override void DoMove()
     {
-        Vector3 direct;
 
-        if (Mathf.Abs(Mathf.Atan2(_rb.velocity.y, _rb.velocity.x)) < 0.5f || Mathf.Abs(Mathf.Atan2(_rb.velocity.y, _rb.velocity.x)) > value)
+        if (Mathf.Abs(Mathf.Atan2(_rb.velocity.y, _rb.velocity.x)) > valueMin
+            && Mathf.Abs(Mathf.Atan2(_rb.velocity.y, _rb.velocity.x)) < valueMax)
         {
-            direct = new Vector3(Mathf.Cos(0.5f) * Mathf.Sign(_rb.velocity.x), Mathf.Sin(0.5f) * Mathf.Sign(_rb.velocity.y), 0);
+            SetDir(_rb.velocity);
+            return;
         }
-        else
-            direct = _rb.velocity;
 
-        SetDir(direct);
+        SetDir(new Vector2(Mathf.Cos(0.5f) * Mathf.Sign(_rb.velocity.x), Mathf.Sin(0.5f) * Mathf.Sign(_rb.velocity.y)));
+
     }
 
 }

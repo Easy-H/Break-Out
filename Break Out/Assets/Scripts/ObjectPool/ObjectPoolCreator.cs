@@ -11,13 +11,6 @@ namespace ObjectPool {
 
         [SerializeField] AudioSource _createSound;
 
-        [SerializeField] Transform _createdParent;
-
-        public void SetCreatedParent(Transform parent)
-        {
-            _createdParent = parent;
-        }
-
         public void Create()
         {
             for (int i = 0, createdCount = 0; i < _createPos.Length && createdCount < _goalCreateCount; i++)
@@ -27,7 +20,6 @@ namespace ObjectPool {
 
                 GameObject created = ObjectPoolManager.Instance.GetGameObject(_created[Random.Range(0, _created.Length)]);
                 created.transform.position = _createPos[i].position;
-                created.transform.SetParent(_createdParent);
                 createdCount++;
 
             }

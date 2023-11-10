@@ -173,20 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc63dd6d14ffdc743bd57bd255ee5070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _creator:
-    _created:
-    - BackgroundUnit_1
-    - BackgroundUnit_2
-    - BackgroundUnit_3
-    _goalCreateCount: 1
-    createPos:
-    - {fileID: 8045739196815823220}
-    - {fileID: 7869179953877142561}
-    - {fileID: 2111374320727056727}
-    createSound: {fileID: 0}
-    _createCycleTime: 10
-    _spendTimeAfterLastCreate: 10
-    _createdParent: {fileID: 0}
 --- !u!1 &8045739195895880134
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,8 +198,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8045739195895880134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 8, y: 16, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8, y: 17, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8045739196223700237}
@@ -263,7 +249,7 @@ SpriteMask:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_MaskAlphaCutoff: 0.15
+  m_MaskAlphaCutoff: 0
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
   m_FrontSortingLayer: 0

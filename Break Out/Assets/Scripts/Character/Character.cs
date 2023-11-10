@@ -17,7 +17,7 @@ public class Character : MonoBehaviour
 
         _damageEvent.Invoke();
 
-        if (!_stat.isAlive())
+        if (_stat.isAlive())
         {
             return;
         }

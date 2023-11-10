@@ -128,11 +128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3af7363185707459856d5a801bb73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _created: []
+  _created:
+  - Bullet_Magenta
   _goalCreateCount: 0
-  createPos: []
-  createSound: {fileID: 0}
-  _createdParent: {fileID: 0}
+  _createPos:
+  - {fileID: 3710183106345758279}
+  _createSound: {fileID: 0}
 --- !u!1 &1955404149793775439
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +438,7 @@ MonoBehaviour:
   _stat:
     _maxHP: 2
     _nowHP: 2
-  damageEvent:
+  _damageEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3019668957104101892}
@@ -452,8 +453,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _dieEffectKey: Eft_Pop
-  _creatorReference: {fileID: 0}
 --- !u!114 &950626513440372780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,7 +469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b19f4019a3f6704ead465a4aa05c51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dir: {x: 0, y: -0.2, z: 0}
+  _defaultDir: {x: 0, y: -1}
+  _power: 0.2
   minY: -8.5
   _goalPointAction:
     m_PersistentCalls:
@@ -522,7 +526,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _timeCycle: 10
+  _timeCycle: 3
   _spendTime: 0
 --- !u!1001 &1101766590963958259
 PrefabInstance:
@@ -595,6 +599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: GuageColor.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153455649393459078, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4126370043736808056, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
         type: 3}

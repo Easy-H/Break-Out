@@ -159,6 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6211848781948932199}
   - component: {fileID: 2580118302200297410}
+  - component: {fileID: 5603350388435990735}
   m_Layer: 8
   m_Name: CreatePos
   m_TagString: Untagged
@@ -195,11 +196,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3af7363185707459856d5a801bb73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _created: []
-  _goalCreateCount: 0
-  createPos: []
-  createSound: {fileID: 0}
-  _createdParent: {fileID: 0}
+  _created:
+  - Bullet_Magenta
+  _goalCreateCount: 1
+  _createPos:
+  - {fileID: 9221688026592444210}
+  _createSound: {fileID: 0}
+--- !u!114 &5603350388435990735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389675559643053430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3af7363185707459856d5a801bb73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _created:
+  - Bullet_Magenta
+  _goalCreateCount: 1
+  _createPos:
+  - {fileID: 1935955159723545878}
+  _createSound: {fileID: 0}
 --- !u!1 &4512583415562571127
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +322,7 @@ MonoBehaviour:
   _stat:
     _maxHP: 1
     _nowHP: 1
-  damageEvent:
+  _damageEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4918845801234215798}
@@ -317,8 +337,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _dieEffectKey: Eft_Pop
-  _creatorReference: {fileID: 0}
 --- !u!114 &4735110873856174425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b19f4019a3f6704ead465a4aa05c51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dir: {x: 0, y: -0.2, z: 0}
+  _defaultDir: {x: 0, y: -1}
+  _power: 0.2
   minY: -8.5
   _goalPointAction:
     m_PersistentCalls:
@@ -376,7 +399,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2580118302200297410}
-        m_TargetAssemblyTypeName: Creator, Assembly-CSharp
+        m_TargetAssemblyTypeName: ObjectPool.ObjectPoolCreator, Assembly-CSharp
         m_MethodName: Create
         m_Mode: 1
         m_Arguments:
@@ -387,7 +410,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _timeCycle: 10
+      - m_Target: {fileID: 5603350388435990735}
+        m_TargetAssemblyTypeName: ObjectPool.ObjectPoolCreator, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _timeCycle: 5
   _spendTime: 0
 --- !u!1 &5058384169211443710
 GameObject:

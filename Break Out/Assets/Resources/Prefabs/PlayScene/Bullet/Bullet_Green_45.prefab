@@ -96,6 +96,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _power: 3
+  _defaultDir: {x: 1, y: -1}
 --- !u!50 &2421327939115744774
 Rigidbody2D:
   serializedVersion: 4

@@ -253,7 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3980997b178904b4ab25e63b22b9dda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dir: {x: 0, y: 1, z: 0}
+  _defaultDir: {x: 0, y: 1}
+  _power: 10
   minY: -8.5
   _goalPointAction:
     m_PersistentCalls:
@@ -282,7 +283,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _power: 10
 --- !u!114 &5028023469887861069
 MonoBehaviour:
   m_ObjectHideFlags: 0

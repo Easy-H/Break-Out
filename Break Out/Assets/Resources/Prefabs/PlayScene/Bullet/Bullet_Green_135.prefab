@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3980997b178904b4ab25e63b22b9dda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dir: {x: -1, y: -1, z: 0}
+  _defaultDir: {x: -1, y: -1, z: 0}
   minY: -8.5
   _goalPointAction:
     m_PersistentCalls:
