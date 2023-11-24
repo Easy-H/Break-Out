@@ -161,8 +161,8 @@ GameObject:
   - component: {fileID: 1539520280502568223}
   - component: {fileID: 4945346326796582451}
   - component: {fileID: 5437823450391137362}
-  - component: {fileID: 5876862502521832616}
   - component: {fileID: 2363030711512724120}
+  - component: {fileID: 5876862502521832616}
   - component: {fileID: -3456422235870478450}
   m_Layer: 8
   m_Name: Enemy_Dual_Green
@@ -266,18 +266,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5876862502521832616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3773615628246460540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a189a03773156f4ab3c79e6338490c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2363030711512724120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,8 +298,32 @@ MonoBehaviour:
         m_CallState: 2
   _dieEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5876862502521832616}
+        m_TargetAssemblyTypeName: ObjectPool.PoolTarget, Assembly-CSharp
+        m_MethodName: Return
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _dieEffectKey: Eft_Pop
+--- !u!114 &5876862502521832616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773615628246460540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a189a03773156f4ab3c79e6338490c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-3456422235870478450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3af7363185707459856d5a801bb73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: 8cb3a47fc32337f4fbc1e5018eeaa054, type: 2}
   _created:
   - Bullet_Green_45
   _goalCreateCount: 1
@@ -418,6 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3af7363185707459856d5a801bb73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: 618ecd38b1f0a7a44adec070efe6748c, type: 2}
   _created:
   - Bullet_Green_135
   _goalCreateCount: 1

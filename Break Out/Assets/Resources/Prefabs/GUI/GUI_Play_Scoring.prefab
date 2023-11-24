@@ -266,10 +266,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6579949286922240925}
-  - component: {fileID: 5851683263416319421}
-  - component: {fileID: 2960505920348963641}
   m_Layer: 0
-  m_Name: Phase_1
+  m_Name: CreatePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,63 +295,6 @@ Transform:
   m_Father: {fileID: 4368609528069719763}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5851683263416319421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769028726475917383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c712ce49548770143a925ed66d6f9387, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _routineEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2960505920348963641}
-        m_TargetAssemblyTypeName: ObjectPool.ObjectPoolCreator, Assembly-CSharp
-        m_MethodName: Create
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _timeCycle: 4
-  _spendTime: 3.5
---- !u!114 &2960505920348963641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769028726475917383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3af7363185707459856d5a801bb73d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _created:
-  - Enemy_Solo_Gray
-  - Enemy_Solo_Magenta
-  - Enemy_Solo_Cyan
-  - Enemy_Dual_Magenta
-  - Enemy_Dual_Green
-  _goalCreateCount: 3
-  _createPos:
-  - {fileID: 788234981595771324}
-  - {fileID: 6135142379546672372}
-  - {fileID: 1522093926589037399}
-  - {fileID: 3496259403866387683}
-  - {fileID: 3512935232490700076}
-  - {fileID: 4869358241148148806}
-  - {fileID: 8339811951133878101}
-  _createSound: {fileID: 0}
 --- !u!1 &1980094435375753891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,8 +2039,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4368609528069719763}
+  - component: {fileID: 3886947567896745963}
+  - component: {fileID: 5968725982537140074}
+  - component: {fileID: 325108961303141887}
   m_Layer: 0
-  m_Name: EnemyCreators
+  m_Name: PhaseController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2121,6 +2065,72 @@ Transform:
   m_Father: {fileID: 8824255848450623416}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3886947567896745963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245102991986123147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d908947705f4640bdf076e790e3b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _phaseCreator: {fileID: 325108961303141887}
+  _data:
+  - {fileID: 11400000, guid: 185b6337da513824a82cd1f4f0e90d6c, type: 2}
+  - {fileID: 11400000, guid: 8d11db5de30dc114baecef0e01b6bbfd, type: 2}
+--- !u!114 &5968725982537140074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245102991986123147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c712ce49548770143a925ed66d6f9387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 325108961303141887}
+        m_TargetAssemblyTypeName: ObjectPool.ObjectPoolCreator, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _timeCycle: 4
+  _spendTime: 3.5
+--- !u!114 &325108961303141887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245102991986123147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3af7363185707459856d5a801bb73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: cdea9c31ab892cc42ac1261093a8feaf, type: 2}
+  _createPos:
+  - {fileID: 788234981595771324}
+  - {fileID: 6135142379546672372}
+  - {fileID: 1522093926589037399}
+  - {fileID: 3496259403866387683}
+  - {fileID: 3512935232490700076}
+  - {fileID: 4869358241148148806}
+  - {fileID: 8339811951133878101}
 --- !u!1 &7524860618293519165
 GameObject:
   m_ObjectHideFlags: 0

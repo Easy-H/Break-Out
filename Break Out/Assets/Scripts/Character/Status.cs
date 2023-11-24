@@ -23,6 +23,10 @@ public class Status {
         _nowHP -= amount;
     }
 
+    public void SetHPMax() { 
+        _nowHP = _maxHP;
+    }
+
     public void AddHP(int amount)
     {
         _nowHP += amount;

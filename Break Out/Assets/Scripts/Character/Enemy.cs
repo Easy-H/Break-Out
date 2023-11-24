@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Enemy : Character {
 
+    [SerializeField] string _name;
+
     protected override void DieAct()
     {
-        GameManager.Instance.EnemyKill();
+        StatisticsManager.Instance.AddKillData(_name);
         GameManager.Instance.AddScore(100);
         base.DieAct();
-        Destroy(gameObject);
+        _stat.SetHPMax();
     }
 }
