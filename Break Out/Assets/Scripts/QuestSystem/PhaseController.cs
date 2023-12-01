@@ -4,15 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhaseController : MonoBehaviour, QuestReward
+public class PhaseController : MonoBehaviour, IQuestReward
 {
     [SerializeField] ObjectPoolCreator _phaseCreator;
     [SerializeField] PhaseData[] _data;
-    int nowPhase;
+    int nowPhase = 0;
 
-    private void Start()
+    public void GameStart()
     {
-        PhaseChangeTo(nowPhase);
+        PhaseChangeTo(0);
     }
 
     public void PhaseChangeTo(int idx) {
@@ -21,11 +21,12 @@ public class PhaseController : MonoBehaviour, QuestReward
         if (idx >= _data.Length) return;
 
         nowPhase = idx;
+        Time.timeScale = _data[idx].TimeScale;
         _phaseCreator.SetData(_data[idx].CreatorData);
 
         if (nowPhase + 1 >= _data.Length) return;
 
-        QuestManager.Instance.AddQuest(_data[idx].Quest, this);
+        QuestManager.Instance.AddQuest(QuestData.GetQuestChecker(_data[idx].QuestData), this);
     }
 
     public void Reward()

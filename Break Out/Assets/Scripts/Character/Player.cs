@@ -10,11 +10,22 @@ public class Player : Character {
     [SerializeField] float _maxX = 1;
     [SerializeField] float _minX = -1;
 
+    [SerializeField] private UnityEvent _allBallOutEvent;
+
     [SerializeField] int _goalBallCount;
     private int _nowBallCount;
     private int _ballQueueCount;
 
     [SerializeField] float _ballCreateTime;
+
+    [SerializeField] GameObject[] models;
+
+    private void OnEnable()
+    {
+        for (int i = 0; i < models.Length; i++) {
+            models[i].SetActive(PlayerManager.Instance.NowKey == i);
+        }
+    }
 
     private void Start()
     {
@@ -32,14 +43,20 @@ public class Player : Character {
         transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
     }
 
-    public void DamageAct()
+    public void CreateBall()
     {
-        if (_ballQueueCount == 0) {
+        if (_ballQueueCount == 0)
+        {
             StartCoroutine(_CreateBall());
         }
 
         _ballQueueCount++;
 
+
+    }
+
+    public void DamageAct()
+    {
         if (!GameManager.Instance.IsPlaying())
         {
             return;
@@ -56,6 +73,7 @@ public class Player : Character {
         while (_ballQueueCount > 0)
         {
             Ball newBall = Ball.CreateBall(_ballCreatePos.position, this);
+            StatisticsManager.Instance.BallCreate();
 
             _nowBallCount++;
             _ballQueueCount--;
@@ -72,7 +90,7 @@ public class Player : Character {
 
     public void BallOut() {
         if (--_nowBallCount < _goalBallCount) {
-            GetDamaged(1);
+            _allBallOutEvent.Invoke();
         }
     }
 

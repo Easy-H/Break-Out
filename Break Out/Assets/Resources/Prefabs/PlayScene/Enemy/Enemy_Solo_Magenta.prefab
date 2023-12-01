@@ -129,12 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 1261bc735b24102499916390fb90c8a0, type: 2}
-  _created:
-  - Bullet_Magenta
-  _goalCreateCount: 0
   _createPos:
   - {fileID: 3710183106345758279}
-  _createSound: {fileID: 0}
 --- !u!1 &1955404149793775439
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +466,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _dieEffectKey: Eft_Pop
+  _name: Enemy_Solo_Magenta
 --- !u!114 &950626513440372780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,7 +536,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _timeCycle: 3
+  _timeCycle: 5
   _spendTime: 0
 --- !u!1001 &1101766590963958259
 PrefabInstance:

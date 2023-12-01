@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 365072540043875597}
   - component: {fileID: 7350343767040347989}
   m_Layer: 9
-  m_Name: Bullet_F (1)
+  m_Name: spr_outline
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 193857273782787014}
   - component: {fileID: 2075897122025263837}
   m_Layer: 9
-  m_Name: New Sprite
+  m_Name: spr_inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

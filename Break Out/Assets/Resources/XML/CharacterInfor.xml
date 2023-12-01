@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CharacterInfor>
+  <Character name="Pong"    condition="killEnemyTotal,0"        id="0"    sprite="spr_player_pong"/>
+  <Character name="Ping"    condition="killEnemyTotal,1000"     id="1"    sprite="spr_player_ping"/>
+  <Character name="Bong"    condition="recordBestScore,5000"    id="2"    sprite="spr_player_bong"/>
+	
+</CharacterInfor>

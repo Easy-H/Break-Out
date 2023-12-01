@@ -14,11 +14,17 @@ public class GUIWindow : MonoBehaviour {
 
     protected virtual void Open()
     {
+        TransformSet();
+    }
+
+    protected virtual void TransformSet()
+    {
         RectTransform rect = gameObject.GetComponent<RectTransform>();
 
         //rect.SetParent(GameObject.Find("Canvas").transform);
         rect.offsetMax = Vector3.zero;
         rect.offsetMin = Vector3.zero;
+
     }
 
     public virtual void Close()

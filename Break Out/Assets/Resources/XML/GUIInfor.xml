@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GUIInfor>
-  <GUIData name="ScoringPlay" path="Prefabs/GUI/GUI_Play_Scoring" />
-	
+  <GUIData name="FullScreen_ScoringPlay"      path="Prefabs/GUI/GUI_Play_Scoring" />
+  <GUIData name="FullScreen_CharacterSelect"  path="Prefabs/GUI/GUI_CharacterSelect" />
+
+  <GUIData name="PopUp_Title"                 path="Prefabs/GUI/PopUp/GUI_TitlePopUp" />
+  <GUIData name="PopUp_Statistics"            path="Prefabs/GUI/PopUp/GUI_StatisticsPopUp" />
+
 </GUIInfor>

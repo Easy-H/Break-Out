@@ -196,13 +196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: ec127cec6828ebb4da416a02ce9f276a, type: 2}
-  _created:
-  - Bullet_Magenta
-  _goalCreateCount: 2
   _createPos:
   - {fileID: 9221688026592444210}
   - {fileID: 1935955159723545878}
-  _createSound: {fileID: 0}
 --- !u!1 &4512583415562571127
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +332,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _dieEffectKey: Eft_Pop
+  _name: Enemy_Dual_Magenta
 --- !u!114 &4735110873856174425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,7 +414,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _timeCycle: 5
+  _timeCycle: 8
   _spendTime: 0
 --- !u!1 &5058384169211443710
 GameObject:

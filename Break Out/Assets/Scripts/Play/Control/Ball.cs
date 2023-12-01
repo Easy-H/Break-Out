@@ -4,6 +4,7 @@ using ObjectPool;
 public class Ball : MonoBehaviour {
 
     Player _player;
+    int _collideTime;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -39,7 +40,10 @@ public class Ball : MonoBehaviour {
     public void BallOut()
     {
         if (_player)
+        {
             _player.BallOut();
+            StatisticsManager.Instance.BallOut();
+        }
 
         Effect.PlayEffect("Eft_BallOut", transform.position + Vector3.up, transform.parent);
 

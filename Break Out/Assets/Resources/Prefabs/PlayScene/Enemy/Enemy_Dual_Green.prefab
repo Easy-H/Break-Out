@@ -312,6 +312,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _dieEffectKey: Eft_Pop
+  _name: Enemy_Dual_Green
 --- !u!114 &5876862502521832616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +364,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _timeCycle: 7
+  _timeCycle: 11
   _spendTime: 0
 --- !u!1 &5773246194930588765
 GameObject:
@@ -413,12 +414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 8cb3a47fc32337f4fbc1e5018eeaa054, type: 2}
-  _created:
-  - Bullet_Green_45
-  _goalCreateCount: 1
   _createPos:
   - {fileID: 1587146297527384051}
-  _createSound: {fileID: 0}
 --- !u!114 &9074228431184485135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,12 +429,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 618ecd38b1f0a7a44adec070efe6748c, type: 2}
-  _created:
-  - Bullet_Green_135
-  _goalCreateCount: 1
   _createPos:
   - {fileID: 8412801927586841124}
-  _createSound: {fileID: 0}
 --- !u!1 &6290273314747002587
 GameObject:
   m_ObjectHideFlags: 0

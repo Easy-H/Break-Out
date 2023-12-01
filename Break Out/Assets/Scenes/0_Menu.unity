@@ -542,6 +542,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GUI_Title
       objectReference: {fileID: 0}
+    - target: {fileID: 2063735731216231321, guid: a6e134a4b4d5811489c169b2715d969a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2063735731216231326, guid: a6e134a4b4d5811489c169b2715d969a,
         type: 3}
       propertyPath: m_RootOrder

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public interface QuestReward {
+public interface IQuestReward {
     public void Reward();
 }
 
@@ -9,10 +9,10 @@ public class QuestManager : MonoSingleton<QuestManager>
 {
 
     class QuestInfor {
-        internal QuestChecker _checker;
-        internal QuestReward _reward;
+        internal IQuestChecker _checker;
+        internal IQuestReward _reward;
 
-        internal QuestInfor(QuestChecker checker, QuestReward reward) { 
+        internal QuestInfor(IQuestChecker checker, IQuestReward reward) { 
             _checker = checker;
             _reward = reward;
         }
@@ -21,9 +21,9 @@ public class QuestManager : MonoSingleton<QuestManager>
 
     List<QuestInfor> _doingQuest;
 
-    public void AddQuest(QuestData questData, QuestReward reward) {
+    public void AddQuest(IQuestChecker questChecker, IQuestReward reward) {
 
-        QuestInfor newQuest = new QuestInfor(questData.GetQuestChecker(), reward);
+        QuestInfor newQuest = new QuestInfor(questChecker, reward);
 
         _doingQuest.Add(newQuest);
 

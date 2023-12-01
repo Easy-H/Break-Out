@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _created:
   - Enemy_Solo_Gray
-  - Enemy_Solo_Magenta
   - Enemy_Solo_Cyan
-  - Enemy_Dual_Magenta
-  - Enemy_Dual_Green
+  - Enemy_Solo_Magenta
+  - Enemy_Solo_Magenta
   _goalCreateCount: 3
   _createSound: {fileID: 0}

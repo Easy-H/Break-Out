@@ -5,6 +5,9 @@ using UnityEngine;
 public class StatisticsManager : Singleton<StatisticsManager> {
 
     Dictionary<string, int> _killData;
+    int _ballOutCount;
+    int _ballCreateCount;
+    int _bestScore;
 
     protected override void OnCreate()
     {
@@ -22,6 +25,19 @@ public class StatisticsManager : Singleton<StatisticsManager> {
         _killData[killedEnemyName] = _killData[killedEnemyName] + 1;
     }
 
+    public void NewScore(int score) {
+        if (_bestScore >= score) return;
+        _bestScore = score;
+    }
+
+    public void BallOut() {
+        _ballOutCount++;
+    }
+
+    public void BallCreate() {
+        _ballCreateCount++;
+    }
+
     public int GetKillCount() {
         int retval = 0;
         foreach (int count in _killData.Values) {
@@ -34,6 +50,23 @@ public class StatisticsManager : Singleton<StatisticsManager> {
         if (!_killData.ContainsKey(enemyName)) return 0;
 
         return _killData[enemyName];
+    }
+
+    public int GetBallCreateCount() {
+        return _ballCreateCount;
+    }
+
+    public int GetBallOutCount()
+    {
+        return _ballOutCount;
+    }
+
+    public int GetBestScore() {
+        return _bestScore;
+    }
+
+    public int GetBallGap() {
+        return _ballCreateCount - _ballOutCount;
     }
 
 }

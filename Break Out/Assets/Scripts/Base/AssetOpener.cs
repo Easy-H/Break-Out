@@ -2,6 +2,11 @@ using System.Xml;
 using UnityEditor;
 using UnityEngine;
 
+public interface IXMLRead{
+
+    public void Read(XmlNode node);
+}
+
 public class AssetOpener : MonoBehaviour {
     public static T Import<T>(string path) where T : Object
     {

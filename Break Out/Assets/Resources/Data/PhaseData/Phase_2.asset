@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91db4bd937b56d42b9effd30396db92, type: 3}
   m_Name: Phase_2
   m_EditorClassIdentifier: 
-  Quest: {fileID: 11400000, guid: cacfaccb6647c3142a5119357814d09f, type: 2}
+  QuestData: killAllEnemy,10
   CreatorData: {fileID: 11400000, guid: db1246ba392dd594cadaf09236da4a7e, type: 2}
+  TimeScale: 1

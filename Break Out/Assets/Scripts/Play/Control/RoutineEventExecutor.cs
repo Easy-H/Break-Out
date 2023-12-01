@@ -9,14 +9,20 @@ public class RoutineEventExecutor : MonoBehaviour {
 
     [SerializeField] float _timeCycle = 10f;
     [SerializeField] float _spendTime = 0f;
+    float _timeSpend;
+
+    private void OnEnable()
+    {
+        _timeSpend = _spendTime;
+    }
 
     private void Update()
     {
-        _spendTime += Time.deltaTime;
+        _timeSpend += Time.deltaTime;
 
-        if (_spendTime < _timeCycle) return;
+        if (_timeSpend < _timeCycle) return;
 
-        _spendTime -= _timeCycle;
+        _timeSpend -= _timeCycle;
         _routineEvent.Invoke();
 
     }

@@ -3,79 +3,80 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 
-    public class UIManager : Singleton<UIManager> {
+public class UIManager : Singleton<UIManager> {
 
-        List<GUIFullScreen> uiStack;
+    List<GUIFullScreen> uiStack;
 
-        public GUIFullScreen NowPopUp { get; set; }
+    public GUIFullScreen NowDisplay { get; set; }
 
-        public void EnrollmentGUI(GUIFullScreen newData)
+    public void EnrollmentGUI(GUIFullScreen newData)
+    {
+        if (NowDisplay == null)
         {
-            if (NowPopUp == null)
-            {
-                NowPopUp = newData;
-                return;
-
-            }
-            else
-            {
-                NowPopUp.gameObject.SetActive(false);
-                uiStack.Add(NowPopUp);
-                uiStack.Add(newData);
-
-            }
-            Pop();
+            NowDisplay = newData;
+            return;
 
         }
-
-        public void Pop()
+        else
         {
-            if (uiStack.Count < 1)
-                return;
-
-            NowPopUp = uiStack[uiStack.Count - 1];
-            uiStack.RemoveAt(uiStack.Count - 1);
-            NowPopUp.gameObject.SetActive(true);
+            NowDisplay.Stacked();
+            NowDisplay.gameObject.SetActive(false);
+            uiStack.Add(NowDisplay);
+            uiStack.Add(newData);
 
         }
+        Pop();
 
-        class GUIData {
-            internal string name;
-            internal string path;
+    }
 
-            internal void Read(XmlNode node)
-            {
-                name = node.Attributes["name"].Value;
-                path = node.Attributes["path"].Value;
-            }
-        }
+    public void Pop()
+    {
+        if (uiStack.Count < 1)
+            return;
 
-        Dictionary<string, GUIData> _dic;
+        NowDisplay = uiStack[uiStack.Count - 1];
+        uiStack.RemoveAt(uiStack.Count - 1);
+        NowDisplay.gameObject.SetActive(true);
 
-        protected override void OnCreate()
+    }
+
+    internal class GUIData {
+        internal string name;
+        internal string path;
+
+        internal void Read(XmlNode node)
         {
-            NowPopUp = null;
-            uiStack = new List<GUIFullScreen>();
-
-            _dic = new Dictionary<string, GUIData>();
-            XmlDocument xmlDoc = AssetOpener.ReadXML("GUIInfor");
-
-            XmlNodeList nodes = xmlDoc.SelectNodes("GUIInfor/GUIData");
-
-            for (int i = 0; i < nodes.Count; i++)
-            {
-                GUIData guiData = new GUIData();
-                guiData.Read(nodes[i]);
-
-                _dic.Add(guiData.name, guiData);
-            }
-
-        }
-        public static T OpenGUI<T>(string guiName)
-        {
-            string path = Instance._dic[guiName].path;
-            T result = AssetOpener.Import<GameObject>(path).GetComponent<T>();
-
-            return result;
+            name = node.Attributes["name"].Value;
+            path = node.Attributes["path"].Value;
         }
     }
+
+    Dictionary<string, GUIData> _dic;
+
+    protected override void OnCreate()
+    {
+        NowDisplay = null;
+        uiStack = new List<GUIFullScreen>();
+
+        _dic = new Dictionary<string, GUIData>();
+        XmlDocument xmlDoc = AssetOpener.ReadXML("GUIInfor");
+
+        XmlNodeList nodes = xmlDoc.SelectNodes("GUIInfor/GUIData");
+
+        for (int i = 0; i < nodes.Count; i++)
+        {
+            GUIData guiData = new GUIData();
+            guiData.Read(nodes[i]);
+
+            _dic.Add(guiData.name, guiData);
+        }
+
+    }
+    public static T OpenGUI<T>(string guiName)
+    {
+        string path = Instance._dic[guiName].path;
+        T result = AssetOpener.Import<GameObject>(path).GetComponent<T>();
+
+        return result;
+    }
+}

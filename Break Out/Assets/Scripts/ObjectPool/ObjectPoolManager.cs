@@ -11,13 +11,13 @@ namespace ObjectPool {
         string _path;
 
         Transform tr;
-        Stack<GameObject> _pool;
+        Queue<GameObject> _pool;
         int _min;
 
         public Pool()
         {
             _path = string.Empty;
-            _pool = new Stack<GameObject>();
+            _pool = new Queue<GameObject>();
             _min = 5;
 
         }
@@ -25,7 +25,7 @@ namespace ObjectPool {
         {
             tr = parent;
             _path = path;
-            _pool = new Stack<GameObject>();
+            _pool = new Queue<GameObject>();
             _min = 1;
 
         }
@@ -40,11 +40,11 @@ namespace ObjectPool {
                     obj.transform.SetParent(tr);
                     obj.SetActive(false);
                     obj.GetComponent<PoolTarget>().SetParentPool(this);
-                    _pool.Push(obj);
+                    _pool.Enqueue(obj);
                 }
             }
 
-            GameObject target = _pool.Pop();
+            GameObject target = _pool.Dequeue();
             target.SetActive(true);
 
             return target;
@@ -52,7 +52,7 @@ namespace ObjectPool {
 
         public void ReturnObject(GameObject obj)
         {
-            _pool.Push(obj);
+            _pool.Enqueue(obj);
             obj.transform.SetParent(tr);
             obj.SetActive(false);
         }

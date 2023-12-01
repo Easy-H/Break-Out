@@ -416,7 +416,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8225298688958892684}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2283789680538436172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,7 +1536,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ScoringPlay
+          m_StringArgument: FullScreen_ScoringPlay
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2679153400254989984}
@@ -2080,7 +2092,10 @@ MonoBehaviour:
   _phaseCreator: {fileID: 325108961303141887}
   _data:
   - {fileID: 11400000, guid: 185b6337da513824a82cd1f4f0e90d6c, type: 2}
-  - {fileID: 11400000, guid: 8d11db5de30dc114baecef0e01b6bbfd, type: 2}
+  - {fileID: 11400000, guid: 40107e38eef425a45b6f14708e115ef3, type: 2}
+  - {fileID: 11400000, guid: 45638b48b0cf5314eb3577ac88a733a2, type: 2}
+  - {fileID: 11400000, guid: 0adfb3764d97c9b4ab454decadc28a04, type: 2}
+  - {fileID: 11400000, guid: 282b5dafd10e1f44dac8795dcd6eb470, type: 2}
 --- !u!114 &5968725982537140074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2579,10 +2594,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonMethod, Assembly-CSharp
-        m_MethodName: GoScene
-        m_Mode: 3
+      - m_Target: {fileID: 2679153400254989984}
+        m_TargetAssemblyTypeName: GUICustomFullScreen, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2926,7 +2941,12 @@ PrefabInstance:
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
@@ -2965,6 +2985,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
+      propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
       propertyPath: damageEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 6545015885624834563}
@@ -2978,6 +3003,11 @@ PrefabInstance:
       propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 6545015885624834563}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2488846265630506940}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -3000,6 +3030,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
       propertyPath: damageEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -3015,9 +3055,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
+      propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
       propertyPath: damageEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetHP
       objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2488846265630506940}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2488846265630506940}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -3027,6 +3082,31 @@ PrefabInstance:
         type: 3}
       propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetHP
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: CreateBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetDamaged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GetDamaged
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
@@ -3055,8 +3135,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
+      propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
       propertyPath: _dieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: EasyH
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Character, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Character, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
@@ -3081,6 +3186,21 @@ PrefabInstance:
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3205,6 +3325,7 @@ MonoBehaviour:
   _poolBudget: {fileID: 8717834889482359362}
   _pause: {fileID: 8423604095854840296}
   _gameOver: {fileID: 7788139191707965191}
+  _phaseController: {fileID: 3886947567896745963}
   _scoreView: {fileID: 8442466958071883560}
 --- !u!114 &5680701094628472226
 MonoBehaviour:

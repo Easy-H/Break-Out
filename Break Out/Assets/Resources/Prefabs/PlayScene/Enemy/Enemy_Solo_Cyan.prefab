@@ -133,6 +133,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _dieEffectKey: Eft_Pop
+  _name: Enemy_Solo_Cyan
 --- !u!114 &6472332707409732333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +203,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _timeCycle: 5
+  _timeCycle: 7
   _spendTime: 0
 --- !u!1 &3522178930232430068
 GameObject:
@@ -367,12 +368,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: d80d9752a42f5634eb66af18e7ea0b38, type: 2}
-  _created:
-  - Bullet_Cyan
-  _goalCreateCount: 1
   _createPos:
   - {fileID: 7466443064236979334}
-  _createSound: {fileID: 0}
 --- !u!1 &5747129952590529934
 GameObject:
   m_ObjectHideFlags: 0
