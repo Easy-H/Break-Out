@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BossEffect : Effect
 {
-    [SerializeField] string _createName = "Ball";
     [SerializeField] int _createCount;
 
     public override void On(Vector3 pos)

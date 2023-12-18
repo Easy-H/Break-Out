@@ -16,17 +16,15 @@ public abstract class Effect : MonoBehaviour
         _eventWhenEffectEnd.Invoke();
     }
 
-    public static void PlayEffect(string key, Vector3 position, Transform parent)
+    public static void PlayEffect(string key, Vector3 position)
     {
-        Effect effect = ObjectPoolManager.Instance.GetGameObject(key).GetComponent<Effect>();
-        effect.On(position);
-        effect.transform.SetParent(parent);
+        ObjectPoolManager.Instance.GetGameObject(null, key).GetComponent<Effect>().On(position);
 
     }
 
     public static void PlayEffect(string key, Transform targetTr)
     {
-        PlayEffect(key, targetTr.position, targetTr.parent);
+        PlayEffect(key, targetTr.position);
 
     }
 

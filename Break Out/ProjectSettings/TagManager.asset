@@ -12,6 +12,7 @@ TagManager:
   - Item
   - InforLine
   - Canvas
+  - Wall
   layers:
   - Default
   - TransparentFX

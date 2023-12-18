@@ -33,6 +33,18 @@ public class GUIPlay : GUICustomFullScreen {
     public void Pause()
     {
         _pause.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Continue() {
+        _pause.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public override void Close()
+    {
+        base.Close();
+        Time.timeScale = 1f;
     }
 
     public virtual void Retry()

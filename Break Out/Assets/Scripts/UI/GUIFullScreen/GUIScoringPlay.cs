@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Firebase;
 using Firebase.Extensions;
-using Firebase.Database;
+*/
 
 public class GUIScoringPlay : GUIPlay {
 
@@ -14,7 +15,7 @@ public class GUIScoringPlay : GUIPlay {
         base.GameOver();
         StatisticsManager.Instance.NewScore(GameManager.Instance.Score);
         
-        DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+        //DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
     public override void Retry()

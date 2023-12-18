@@ -127,7 +127,7 @@ public class GUIAnimatedOpen : MonoBehaviour {
     [SerializeField] UIAnimSequence openSequence;
     [SerializeField] UIAnimSequence closeSequence;
 
-    [SerializeField] bool _stopAll = true;
+    //[SerializeField] bool _stopAll = true;
     
     bool _isAnimating = false;
 

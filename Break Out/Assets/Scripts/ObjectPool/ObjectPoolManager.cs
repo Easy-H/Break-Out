@@ -26,7 +26,7 @@ namespace ObjectPool {
             tr = parent;
             _path = path;
             _pool = new Queue<GameObject>();
-            _min = 1;
+            _min = 5;
 
         }
 

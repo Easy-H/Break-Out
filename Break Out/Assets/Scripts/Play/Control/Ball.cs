@@ -10,9 +10,20 @@ public class Ball : MonoBehaviour {
     {
         Effect.PlayEffect("Eft_Collide", transform);
 
+        if (collision.collider.CompareTag("Wall")) {
+            SoundManager.Instance.PlayEffect("Collide_Wall");
+            return;
+        }
+
+        if (collision.collider.CompareTag("Player"))
+        {
+            SoundManager.Instance.PlayEffect("Collide_Player");
+            return;
+        }
         if (!collision.collider.CompareTag("Enemy")) {
             return;
         }
+        SoundManager.Instance.PlayEffect("Collide_Enemy");
         Character hit = collision.collider.GetComponent<Character>();
         hit.GetDamaged(1);
 
@@ -44,9 +55,6 @@ public class Ball : MonoBehaviour {
             _player.BallOut();
             StatisticsManager.Instance.BallOut();
         }
-
-        Effect.PlayEffect("Eft_BallOut", transform.position + Vector3.up, transform.parent);
-
     }
 
 }

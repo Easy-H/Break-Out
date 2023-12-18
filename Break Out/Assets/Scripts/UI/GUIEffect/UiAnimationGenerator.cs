@@ -29,9 +29,8 @@ public class UiAnimationGenerator {
 
     public string actionName;
 
-    [SerializeField] UiAnimation[] animations = null;
+    //[SerializeField] UiAnimation[] animations = null;
 
-    int _actnum = 0;
 
     IEnumerator FillImage(Image panel, float goalFill,  float time) {
 

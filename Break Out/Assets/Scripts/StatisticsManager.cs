@@ -28,6 +28,7 @@ public class StatisticsManager : Singleton<StatisticsManager> {
     public void NewScore(int score) {
         if (_bestScore >= score) return;
         _bestScore = score;
+        DatabaseManager.Instance.AddScoreToLeaders(PlayerManager.Instance.PlayerName, score);
     }
 
     public void BallOut() {

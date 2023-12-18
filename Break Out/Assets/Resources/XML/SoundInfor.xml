@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<List>
+  <!-- 잡몹 -->
+  <Element name="Collide_Enemy"       path="Sound/snd_effect_collide_enemy" />
+  <Element name="Collide_Player"      path="Sound/snd_effect_collide_player" />
+  <Element name="Collide_Wall"        path="Sound/snd_effect_collide_wall" />
+  <Element name="Error"               path="Sound/snd_effect_collide_wall" />
+</List>

@@ -28,8 +28,21 @@ public class PlayerManager : Singleton<PlayerManager>
     List<CharacterInfor> _infor;
     public int NowKey { get; set; }
 
+    string name;
+    public string PlayerName {
+        get { return name; }
+        set {
+            if (value.Equals(string.Empty)) {
+                name = "Pong";
+                return;
+            }
+            name = value;
+        }
+    }
+
     // Start is called before the first frame update
     protected override void OnCreate() {
+        PlayerName = "Pong";
         _infor = new List<CharacterInfor>();
 
         XmlDocument xmlDoc = AssetOpener.ReadXML("CharacterInfor");

@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Player : Character {
 
+
     [SerializeField] Transform _ballCreatePos;
 
     [SerializeField] float _maxX = 1;
@@ -29,6 +30,7 @@ public class Player : Character {
 
     private void Start()
     {
+        _nowBallCount = 0;
         _ballQueueCount = _goalBallCount;
         StartCoroutine(_CreateBall());
     }
@@ -77,6 +79,8 @@ public class Player : Character {
 
             _nowBallCount++;
             _ballQueueCount--;
+
+            SoundManager.Instance.PlayEffect("Collide_Player");
 
             yield return new WaitForSeconds(_ballCreateTime);
         }

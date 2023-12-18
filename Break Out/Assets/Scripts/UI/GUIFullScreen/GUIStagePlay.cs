@@ -34,33 +34,12 @@ public class GUIStagePlay : GUIPlay
             case ClearCondition.score:
                 _clearCondition = ScoreCheck;
                 break;
-            case ClearCondition.killcount:
-                _clearCondition = KillCheck;
-                break;
-            case ClearCondition.bossKillCount:
-                _clearCondition = BossKillCheck;
-                break;
         }
-
-    }
-
-    bool BossKillCheck()
-    {
-        if (GameManager.Instance.BossKillCount >= _clearValue)
-            return true;
-        return false;
 
     }
 
     bool ScoreCheck() {
         if (GameManager.Instance.Score >= _clearValue)
-            return true;
-        return false;
-    }
-
-    bool KillCheck()
-    {
-        if (GameManager.Instance.KillCount >= _clearValue)
             return true;
         return false;
     }

@@ -5,5 +5,7 @@
 
   <GUIData name="PopUp_Title"                 path="Prefabs/GUI/PopUp/GUI_TitlePopUp" />
   <GUIData name="PopUp_Statistics"            path="Prefabs/GUI/PopUp/GUI_StatisticsPopUp" />
+  <GUIData name="PopUp_LeaderBoard"           path="Prefabs/GUI/PopUp/GUI_LeaderBoard" />
+  <GUIData name="PopUp_Message"               path="Prefabs/GUI/PopUp/GUI_MessageBox" />
 
 </GUIInfor>

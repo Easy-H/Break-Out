@@ -16,6 +16,7 @@
   <Element name="Bullet_Green_135"	  path="Prefabs/PlayScene/Bullet/Bullet_Green_135" />
 
   <Element name="Ball"	              path="Prefabs/PlayScene/Ball" />
+  <Element name="SoundPlayer"	        path="Prefabs/PlayScene/SoundPlayer" />
 
   <!-- 배경-->
   <Element name="BackgroundUnit_1"	  path="Prefabs/Background/BackgroundUnit_1" />

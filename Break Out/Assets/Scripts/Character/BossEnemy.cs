@@ -7,8 +7,6 @@ public class BossEnemy : Enemy
 
     protected override void DieAct()
     {
-        GameManager.Instance.BossKill();
-        GameManager.Instance.AddScore(1000);
         base.DieAct();
         Destroy(gameObject);
     }

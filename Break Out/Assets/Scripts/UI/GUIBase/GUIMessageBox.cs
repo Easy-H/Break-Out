@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GUIMessageBox : GUIPopUp {
 
-    [SerializeField] NewText _textField;
+    [SerializeField] Text _textField;
 
     Action _buttonMethod;
 
@@ -17,7 +17,7 @@ public class GUIMessageBox : GUIPopUp {
 
     public void SetMessage(string key, Action buttonMethod)
     {
-        _textField.SetText(key);
+        _textField.text = (key);
         gameObject.SetActive(true);
 
         _buttonMethod = buttonMethod;

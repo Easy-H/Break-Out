@@ -17,7 +17,6 @@ public class GameManager : Singleton<GameManager>
 
     public int Score { get; private set; }
     public int BossKillCount { get; private set; }
-    public int KillCount { get; private set; }
 
     public bool IsPlaying()
     {
@@ -32,16 +31,6 @@ public class GameManager : Singleton<GameManager>
         _actor.Invoke(Score);
     }
 
-    public void BossKill()
-    {
-        BossKillCount++;
-
-    }
-    
-    public void EnemyKill() {
-        KillCount++;
-    }
-
     public void SetScoreView(ScoreAct act) {
         _actor = act;
     }
@@ -49,9 +38,7 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         _state = GameState.play;
-
         Score = 0;
-        KillCount = 0;
     }
     public void EndGame()
     {

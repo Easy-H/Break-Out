@@ -79,4 +79,13 @@ public class UIManager : Singleton<UIManager> {
 
         return result;
     }
+
+    GUIMessageBox _msg;
+
+    public void ShowMessage(string data) {
+        if (_msg == null) {
+            _msg = OpenGUI<GUIMessageBox>("PopUp_Message");
+        }
+        _msg.SetMessage(data);
+    }
 }
