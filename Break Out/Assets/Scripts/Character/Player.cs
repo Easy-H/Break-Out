@@ -26,6 +26,7 @@ public class Player : Character {
         for (int i = 0; i < models.Length; i++) {
             models[i].SetActive(PlayerManager.Instance.NowKey == i);
         }
+        SoundManager.Instance.PlayEffect("Start");
     }
 
     private void Start()
@@ -65,6 +66,7 @@ public class Player : Character {
         }
 
         Effect.PlayEffect("Eft_Damaged", transform);
+        SoundManager.Instance.PlayEffect("Player_Damaged");
 
     }
 
@@ -79,8 +81,6 @@ public class Player : Character {
 
             _nowBallCount++;
             _ballQueueCount--;
-
-            SoundManager.Instance.PlayEffect("Collide_Player");
 
             yield return new WaitForSeconds(_ballCreateTime);
         }

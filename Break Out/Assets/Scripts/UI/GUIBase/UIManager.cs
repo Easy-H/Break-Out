@@ -11,6 +11,8 @@ public class UIManager : Singleton<UIManager> {
 
     public void EnrollmentGUI(GUIFullScreen newData)
     {
+        uiStack.Add(newData);
+
         if (NowDisplay == null)
         {
             NowDisplay = newData;
@@ -21,22 +23,26 @@ public class UIManager : Singleton<UIManager> {
         {
             NowDisplay.Stacked();
             NowDisplay.gameObject.SetActive(false);
-            uiStack.Add(NowDisplay);
-            uiStack.Add(newData);
-
         }
-        Pop();
+
+        NowDisplay = uiStack[uiStack.Count - 1];
+        NowDisplay.gameObject.SetActive(true);
 
     }
 
-    public void Pop()
+    public void RemoveScreen(GUIFullScreen screen)
     {
+        
         if (uiStack.Count < 1)
             return;
+        if (NowDisplay == screen)
+        {
+            NowDisplay = uiStack[uiStack.Count - 2];
+            NowDisplay.gameObject.SetActive(true);
 
-        NowDisplay = uiStack[uiStack.Count - 1];
-        uiStack.RemoveAt(uiStack.Count - 1);
-        NowDisplay.gameObject.SetActive(true);
+        }
+
+        uiStack.Remove(screen);
 
     }
 

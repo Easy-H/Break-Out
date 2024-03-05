@@ -17,7 +17,6 @@ public class PhaseController : MonoBehaviour, IQuestReward
 
     public void PhaseChangeTo(int idx) {
 
-        Debug.Log("Change To " + idx);
         if (idx >= _data.Length) return;
 
         nowPhase = idx;

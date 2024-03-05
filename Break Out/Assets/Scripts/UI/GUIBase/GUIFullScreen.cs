@@ -35,7 +35,7 @@ public class GUIFullScreen : GUIWindow
 
     public override void Close()
     {
-        UIManager.Instance.Pop();
+        UIManager.Instance.RemoveScreen(this);
         base.Close();
     }
 

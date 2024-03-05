@@ -41,7 +41,7 @@ public class SoundManager : MonoSingleton<SoundManager>
 
     public void PlayEffect(string audioName)
     {
-        AudioSource _audio = ObjectPoolManager.Instance.GetGameObject("SoundPlayer").GetComponent<AudioSource>();
+        AudioSource _audio = ObjectPoolManager.Instance.GetGameObject(null, "SoundPlayer").GetComponent<AudioSource>();
         
         if (_dic.TryGetValue(audioName, out AudioClip value))
         {

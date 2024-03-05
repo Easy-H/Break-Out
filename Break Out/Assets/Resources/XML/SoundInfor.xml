@@ -4,5 +4,11 @@
   <Element name="Collide_Enemy"       path="Sound/snd_effect_collide_enemy" />
   <Element name="Collide_Player"      path="Sound/snd_effect_collide_player" />
   <Element name="Collide_Wall"        path="Sound/snd_effect_collide_wall" />
+
+  <Element name="Start"               path="Sound/snd_effect_kill_enemy" />
+  <Element name="KillEnemy"           path="Sound/snd_effect_kill_enemy" />
+  <Element name="Player_Damaged"      path="Sound/snd_effect_damaged" />
+  <Element name="Ball_Out"            path="Sound/snd_effect_ballout" />
+  <Element name="Create_Enemy"        path="Sound/snd_effect_create_enemy" />
   <Element name="Error"               path="Sound/snd_effect_collide_wall" />
 </List>

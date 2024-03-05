@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.ComponentModel.Design;
+using ObjectPool;
 
 public class GUIPlay : GUICustomFullScreen {
 
@@ -14,7 +15,7 @@ public class GUIPlay : GUICustomFullScreen {
 
     public virtual void SetScore(int score)
     {
-        _scoreView.text = "<mspace=\"0.45\">" + score.ToString("000000") + "</mspace>";
+        _scoreView.text = string.Format("<mspace=\"0.45\">{0}</mspace>", score.ToString("000000"));
     }
 
     protected virtual void Start()
@@ -22,6 +23,7 @@ public class GUIPlay : GUICustomFullScreen {
         GameManager.Instance.StartGame();
         GameManager.Instance.SetScoreView(SetScore);
         _phaseController.GameStart();
+        SetBudget();
     }
 
     public virtual void GameOver()

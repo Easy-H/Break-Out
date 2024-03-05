@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 5876862502521832616}
   - component: {fileID: -3456422235870478450}
   - component: {fileID: -3877014064183819816}
+  - component: {fileID: -7580393890892076260}
   m_Layer: 8
   m_Name: Enemy_Dual_Green
   m_TagString: Enemy
@@ -324,6 +325,18 @@ MonoBehaviour:
           m_StringArgument: Eft_Pop
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -7580393890892076260}
+        m_TargetAssemblyTypeName: SoundPlayer, Assembly-CSharp
+        m_MethodName: PlayEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: KillEnemy
+          m_BoolArgument: 0
+        m_CallState: 2
   _dieEffectKey: Eft_Pop
   _name: Enemy_Dual_Green
   _score: 100
@@ -390,6 +403,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7c4d45e5db609446a689f8d26528b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7580393890892076260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773615628246460540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd7a98d49a817340956389d05b31155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5773246194930588765

@@ -25,10 +25,11 @@ public class StatisticsManager : Singleton<StatisticsManager> {
         _killData[killedEnemyName] = _killData[killedEnemyName] + 1;
     }
 
-    public void NewScore(int score) {
+    public void NewScore(int score)
+    {
+        DatabaseManager.Instance.AddScoreToLeaders(PlayerManager.Instance.PlayerName, score);
         if (_bestScore >= score) return;
         _bestScore = score;
-        DatabaseManager.Instance.AddScoreToLeaders(PlayerManager.Instance.PlayerName, score);
     }
 
     public void BallOut() {

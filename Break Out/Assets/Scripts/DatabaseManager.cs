@@ -25,7 +25,7 @@ public static class Extensions
 }
 
 public class DatabaseManager : MonoSingleton<DatabaseManager>, ISubject {
-    public int MaxScores = 1000;
+    public int MaxScores = 20;
 
 #if !UNITY_WEBGL || UNITY_EDITOR
     FirebaseDatabase reference;
@@ -64,10 +64,6 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>, ISubject {
 #endif
     }
 
-    public void ShowState(string state) {
-        UIManager.Instance.ShowMessage(state);
-    }
-
     public void AddScoreToLeaders(string userId, int score)
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -99,8 +95,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>, ISubject {
                 foreach (var child in leader)
                 {
                     if (!(child is Dictionary<string, object>)) continue;
-                    long childScore = (long)
-                                ((Dictionary<string, object>)child)["score"];
+                    long childScore = long.Parse(((Dictionary<string, object>)child)["score"].ToString());
                     if (childScore < minScore)
                     {
                         minScore = childScore;
@@ -132,22 +127,15 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>, ISubject {
         Dictionary<object, Dictionary<string, object>> temp = JsonConvert.DeserializeObject<Dictionary<object, Dictionary<string, object>>>(data);
 
         Debug.Log(data);
-        /*
-        foreach (KeyValuePair<object, object> kvp in temp)
+
+        if (temp != null)
         {
-            //textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-            Debug.Log(string.Format("Key = {0}, Value = {1}", kvp.Key, kvp.Value));
+            Leaders = temp.Values.ToList<object>();
+        }
+        else {
+            Leaders = new List<object>();
         }
 
-        return;
-        */
-        Leaders = temp.Values.ToList<object>();
-        Debug.Log(Leaders.Count);
-        foreach (Dictionary<string, object> element in Leaders)
-        {
-            Debug.Log(string.Format("score = {0}, userId = {1}", element["score"], element["userId"]));
-
-        }
         NotifyToObserver();
     }
 

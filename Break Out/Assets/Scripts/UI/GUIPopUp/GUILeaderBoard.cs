@@ -16,7 +16,7 @@ class Scoresort : IComparer<object> {
 public class GUILeaderBoard : GUIPopUp, IObserver
 {
 
-    [SerializeField] Text[] _infors;
+    [SerializeField] ScoreUnit[] _infors;
     [SerializeField] Image _loading;
 
     protected override void Open()
@@ -41,7 +41,7 @@ public class GUILeaderBoard : GUIPopUp, IObserver
                 _infors[i].gameObject.SetActive(true);
                 Dictionary<string, object> data = leaders[i] as Dictionary<string, object>;
 
-                _infors[i].text = string.Format("{0} : {1}", data["userId"], data["score"]);
+                _infors[i].SetValue(i + 1, data["userId"].ToString(), data["score"].ToString());
                 continue;
             }
             _infors[i].gameObject.SetActive(false);

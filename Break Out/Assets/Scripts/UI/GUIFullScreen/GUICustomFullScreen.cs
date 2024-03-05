@@ -9,7 +9,6 @@ public class GUICustomFullScreen : GUIFullScreen {
     protected override void Open()
     {
         base.Open();
-        ObjectPoolManager.Instance.SetBudget(_poolBudget);
 
     }
 
@@ -18,10 +17,13 @@ public class GUICustomFullScreen : GUIFullScreen {
         transform.SetParent(GameObject.FindWithTag("Canvas").transform);
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
-
         _inforLine.SetParent(GameObject.FindWithTag("InforLine").transform);
+    }
+
+    protected void SetBudget() {
+        ObjectPoolManager.Instance.SetBudget(_poolBudget);
     }
 
     public override void Stacked()

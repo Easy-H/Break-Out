@@ -20,8 +20,8 @@ public class GUIScoringPlay : GUIPlay {
 
     public override void Retry()
     {
-        UIManager.OpenGUI<GUIPlay>("ScoringPlay");
-        Close();
         base.Retry();
+        UIManager.OpenGUI<GUIPlay>("FullScreen_ScoringPlay");
+        Close();
     }
 }

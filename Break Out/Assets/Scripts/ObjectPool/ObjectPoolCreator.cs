@@ -20,7 +20,7 @@ namespace ObjectPool {
                 if (_data._goalCreateCount - createdCount != _createPos.Length - i
                     && Random.Range(0, _createPos.Length) >= _data._goalCreateCount) continue;
 
-                GameObject created = ObjectPoolManager.Instance.GetGameObject(_data._created[Random.Range(0, _data._created.Length)]);
+                GameObject created = GetCreated();
                 created.transform.position = _createPos[i].position;
                 createdCount++;
 
@@ -29,6 +29,10 @@ namespace ObjectPool {
             if (_data._createSound)
                 _data._createSound.Play();
 
+        }
+
+        protected virtual GameObject GetCreated() {
+            return ObjectPoolManager.Instance.GetGameObject(_data._created[Random.Range(0, _data._created.Length)]);
         }
 
     }
