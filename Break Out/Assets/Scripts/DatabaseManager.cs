@@ -7,8 +7,7 @@ using System.Linq;
 using UnityEngine.Purchasing;
 using Newtonsoft.Json;
 
-
-#if UNITY_EDITOR
+#if !UNITY_WEBGL || UNITY_EDITOR
 using Firebase.Database;
 using Firebase.Extensions;
 

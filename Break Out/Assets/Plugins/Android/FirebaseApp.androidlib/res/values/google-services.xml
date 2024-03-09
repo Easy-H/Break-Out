@@ -6,6 +6,6 @@
   <string name="project_id" translatable="false">superpongbros</string>
   <string name="google_api_key" translatable="false">AIzaSyAH8_EeBmND34MePhAS1XjHWQIR1WKPHkY</string>
   <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAH8_EeBmND34MePhAS1XjHWQIR1WKPHkY</string>
-  <string name="google_app_id" translatable="false">1:729964666318:android:c22c7f7b99c2d26f0c1f9f</string>
+  <string name="google_app_id" translatable="false">1:729964666318:android:2da276ac338162e90c1f9f</string>
   <string name="default_web_client_id" translatable="false">729964666318-qand18b2ao7gq08dgd9mlk63flm0ns1f.apps.googleusercontent.com</string>
 </resources>

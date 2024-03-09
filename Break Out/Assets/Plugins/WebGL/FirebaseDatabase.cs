@@ -1,3 +1,5 @@
+#if UNITY_WEBGL && !UNITY_EDITOR
+
 using System.IO;
 using System.Runtime.InteropServices;
 using UnityEditor;
@@ -14,3 +16,4 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
         public static extern void GetJSON(string path, string objectName, string callback, string fallback);
     }
 }
+#endif
