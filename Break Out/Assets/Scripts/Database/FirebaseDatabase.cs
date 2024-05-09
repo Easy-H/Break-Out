@@ -12,8 +12,8 @@ using Firebase.Database;
 using Firebase.Extensions;
 
 #endif
-public static class Extensions
-{
+
+public static class Extensions {
     public static string GetString<K, V>(this IDictionary<K, V> dict)
     {
         var items = from kvp in dict
@@ -23,17 +23,18 @@ public static class Extensions
     }
 }
 
-public class DatabaseManager : MonoSingleton<DatabaseManager>, ISubject {
+public class FirebaseReader : IDatabaseReader {
     public int MaxScores = 20;
 
 #if !UNITY_WEBGL || UNITY_EDITOR
     FirebaseDatabase reference;
 #endif
-    List<IObserver> _ops = new List<IObserver>();
+
+    IList<IObserver> _ops = new List<IObserver>();
 
     public List<object> Leaders { get; private set; }
 
-    protected override void OnCreate()
+    public void OnCreate()
     {
 
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -49,7 +50,8 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>, ISubject {
             }
             else if (task.IsCompleted)
             {
-                if (task.Result.Value == null) {
+                if (task.Result.Value == null)
+                {
                     Leaders = new List<object>();
                     NotifyToObserver();
                     return;
@@ -62,7 +64,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>, ISubject {
         reference.GetReference("Leader").ValueChanged += HandleValueChanged;
 #endif
     }
-
+    
     public void AddScoreToLeaders(string userId, int score)
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -131,7 +133,8 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>, ISubject {
         {
             Leaders = temp.Values.ToList<object>();
         }
-        else {
+        else
+        {
             Leaders = new List<object>();
         }
 
@@ -180,7 +183,8 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>, ISubject {
 
     public void NotifyToObserver()
     {
-        foreach (IObserver ops in _ops) {
+        foreach (IObserver ops in _ops)
+        {
             ops.Notified();
         }
     }

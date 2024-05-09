@@ -342,21 +342,10 @@ MonoBehaviour:
   _stat:
     _maxHP: 2
     _nowHP: 2
+  _hpUI: {fileID: 8509206543678080850}
   _damageEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5644896083905526624}
-        m_TargetAssemblyTypeName: HpBar, Assembly-CSharp
-        m_MethodName: SetHP
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _dieEvent:
     m_PersistentCalls:
       m_Calls:
@@ -825,7 +814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201de7bbdcb959f4d8c2210e9e49caa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 2580657931157273053}
   GuageColor: {r: 0, g: 0, b: 0, a: 1}
   _gauge: {fileID: 2306151685624769367}
   _frame: {fileID: 191796249948473868}

@@ -3038,13 +3038,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
+      propertyPath: _hpUI
+      value: 
+      objectReference: {fileID: 7103553292198135345}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
       propertyPath: _play
       value: 
       objectReference: {fileID: 2679153400254989984}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _dieEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
@@ -3054,7 +3059,7 @@ PrefabInstance:
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
@@ -3115,7 +3120,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 6545015885624834563}
+      objectReference: {fileID: 2488846265630506940}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -3194,7 +3199,7 @@ PrefabInstance:
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetHP
+      value: CreateBall
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
@@ -3244,7 +3249,7 @@ PrefabInstance:
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _damageEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: HpBar, Assembly-CSharp
+      value: Player, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
@@ -3452,7 +3457,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8070987981813576844}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7103553292198135345}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 201de7bbdcb959f4d8c2210e9e49caa6, type: 3}
@@ -3461,6 +3466,12 @@ MonoBehaviour:
 --- !u!4 &6615488097771113334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3156750184655437818, guid: ae8e1366c9f49e44cb13dbb596770631,
+    type: 3}
+  m_PrefabInstance: {fileID: 8070987981813576844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7103553292198135345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1338990603160466109, guid: ae8e1366c9f49e44cb13dbb596770631,
     type: 3}
   m_PrefabInstance: {fileID: 8070987981813576844}
   m_PrefabAsset: {fileID: 0}

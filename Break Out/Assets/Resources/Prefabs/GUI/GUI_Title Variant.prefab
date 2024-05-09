@@ -479,6 +479,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6706665608763406635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1338990603160466109, guid: ae8e1366c9f49e44cb13dbb596770631,
+    type: 3}
+  m_PrefabInstance: {fileID: 5730777807510621078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7226262670726788204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3156750184655437818, guid: ae8e1366c9f49e44cb13dbb596770631,
@@ -552,6 +558,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _hpUI
+      value: 
+      objectReference: {fileID: 6706665608763406635}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.size

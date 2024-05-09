@@ -28,7 +28,7 @@ public class GUILeaderBoard : GUIPopUp, IObserver
 
     public void Notified() {
 
-        List<object> leaders = DatabaseManager.Instance.Leaders;
+        List<object> leaders = DatabaseManager.Instance.DBReader.Leaders;
 
         if (leaders == null) return;
 

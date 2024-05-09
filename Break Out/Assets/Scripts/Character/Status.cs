@@ -3,8 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class Status {
 
-    public int _maxHP;
-    public int _nowHP;
+    [SerializeField] private int _maxHP;
+    [SerializeField] private int _nowHP;
 
     public Status()
     {
@@ -23,6 +23,10 @@ public class Status {
         _nowHP -= amount;
     }
 
+    public int GetMaxValue() {
+        return _maxHP;
+    }
+
     public void SetHPMax() { 
         _nowHP = _maxHP;
     }
@@ -31,6 +35,10 @@ public class Status {
     {
         _nowHP += amount;
         if (_nowHP > _maxHP) _nowHP = _maxHP;
+    }
+
+    public float GetHPRatio() {
+        return (float)_nowHP / _maxHP;
     }
 
     public bool isAlive() { return (_nowHP > 0); }

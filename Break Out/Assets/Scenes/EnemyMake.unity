@@ -224,20 +224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7296559359521808574, guid: 4f4361a054151864abe847b4b75138db,
-        type: 3}
-      propertyPath: _dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 333317108}
     - target: {fileID: 8221559934308457474, guid: 4f4361a054151864abe847b4b75138db,
         type: 3}
       propertyPath: m_Name
       value: Enemy_Solo_Magenta
-      objectReference: {fileID: 0}
-    - target: {fileID: 8221559934308457474, guid: 4f4361a054151864abe847b4b75138db,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8221559934308457487, guid: 4f4361a054151864abe847b4b75138db,
         type: 3}
@@ -308,18 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c084980486df5844c8d09a4fe3e5156a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &333317108 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1713765995683033302, guid: 4f4361a054151864abe847b4b75138db,
-    type: 3}
-  m_PrefabInstance: {fileID: 333317106}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a189a03773156f4ab3c79e6338490c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &706696278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386,11 +364,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy_Solo_Gray
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484933963667708696, guid: ead22efe2b1f8dc428e0baad9ad828fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ead22efe2b1f8dc428e0baad9ad828fe, type: 3}
@@ -461,11 +434,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Dual_Green
       objectReference: {fileID: 0}
-    - target: {fileID: 3773615628246460540, guid: bde82d356f113534eb6df3cbbcc3a5f5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bde82d356f113534eb6df3cbbcc3a5f5, type: 3}
 --- !u!1001 &1237123956
@@ -479,11 +447,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy_Solo_Cyan
-      objectReference: {fileID: 0}
-    - target: {fileID: 2809063898591315651, guid: e3585756dd7044842990155218b1b32c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2809063898591315662, guid: e3585756dd7044842990155218b1b32c,
         type: 3}
@@ -994,11 +957,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Dual_Magenta
       objectReference: {fileID: 0}
-    - target: {fileID: 4512583415562571127, guid: 6ed55e071f339384a904003409b2719b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4512583415562571130, guid: 6ed55e071f339384a904003409b2719b,
         type: 3}
       propertyPath: m_RootOrder
@@ -1101,9 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c084980486df5844c8d09a4fe3e5156a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stat:
-    _maxHP: 2
-    _nowHP: 2
+  _hpUI: {fileID: 0}
   _damageEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1135,6 +1091,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _dieEffectKey: Eft_Pop
+  _name: 
+  _score: 100
 --- !u!212 &590738120059747916
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1353,12 +1311,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 0}
-  _created:
-  - Bullet_Magenta
-  _goalCreateCount: 0
   _createPos:
   - {fileID: 6325374242065096812}
-  _createSound: {fileID: 0}
 --- !u!212 &5410796227057472907
 SpriteRenderer:
   m_ObjectHideFlags: 0

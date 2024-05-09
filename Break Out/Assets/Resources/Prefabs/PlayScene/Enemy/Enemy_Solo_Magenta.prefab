@@ -437,21 +437,10 @@ MonoBehaviour:
   _stat:
     _maxHP: 2
     _nowHP: 2
+  _hpUI: {fileID: 1272391942571091510}
   _damageEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3019668957104101892}
-        m_TargetAssemblyTypeName: HpBar, Assembly-CSharp
-        m_MethodName: SetHP
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _dieEvent:
     m_PersistentCalls:
       m_Calls:
@@ -709,11 +698,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5257369427049024448, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
         type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5257369427049024448, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
-        type: 3}
       propertyPath: m_FillOrigin
       value: 1
       objectReference: {fileID: 0}
@@ -851,12 +835,12 @@ PrefabInstance:
     - target: {fileID: 8978826657201013582, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -0.2
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8978826657201013582, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -0.1
+      value: -0.17000003
       objectReference: {fileID: 0}
     - target: {fileID: 8978826657201013582, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
         type: 3}
@@ -866,22 +850,16 @@ PrefabInstance:
     - target: {fileID: 8978826657201013582, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.0150000155
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d34e44fbe20bff4bb83ee242d8bf91e, type: 3}
---- !u!114 &3019668957104101892 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2783864530054814711, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
+--- !u!1 &1272391942571091510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2225397629658343365, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
     type: 3}
   m_PrefabInstance: {fileID: 1101766590963958259}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 201de7bbdcb959f4d8c2210e9e49caa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &6356339766593068520 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6303917665689066523, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,

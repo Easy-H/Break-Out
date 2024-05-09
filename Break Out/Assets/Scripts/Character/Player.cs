@@ -21,12 +21,15 @@ public class Player : Character {
 
     [SerializeField] GameObject[] models;
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
+
+        base.OnEnable();
         for (int i = 0; i < models.Length; i++) {
             models[i].SetActive(PlayerManager.Instance.NowKey == i);
         }
         SoundManager.Instance.PlayEffect("Start");
+
     }
 
     private void Start()
@@ -34,6 +37,7 @@ public class Player : Character {
         _nowBallCount = 0;
         _ballQueueCount = _goalBallCount;
         StartCoroutine(_CreateBall());
+
     }
 
     // Update is called once per frame
@@ -54,7 +58,6 @@ public class Player : Character {
         }
 
         _ballQueueCount++;
-
 
     }
 

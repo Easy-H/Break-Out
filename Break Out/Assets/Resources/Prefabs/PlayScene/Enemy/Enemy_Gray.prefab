@@ -99,23 +99,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stat:
-    _maxHP: 3
-    _nowHP: 3
+    _maxHP: 2
+    _nowHP: 2
+  _hpUI: {fileID: 8980582798534121771}
   _damageEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4963253939096921369}
-        m_TargetAssemblyTypeName: HpBar, Assembly-CSharp
-        m_MethodName: SetHP
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _dieEvent:
     m_PersistentCalls:
       m_Calls:
@@ -459,15 +448,9 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7080576857318637294}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4963253939096921369 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2783864530054814711, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
+--- !u!1 &8980582798534121771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2225397629658343365, guid: 9d34e44fbe20bff4bb83ee242d8bf91e,
     type: 3}
   m_PrefabInstance: {fileID: 7080576857318637294}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 201de7bbdcb959f4d8c2210e9e49caa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
