@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using EHTool.UIKit;
 
 public class GUIStatisticsPopUp : GUIPopUp
 {
@@ -10,7 +9,7 @@ public class GUIStatisticsPopUp : GUIPopUp
     [SerializeField] Text _enemyKillCount;
     [SerializeField] Text _bestScore;
 
-    protected override void Open() {
+    public override void Open() {
         base.Open();
         _ballCreateCount.text = StatisticsManager.Instance.GetBallCreateCount().ToString();
         _ballOutCount.text = StatisticsManager.Instance.GetBallOutCount().ToString();

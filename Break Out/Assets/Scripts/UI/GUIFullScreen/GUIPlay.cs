@@ -18,12 +18,12 @@ public class GUIPlay : GUICustomFullScreen {
         _scoreView.text = string.Format("<mspace=\"0.45\">{0}</mspace>", score.ToString("000000"));
     }
 
-    protected virtual void Start()
+    public override void SetOn()
     {
+        base.SetOn();
         GameManager.Instance.StartGame();
         GameManager.Instance.SetScoreView(SetScore);
         _phaseController.GameStart();
-        SetBudget();
     }
 
     public virtual void GameOver()

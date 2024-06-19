@@ -16,7 +16,7 @@ public class GUICharacterSelect : GUICustomFullScreen
     [SerializeField] Image _characterImg;
     [SerializeField] SpriteAtlas _atlas;
 
-    protected override void Open()
+    public override void Open()
     {
         base.Open();
         _infor = PlayerManager.Instance.GetCharacterInfor();

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using EHTool;
 
 public interface IDatabaseReader : ISubject {
 

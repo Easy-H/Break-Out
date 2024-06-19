@@ -7,7 +7,6 @@ public class Character : MonoBehaviour
 {
     [SerializeField] protected Status _stat;
     [SerializeField] private GameObject _hpUI;
-
     private IGaugeUI _gaugeUI;
 
     [SerializeField] private UnityEvent _damageEvent;
@@ -21,6 +20,7 @@ public class Character : MonoBehaviour
             _gaugeUI = _hpUI.GetComponent<IGaugeUI>();
         }
         _gaugeUI.InstantiateSet(_stat.GetMaxValue());
+        _gaugeUI.SetGauge(_stat.GetHPRatio());
     }
 
     public void GetDamaged(int amount) {
@@ -28,7 +28,7 @@ public class Character : MonoBehaviour
         _damageEvent.Invoke();
         _gaugeUI.SetGauge(_stat.GetHPRatio());
 
-        if (_stat.isAlive())
+        if (_stat.IsAlive())
         {
             return;
         }

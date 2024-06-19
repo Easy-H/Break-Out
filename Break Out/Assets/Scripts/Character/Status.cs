@@ -41,6 +41,6 @@ public class Status {
         return (float)_nowHP / _maxHP;
     }
 
-    public bool isAlive() { return (_nowHP > 0); }
+    public bool IsAlive() { return (_nowHP > 0); }
 
 }

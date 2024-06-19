@@ -4,7 +4,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
-using static UIManager;
+using EHTool;
 
 public class PlayerManager : Singleton<PlayerManager>
 {

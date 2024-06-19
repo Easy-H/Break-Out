@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using EHTool.UIKit;
+using EHTool;
 
 class Scoresort : IComparer<object> {
 
@@ -19,7 +21,7 @@ public class GUILeaderBoard : GUIPopUp, IObserver
     [SerializeField] ScoreUnit[] _infors;
     [SerializeField] Image _loading;
 
-    protected override void Open()
+    public override void Open()
     {
         base.Open();
         DatabaseManager.Instance.AddObserver(this);

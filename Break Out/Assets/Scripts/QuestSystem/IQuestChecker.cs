@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public interface IQuestChecker {
     public bool CheckAchieve();
     public float GetProgress();

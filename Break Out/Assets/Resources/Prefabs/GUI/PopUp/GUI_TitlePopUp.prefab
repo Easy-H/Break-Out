@@ -195,8 +195,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6337495222866608391}
-        m_TargetAssemblyTypeName: GUIWindow, Assembly-CSharp
+      - m_Target: {fileID: 2323893306367304127}
+        m_TargetAssemblyTypeName: EHTool.UIKit.GUIWindow, Assembly-CSharp
         m_MethodName: OpenWindow
         m_Mode: 5
         m_Arguments:
@@ -518,8 +518,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6337495222866608391}
-        m_TargetAssemblyTypeName: GUIWindow, Assembly-CSharp
+      - m_Target: {fileID: 2323893306367304127}
+        m_TargetAssemblyTypeName: EHTool.UIKit.GUIWindow, Assembly-CSharp
         m_MethodName: OpenWindow
         m_Mode: 5
         m_Arguments:
@@ -1243,7 +1243,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6337495222866608391}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GUIWindow, Assembly-CSharp
         m_MethodName: OpenWindow
         m_Mode: 5
@@ -1502,8 +1502,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6337495222866608391}
-        m_TargetAssemblyTypeName: GUIWindow, Assembly-CSharp
+      - m_Target: {fileID: 2323893306367304127}
+        m_TargetAssemblyTypeName: EHTool.UIKit.GUIWindow, Assembly-CSharp
         m_MethodName: OpenWindow
         m_Mode: 5
         m_Arguments:
@@ -2085,10 +2085,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1847474053683548009}
   - component: {fileID: 423183381529769997}
-  - component: {fileID: 3543389983435577743}
   - component: {fileID: 6906735950910134408}
-  - component: {fileID: 6337495222866608391}
   - component: {fileID: 3389490066264608720}
+  - component: {fileID: 2323893306367304127}
   m_Layer: 5
   m_Name: GUI_TitlePopUp
   m_TagString: Untagged
@@ -2140,29 +2139,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 120
   m_TargetDisplay: 0
---- !u!114 &3543389983435577743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8798796605613966160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
 --- !u!114 &6906735950910134408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2180,19 +2156,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6337495222866608391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8798796605613966160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b67bce33711a634cb4e019a70d48543, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  priority: 0
 --- !u!114 &3389490066264608720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2206,3 +2169,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: {fileID: 5422314250788901841}
+--- !u!114 &2323893306367304127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798796605613966160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e21effbf1f0ae34db7ff20c1807230a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 0

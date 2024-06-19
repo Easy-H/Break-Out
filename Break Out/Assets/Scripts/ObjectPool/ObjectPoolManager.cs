@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using TMPro;
 using UnityEngine;
+using EHTool;
 
 namespace ObjectPool {
 
@@ -66,7 +67,15 @@ namespace ObjectPool {
         Transform _createdBudget;
 
         public void SetBudget(Transform tr) {
+            Debug.Log("SetBudget");
             _createdBudget = tr;
+        }
+
+        public void CancleBudget(Transform tr)
+        {
+            Debug.Log("CancleBudget");
+            if (_createdBudget != tr) return;
+            _createdBudget = null;
         }
 
         protected override void OnCreate()

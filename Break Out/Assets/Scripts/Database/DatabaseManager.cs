@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using UnityEngine.Purchasing;
 using Newtonsoft.Json;
+using EHTool;
 
 #if !UNITY_WEBGL || UNITY_EDITOR
 using Firebase.Database;

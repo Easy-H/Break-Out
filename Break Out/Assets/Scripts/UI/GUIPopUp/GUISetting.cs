@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using EHTool.UIKit;
 
 public class GUISetting : GUIPopUp {
 
@@ -12,7 +13,7 @@ public class GUISetting : GUIPopUp {
     //[SerializeField] private Slider _musicSFXSlider;
 
     //https://wlsdn629.tistory.com/entry/%EC%9C%A0%EB%8B%88%ED%8B%B0-Audio-Mixer-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95
-    protected override void Open()
+    public override void Open()
     {
         base.Open();
         _musicMasterSlider.onValueChanged.AddListener(SetMasterVolume);

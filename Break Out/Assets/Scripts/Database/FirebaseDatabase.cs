@@ -5,6 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 using System;
 using System.Linq;
 using UnityEngine.Purchasing;
+using EHTool;
 using Newtonsoft.Json;
 
 #if !UNITY_WEBGL || UNITY_EDITOR
