@@ -67,13 +67,11 @@ namespace ObjectPool {
         Transform _createdBudget;
 
         public void SetBudget(Transform tr) {
-            Debug.Log("SetBudget");
             _createdBudget = tr;
         }
 
         public void CancleBudget(Transform tr)
         {
-            Debug.Log("CancleBudget");
             if (_createdBudget != tr) return;
             _createdBudget = null;
         }

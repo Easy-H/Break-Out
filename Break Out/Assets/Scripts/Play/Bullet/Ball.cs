@@ -10,6 +10,13 @@ public class Ball : MonoBehaviour {
     {
         Effect.PlayEffect("Eft_Collide", transform);
 
+        IBallTarget target = collision.collider.GetComponent<IBallTarget>();
+
+        if (target != null)
+        {
+            target.BallCollideAction();
+        }
+
         if (collision.collider.CompareTag("Wall")) {
             SoundManager.Instance.PlayEffect("Collide_Wall");
             return;
@@ -23,9 +30,6 @@ public class Ball : MonoBehaviour {
         if (!collision.collider.CompareTag("Enemy")) {
             return;
         }
-        SoundManager.Instance.PlayEffect("Collide_Enemy");
-        Character hit = collision.collider.GetComponent<Character>();
-        hit.GetDamaged(1);
 
     }
 

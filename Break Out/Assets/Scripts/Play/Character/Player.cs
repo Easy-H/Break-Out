@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Player : Character {
+public class Player : Character, IBallTarget {
 
 
     [SerializeField] Transform _ballCreatePos;
@@ -103,15 +103,18 @@ public class Player : Character {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bullet"))
-        {
-            if (!other.gameObject.activeInHierarchy)
-                return;
-            GetDamaged(1);
-            
-            other.gameObject.SetActive(false);
-            Destroy(other.gameObject);
-        }
+        if (!other.CompareTag("Bullet")) return;
+        if (!other.gameObject.activeInHierarchy) return;
+
+        GetDamaged(1);
+
+        other.gameObject.SetActive(false);
+        Destroy(other.gameObject);
     }
 
+    public void BallCollideAction()
+    {
+        Debug.Log("Collide_Player");
+        SoundManager.Instance.PlayEffect("Collide_Player");
+    }
 }
