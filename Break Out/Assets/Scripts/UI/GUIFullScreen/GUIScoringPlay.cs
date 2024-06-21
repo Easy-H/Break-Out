@@ -5,7 +5,7 @@ public class GUIScoringPlay : GUIPlay {
     public override void GameOver()
     {
         base.GameOver();
-        StatisticsManager.Instance.NewScore(GameManager.Instance.Score);
+        StatisticsManager.Instance.NewScore(Score);
         
     }
 

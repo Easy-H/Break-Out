@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PhaseController : MonoBehaviour, IQuestReward
 {
-    [SerializeField] ObjectPoolCreator _phaseCreator;
+    [SerializeField] ObjectPoolCreateRoutineEvent _phaseCreator;
     [SerializeField] PhaseData[] _data;
     int nowPhase = 0;
 

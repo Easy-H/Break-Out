@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
 
-public class DevicePoolCreator : ObjectPoolCreator
+public class DevicePoolCreator : ObjectPoolCreateRoutineEvent
 {
     [SerializeField] Transform _parent;
 

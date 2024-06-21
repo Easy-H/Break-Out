@@ -6,18 +6,15 @@ using UnityEngine.Events;
 public class Character : MonoBehaviour
 {
     [SerializeField] protected Status _stat;
-    [SerializeField] private GameObject _hpUI;
-    private IGaugeUI _gaugeUI;
+    [SerializeField] private GaugeUI _gaugeUI;
 
-    [SerializeField] private UnityEvent _damageEvent;
-    [SerializeField] private UnityEvent _dieEvent;
 
-    [SerializeField] string _dieEffectKey;
+    [SerializeField] private RemoveAct _dieAct;
 
 
     protected virtual void OnEnable() {
         if (_gaugeUI == null) {
-            _gaugeUI = _hpUI.GetComponent<IGaugeUI>();
+            return;
         }
         _gaugeUI.InstantiateSet(_stat.GetMaxValue());
         _gaugeUI.SetGauge(_stat.GetHPRatio());
@@ -25,18 +22,23 @@ public class Character : MonoBehaviour
 
     public void GetDamaged(int amount) {
         _stat.GetDamage(amount);
-        _damageEvent.Invoke();
         _gaugeUI.SetGauge(_stat.GetHPRatio());
 
         if (_stat.IsAlive())
         {
+            DamageAct();
             return;
         }
-        _dieEvent.Invoke();
+
         DieAct();
     }
 
+    protected virtual void DamageAct() { 
+        
+    }
+
     protected virtual void DieAct() {
+        _dieAct.DieAct();
     }
 
     public void PlayEffect(string effectKey)

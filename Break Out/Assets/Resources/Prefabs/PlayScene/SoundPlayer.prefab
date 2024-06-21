@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 46}
-  - component: {fileID: 5028023469887861069}
   - component: {fileID: 5781419394170078754}
   - component: {fileID: 7624580229321459735}
+  - component: {fileID: 5145742541337675539}
+  - component: {fileID: 5028023469887861069}
   m_Layer: 10
   m_Name: SoundPlayer
   m_TagString: Ball
@@ -34,18 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5028023469887861069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a189a03773156f4ab3c79e6338490c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &5781419394170078754
 AudioSource:
   m_ObjectHideFlags: 0
@@ -155,7 +144,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c712ce49548770143a925ed66d6f9387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _routineEvent:
+  _routineEvent: {fileID: 5145742541337675539}
+  _timeCycle: 1
+  _spendTime: 0
+--- !u!114 &5145742541337675539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b617a91447f65064f870e52d1ee54e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5028023469887861069}
@@ -170,5 +174,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _timeCycle: 1
-  _spendTime: 0
+--- !u!114 &5028023469887861069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a189a03773156f4ab3c79e6338490c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

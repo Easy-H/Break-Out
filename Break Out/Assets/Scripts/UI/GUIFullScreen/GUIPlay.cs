@@ -4,8 +4,9 @@ using UnityEngine;
 using TMPro;
 using System.ComponentModel.Design;
 using ObjectPool;
+using UnityEngine.SocialPlatforms.Impl;
 
-public class GUIPlay : GUICustomFullScreen {
+public class GUIPlay : GUICustomFullScreen, IPlayground {
 
     [SerializeField] private GameObject _pause;
     [SerializeField] private GameObject _gameOver;
@@ -13,23 +14,29 @@ public class GUIPlay : GUICustomFullScreen {
     [SerializeField] private PhaseController _phaseController;
     [SerializeField] private TextMeshProUGUI _scoreView;
 
-    public virtual void SetScore(int score)
+    [SerializeField] private Player _player;
+
+    protected int Score;
+
+
+    public virtual void AddScore(int amount)
     {
-        _scoreView.text = string.Format("<mspace=\"0.45\">{0}</mspace>", score.ToString("000000"));
+        Score += amount;
+        _scoreView.text = string.Format("<mspace=\"0.45\">{0}</mspace>", Score.ToString("000000"));
     }
 
     public override void SetOn()
     {
         base.SetOn();
-        GameManager.Instance.StartGame();
-        GameManager.Instance.SetScoreView(SetScore);
+        GameManager.Instance.SetPlayground(this);
         _phaseController.GameStart();
+        _player.GameStart();
     }
 
     public virtual void GameOver()
     {
         _gameOver.SetActive(true);
-        GameManager.Instance.SetScoreView(null);
+        GameManager.Instance.SetPlayground(null);
     }
 
     public void Pause()
@@ -53,5 +60,4 @@ public class GUIPlay : GUICustomFullScreen {
     {
 
     }
-
 }

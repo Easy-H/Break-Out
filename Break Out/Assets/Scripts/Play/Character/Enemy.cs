@@ -1,3 +1,4 @@
+using ObjectPool;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class Enemy : Character, IBallTarget {
 
     [SerializeField] string _name;
     [SerializeField] int _score = 100;
+
+    Pool _parent;
 
     public void BallCollideAction()
     {
@@ -16,8 +19,11 @@ public class Enemy : Character, IBallTarget {
     protected override void DieAct()
     {
         StatisticsManager.Instance.AddKillData(_name);
-        GameManager.Instance.AddScore(_score);
-        base.DieAct();
+        GameManager.Instance.Playground.AddScore(_score);
+        SoundManager.Instance.PlayEffect("KillEnemy");
+        Effect.PlayEffect("Eft_Pop", transform.position);
+
         _stat.SetHPMax();
+        base.DieAct();
     }
 }

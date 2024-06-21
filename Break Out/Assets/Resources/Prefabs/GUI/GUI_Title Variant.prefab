@@ -201,7 +201,7 @@ Transform:
   - {fileID: 1784759284}
   - {fileID: 709548758}
   m_Father: {fileID: 2063735731216231326}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990009827
 GameObject:
@@ -2532,7 +2532,7 @@ PrefabInstance:
     - target: {fileID: 646847544678917838, guid: ae8e1366c9f49e44cb13dbb596770631,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3086506761390460559, guid: ae8e1366c9f49e44cb13dbb596770631,
         type: 3}
@@ -2732,6 +2732,11 @@ PrefabInstance:
       propertyPath: _hpUI
       value: 
       objectReference: {fileID: 6706665608763406635}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _damageRatio
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _allBallOutEvent.m_PersistentCalls.m_Calls.Array.size

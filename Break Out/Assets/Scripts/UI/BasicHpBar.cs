@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BasicHpBar : MonoBehaviour, IGaugeUI {
+public class BasicHpBar : GaugeUI {
 
     [SerializeField] Color GuageColor;
     [SerializeField] Image _gauge;
@@ -13,7 +13,7 @@ public class BasicHpBar : MonoBehaviour, IGaugeUI {
 
     [SerializeField] float _frameSize;
 
-    public void InstantiateSet(int max) {
+    public override void InstantiateSet(int max) {
 
         _frame.color = GuageColor;
         _slice.color = GuageColor;
@@ -40,7 +40,7 @@ public class BasicHpBar : MonoBehaviour, IGaugeUI {
 
     }
 
-    public void SetGauge(float amount) {
+    public override void SetGauge(float amount) {
         _gauge.fillAmount = amount;
 
     }

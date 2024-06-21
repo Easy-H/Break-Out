@@ -134,4 +134,16 @@ public class GUICustomFullScreen : GUIWindow, IGUIFullScreen {
         gui.Open();
     }
 
+    public virtual void MoveRightButton() { 
+        
+    }
+
+    public virtual void MoveLeftButton()
+    {
+
+    }
+    public virtual void ActionButton()
+    {
+
+    }
 }

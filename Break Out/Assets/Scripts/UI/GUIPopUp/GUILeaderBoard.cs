@@ -24,7 +24,7 @@ public class GUILeaderBoard : GUIPopUp, IObserver
     public override void Open()
     {
         base.Open();
-        DatabaseManager.Instance.AddObserver(this);
+        DatabaseManager.Instance.DBReader.AddObserver(this);
         Notified();
     }
 
@@ -53,7 +53,7 @@ public class GUILeaderBoard : GUIPopUp, IObserver
 
     public override void Close()
     {
-        DatabaseManager.Instance.RemoveObserver(this);
+        DatabaseManager.Instance.DBReader.RemoveObserver(this);
         base.Close();
     }
 

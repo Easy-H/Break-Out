@@ -1504,7 +1504,7 @@ Transform:
   - {fileID: 4368609528069719763}
   - {fileID: 401302672271196661}
   m_Father: {fileID: 2532681559115404420}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5276016353191590328
 GameObject:
@@ -2269,21 +2269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c712ce49548770143a925ed66d6f9387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _routineEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 325108961303141887}
-        m_TargetAssemblyTypeName: ObjectPool.ObjectPoolCreator, Assembly-CSharp
-        m_MethodName: Create
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _routineEvent: {fileID: 325108961303141887}
   _timeCycle: 4
   _spendTime: 3.5
 --- !u!114 &325108961303141887
@@ -2295,7 +2281,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7245102991986123147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3af7363185707459856d5a801bb73d, type: 3}
+  m_Script: {fileID: 11500000, guid: dde9ad6ebee7ba04d996d537ef9ba7ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: cdea9c31ab892cc42ac1261093a8feaf, type: 2}
@@ -2307,6 +2293,8 @@ MonoBehaviour:
   - {fileID: 3512935232490700076}
   - {fileID: 4869358241148148806}
   - {fileID: 8339811951133878101}
+  _serialTerm: 0
+  _serialCount: 1
 --- !u!1 &7524860618293519165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,7 +2363,7 @@ RectTransform:
   m_Children:
   - {fileID: 8936635141207681163}
   m_Father: {fileID: 2532681559115404420}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2565,7 +2553,7 @@ RectTransform:
   m_Children:
   - {fileID: 3233307672169644917}
   m_Father: {fileID: 2532681559115404420}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3048,6 +3036,11 @@ PrefabInstance:
       objectReference: {fileID: 2679153400254989984}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
+      propertyPath: _gaugeUI
+      value: 
+      objectReference: {fileID: 6545015885624834563}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
       propertyPath: _dieEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3351,7 +3344,7 @@ PrefabInstance:
     - target: {fileID: 646847544678917838, guid: ae8e1366c9f49e44cb13dbb596770631,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3086506761390460559, guid: ae8e1366c9f49e44cb13dbb596770631,
         type: 3}
@@ -3445,6 +3438,7 @@ MonoBehaviour:
   _gameOver: {fileID: 7788139191707965191}
   _phaseController: {fileID: 3886947567896745963}
   _scoreView: {fileID: 8442466958071883560}
+  _player: {fileID: 2488846265630506940}
 --- !u!4 &2532681559115404420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5990927402382942216, guid: ae8e1366c9f49e44cb13dbb596770631,

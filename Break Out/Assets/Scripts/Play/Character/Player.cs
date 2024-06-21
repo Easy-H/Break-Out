@@ -5,49 +5,40 @@ using UnityEngine.Events;
 
 public class Player : Character, IBallTarget {
 
-
     [SerializeField] Transform _ballCreatePos;
 
     [SerializeField] float _maxX = 1;
     [SerializeField] float _minX = -1;
-
-    [SerializeField] private UnityEvent _allBallOutEvent;
 
     [SerializeField] int _goalBallCount;
     private int _nowBallCount;
     private int _ballQueueCount;
 
     [SerializeField] float _ballCreateTime;
-
-    [SerializeField] GameObject[] models;
-
-    protected override void OnEnable()
-    {
-
-        base.OnEnable();
-        for (int i = 0; i < models.Length; i++) {
-            models[i].SetActive(PlayerManager.Instance.NowKey == i);
-        }
-        SoundManager.Instance.PlayEffect("Start");
-
-    }
-
-    private void Start()
-    {
-        _nowBallCount = 0;
-        _ballQueueCount = _goalBallCount;
-        StartCoroutine(_CreateBall());
-
-    }
+    [SerializeField] int _damageRatio = 1;
 
     // Update is called once per frame
     void Update()
     {
+        SetPos(Camera.main.ScreenToWorldPoint(Input.mousePosition).x);
 
-        float xPos = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
+    }
+
+    public void SetPos(float xPos)
+    {
         xPos = Mathf.Clamp(xPos, _minX, _maxX);
-
         transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+
+    }
+
+    public void GameStart(int goalBallCount = 1, int damageRatio = 1) {
+        _goalBallCount = goalBallCount;
+        _damageRatio = damageRatio;
+
+        _nowBallCount = 0;
+        _ballQueueCount = _goalBallCount;
+        StartCoroutine(_CreateBall());
+        SoundManager.Instance.PlayEffect("Start");
     }
 
     public void CreateBall()
@@ -61,15 +52,12 @@ public class Player : Character, IBallTarget {
 
     }
 
-    public void DamageAct()
+    protected override void DamageAct()
     {
-        if (!GameManager.Instance.IsPlaying())
-        {
-            return;
-        }
 
         Effect.PlayEffect("Eft_Damaged", transform);
         SoundManager.Instance.PlayEffect("Player_Damaged");
+        CreateBall();
 
     }
 
@@ -92,13 +80,15 @@ public class Player : Character, IBallTarget {
     protected override void DieAct()
     {
         base.DieAct();
+        GameManager.Instance.Playground.GameOver();
         Destroy(gameObject);
     }
 
     public void BallOut() {
-        if (--_nowBallCount < _goalBallCount) {
-            _allBallOutEvent.Invoke();
+        if (--_nowBallCount >= _goalBallCount) {
+            return;
         }
+        GetDamaged(1 * _damageRatio);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -106,7 +96,7 @@ public class Player : Character, IBallTarget {
         if (!other.CompareTag("Bullet")) return;
         if (!other.gameObject.activeInHierarchy) return;
 
-        GetDamaged(1);
+        GetDamaged(1 * _damageRatio);
 
         other.gameObject.SetActive(false);
         Destroy(other.gameObject);
@@ -114,7 +104,6 @@ public class Player : Character, IBallTarget {
 
     public void BallCollideAction()
     {
-        Debug.Log("Collide_Player");
         SoundManager.Instance.PlayEffect("Collide_Player");
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pool_Phase_2
   m_EditorClassIdentifier: 
   _created:
-  - Enemy_Solo_Gray
+  - Enemy_Gray
   - Enemy_Solo_Cyan
   - Enemy_Solo_Magenta
   - Enemy_Solo_Magenta

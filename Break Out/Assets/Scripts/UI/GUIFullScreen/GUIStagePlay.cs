@@ -39,14 +39,14 @@ public class GUIStagePlay : GUIPlay
     }
 
     bool ScoreCheck() {
-        if (GameManager.Instance.Score >= _clearValue)
+        if (Score >= _clearValue)
             return true;
         return false;
     }
 
-    public override void SetScore(int score)
+    public override void AddScore(int amount)
     {
-        base.SetScore(score);
+        base.AddScore(amount);
 
         if (!_clearCondition()) return;
 
@@ -55,6 +55,5 @@ public class GUIStagePlay : GUIPlay
 
     void StageClear() {
         _stageClear.SetActive(true);
-        GameManager.Instance.EndGame();
     }
 }

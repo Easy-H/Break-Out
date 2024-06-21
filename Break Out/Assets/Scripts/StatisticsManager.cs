@@ -17,7 +17,6 @@ public class StatisticsManager : Singleton<StatisticsManager> {
     }
 
     public void AddKillData(string killedEnemyName) {
-        if (!GameManager.Instance.IsPlaying()) return;
         if (!_killData.ContainsKey(killedEnemyName)) {
             _killData.Add(killedEnemyName, 1);
             return;
@@ -28,7 +27,7 @@ public class StatisticsManager : Singleton<StatisticsManager> {
 
     public void NewScore(int score)
     {
-        DatabaseManager.Instance.AddScoreToLeaders(PlayerManager.Instance.PlayerName, score);
+        DatabaseManager.Instance.DBReader.AddScoreToLeaders(PlayerManager.Instance.PlayerName, score);
         if (_bestScore >= score) return;
         _bestScore = score;
     }
