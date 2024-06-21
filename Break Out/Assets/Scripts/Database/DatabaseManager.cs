@@ -11,7 +11,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager> {
 #if !UNITY_WEBGL || UNITY_EDITOR
         DBReader = new FirebaseReader();
 #else
-        DBREader = new WebFirebaseReader();
+        DBReader = gameObject.AddComponent<WebFirebaseReader>();
 #endif
         DBReader.OnCreate();
 

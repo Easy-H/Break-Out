@@ -17,6 +17,7 @@ public static class Extensions {
 }
 
 public class FirebaseReader : IDatabaseReader {
+
     public int MaxScores = 20;
 
     FirebaseDatabase reference;
@@ -46,10 +47,21 @@ public class FirebaseReader : IDatabaseReader {
                 NotifyToObserver();
             }
         });
-        reference.GetReference("Leader").ValueChanged += HandleValueChanged;
+        reference.GetReference("Leader").ValueChanged += _HandleValueChanged;
 
     }
-    
+
+    private void _HandleValueChanged(object sender, ValueChangedEventArgs args)
+    {
+        if (args.DatabaseError != null)
+        {
+            Debug.LogError(args.DatabaseError.Message);
+            return;
+        }
+        Leaders = args.Snapshot.Value as List<object>;
+        NotifyToObserver();
+    }
+
     public void AddScoreToLeaders(string userId, int score)
     {
 
@@ -102,17 +114,6 @@ public class FirebaseReader : IDatabaseReader {
             mutableData.Value = leader;
             return TransactionResult.Success(mutableData);
         });
-    }
-
-    private void HandleValueChanged(object sender, ValueChangedEventArgs args)
-    {
-        if (args.DatabaseError != null)
-        {
-            Debug.LogError(args.DatabaseError.Message);
-            return;
-        }
-        Leaders = args.Snapshot.Value as List<object>;
-        NotifyToObserver();
     }
 
     void ShowLeader()

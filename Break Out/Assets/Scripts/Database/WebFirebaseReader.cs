@@ -1,44 +1,39 @@
-#if UNITY_WEBGL && !UNITY_EDITOR
-
 using EHTool;
 using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class WebFirebaseReader : IDatabaseReader {
+[Serializable]
+public class FirebaseError {
+    public string code;
+    public string message;
+    public string details;
+}
+
+public class WebFirebaseReader : MonoBehaviour, IDatabaseReader {
 
     public List<object> Leaders { get; private set; }
+
     IList<IObserver> _ops = new List<IObserver>();
 
-    
-    public void AddObserver(IObserver ops)
-    {
-        _ops.Add(ops);
-    }
-
-    public void RemoveObserver(IObserver ops)
-    {
-        _ops.Remove(ops);
-    }
-
-    public void NotifyToObserver()
-    {
-        foreach (IObserver ops in _ops)
-        {
-            ops.Notified();
-        }
-    }
+    [DllImport("__Internal")]
+    public static extern void PostJSON(string path, string value, string objectName, string callback, string fallback);
+    [DllImport("__Internal")]
+    public static extern void AddNewScore(string userId, string score);
+    [DllImport("__Internal")]
+    public static extern void GetJSON(string path, string objectName, string callback, string fallback);
 
     public void OnCreate()
     {
+        GetJSON("Leader", gameObject.name, "_HandleValueChanged", "_HandleValueChanged");
 
-        FirebaseWebGL.Scripts.FirebaseBridge.FirebaseDatabase.GetJSON("Leader", gameObject.name, "HandleValueChangedJS", "HandleValueChangedJS");
-        
     }
 
-    void HandleValueChangedJS(string data)
+    void _HandleValueChanged(string data)
     {
         Dictionary<object, Dictionary<string, object>> temp = JsonConvert.DeserializeObject<Dictionary<object, Dictionary<string, object>>>(data);
 
@@ -56,6 +51,26 @@ public class WebFirebaseReader : IDatabaseReader {
         NotifyToObserver();
     }
 
-}
+    public void AddScoreToLeaders(string userId, int score)
+    {
+        AddNewScore(userId, score.ToString());
+    }
 
-#endif
+    public void AddObserver(IObserver ops)
+    {
+        _ops.Add(ops);
+    }
+
+    public void RemoveObserver(IObserver ops)
+    {
+        _ops.Remove(ops);
+    }
+
+    public void NotifyToObserver()
+    {
+        foreach (IObserver ops in _ops)
+        {
+            ops.Notified();
+        }
+    }
+}
