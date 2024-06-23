@@ -18,16 +18,21 @@ public class GUIPlay : GUICustomFullScreen, IPlayground {
 
     protected int Score;
 
+    bool _isPlaying;
 
     public virtual void AddScore(int amount)
     {
+        if (!_isPlaying) return;
+
         Score += amount;
         _scoreView.text = string.Format("<mspace=\"0.45\">{0}</mspace>", Score.ToString("000000"));
+
     }
 
     public override void SetOn()
     {
         base.SetOn();
+        _isPlaying = true;
         GameManager.Instance.SetPlayground(this);
         _phaseController.GameStart();
         _player.GameStart();
@@ -36,7 +41,7 @@ public class GUIPlay : GUICustomFullScreen, IPlayground {
     public virtual void GameOver()
     {
         _gameOver.SetActive(true);
-        GameManager.Instance.SetPlayground(null);
+        _isPlaying = false;
     }
 
     public void Pause()

@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class WebFirebaseReader : MonoBehaviour, IDatabaseReader {
     IList<IObserver> _ops = new List<IObserver>();
 
     [DllImport("__Internal")]
+    public static extern void OnInit(string firebaseConfigValue);
+    [DllImport("__Internal")]
     public static extern void PostJSON(string path, string value, string objectName, string callback, string fallback);
     [DllImport("__Internal")]
     public static extern void AddNewScore(string userId, string score);
@@ -29,6 +32,7 @@ public class WebFirebaseReader : MonoBehaviour, IDatabaseReader {
 
     public void OnCreate()
     {
+        OnInit(AssetOpener.ReadTextAsset("FirebaseConfig"));
         GetJSON("Leader", gameObject.name, "_HandleValueChanged", "_HandleValueChanged");
 
     }
