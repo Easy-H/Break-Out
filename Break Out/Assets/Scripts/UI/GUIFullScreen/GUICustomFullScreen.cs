@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class GUICustomFullScreen : GUIWindow, IGUIFullScreen {
 
+    [SerializeField] protected Player _player;
+
     [SerializeField] Transform _inforLine;
     [SerializeField] Transform _poolBudget;
 
@@ -32,7 +34,7 @@ public class GUICustomFullScreen : GUIWindow, IGUIFullScreen {
 
         _popupUI = new List<IGUIPopUp>();
 
-        UIManager.Instance.EnrollmentGUI(this);
+        UIManager.Instance.OpenFullScreen(this);
     }
 
     public override void SetOn()
@@ -100,7 +102,7 @@ public class GUICustomFullScreen : GUIWindow, IGUIFullScreen {
 
     public override void Close()
     {
-        UIManager.Instance.Pop();
+        UIManager.Instance.CloseFullScreen(this);
 
         while (_popupUI.Count > 0)
         {

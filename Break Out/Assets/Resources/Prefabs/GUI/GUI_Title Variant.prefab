@@ -655,7 +655,7 @@ RectTransform:
   m_GameObject: {fileID: 2111149958470631960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8304001805086911267}
@@ -881,7 +881,7 @@ RectTransform:
   m_GameObject: {fileID: 3318981475801119470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2791157527583909192}
@@ -1360,7 +1360,7 @@ RectTransform:
   m_GameObject: {fileID: 5214193749023059915}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1879934753870481177}
@@ -2116,7 +2116,7 @@ RectTransform:
   m_GameObject: {fileID: 8064879747870694648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7374543155268332161}
@@ -2620,6 +2620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 0
+  _player: {fileID: 44523029236739224}
   _inforLine: {fileID: 7226262670726788204}
   _poolBudget: {fileID: 5151485100134198616}
   _scoreView: {fileID: 5381680835708966962}
@@ -2660,6 +2661,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5730777807510621078}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7301084340704363801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3086506761390460559, guid: ae8e1366c9f49e44cb13dbb596770631,
+    type: 3}
+  m_PrefabInstance: {fileID: 5730777807510621078}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706665608763406635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201de7bbdcb959f4d8c2210e9e49caa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5730777808041400971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2732,6 +2745,11 @@ PrefabInstance:
       propertyPath: _hpUI
       value: 
       objectReference: {fileID: 6706665608763406635}
+    - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
+        type: 3}
+      propertyPath: _gaugeUI
+      value: 
+      objectReference: {fileID: 7301084340704363801}
     - target: {fileID: 5699865495839520275, guid: f36f47012428db84ca053b92fe0a5f3a,
         type: 3}
       propertyPath: _damageRatio

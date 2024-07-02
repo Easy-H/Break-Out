@@ -1,7 +1,7 @@
-#if UNITY_EDITOR
-
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace EHTool.LangKit {
     [CustomEditor(typeof(EHTmp))]
@@ -16,4 +16,3 @@ namespace EHTool.LangKit {
         }
     }
 }
-#endif

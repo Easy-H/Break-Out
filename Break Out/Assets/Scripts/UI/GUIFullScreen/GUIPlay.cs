@@ -14,8 +14,6 @@ public class GUIPlay : GUICustomFullScreen, IPlayground {
     [SerializeField] private PhaseController _phaseController;
     [SerializeField] private TextMeshProUGUI _scoreView;
 
-    [SerializeField] private Player _player;
-
     protected int Score;
 
     bool _isPlaying;
@@ -32,8 +30,9 @@ public class GUIPlay : GUICustomFullScreen, IPlayground {
     public override void SetOn()
     {
         base.SetOn();
-        _isPlaying = true;
         GameManager.Instance.SetPlayground(this);
+
+        _isPlaying = true;
         _phaseController.GameStart();
         _player.GameStart();
     }

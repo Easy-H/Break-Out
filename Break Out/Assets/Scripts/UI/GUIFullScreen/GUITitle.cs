@@ -30,6 +30,7 @@ public class GUITitle : GUICustomFullScreen
     public override void SetOn()
     {
         base.SetOn();
+        _player.GameStart(1, 0);
         _scoreView.text = string.Format("<mspace=\"0.45\">{0}</mspace>", StatisticsManager.Instance.GetBestScore().ToString("000000"));
     }
 }

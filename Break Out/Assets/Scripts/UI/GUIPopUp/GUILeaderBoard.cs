@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using EHTool.UIKit;
 using EHTool;
+using System;
+using System.Linq;
 
 class Scoresort : IComparer<object> {
 
@@ -15,46 +17,57 @@ class Scoresort : IComparer<object> {
     }
 }
 
-public class GUILeaderBoard : GUIPopUp, IObserver
-{
+public class GUILeaderBoard : GUIPopUp, IObserver<IList<Score>> {
 
     [SerializeField] ScoreUnit[] _infors;
     [SerializeField] Image _loading;
 
+#nullable enable
+    private IDisposable? _cancellation;
+
     public override void Open()
     {
         base.Open();
-        DatabaseManager.Instance.DBReader.AddObserver(this);
-        Notified();
+        _cancellation = DatabaseManager.Instance.Subscribe(this);
+        DatabaseManager.Instance.GetLeader();
     }
 
-    public void Notified() {
+    public override void Close()
+    {
+        _cancellation?.Dispose();
+        base.Close();
+    }
 
-        List<object> leaders = DatabaseManager.Instance.DBReader.Leaders;
+    public void OnCompleted()
+    {
 
-        if (leaders == null) return;
+    }
 
+    public void OnError(Exception error)
+    {
+
+    }
+
+    public void OnNext(IList<Score> value)
+    {
         _loading.gameObject.SetActive(false);
-        leaders.Sort(new Scoresort());
 
-        for (int i = 0; i < _infors.Length; i++) {
-            if (i < leaders.Count)
+        if (value == null) return;
+
+        IEnumerable<Score> sortedEnum = value.OrderBy(f => -f.score);
+        IList<Score> sortedList = sortedEnum.ToList();
+
+        for (int i = 0; i < _infors.Length; i++)
+        {
+            if (i < sortedList.Count)
             {
                 _infors[i].gameObject.SetActive(true);
-                Dictionary<string, object> data = leaders[i] as Dictionary<string, object>;
 
-                _infors[i].SetValue(i + 1, data["userId"].ToString(), data["score"].ToString());
+                _infors[i].SetValue(i + 1, sortedList[i].userId, sortedList[i].score.ToString());
                 continue;
             }
             _infors[i].gameObject.SetActive(false);
         }
 
     }
-
-    public override void Close()
-    {
-        DatabaseManager.Instance.DBReader.RemoveObserver(this);
-        base.Close();
-    }
-
 }
