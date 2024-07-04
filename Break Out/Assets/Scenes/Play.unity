@@ -276,11 +276,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3237978349866496901, guid: 91862f57f7b4de74286b7210bba5a5fc,
-        type: 3}
-      propertyPath: _routineEvent
-      value: 
-      objectReference: {fileID: 794194048}
     - target: {fileID: 8045739197122271387, guid: 91862f57f7b4de74286b7210bba5a5fc,
         type: 3}
       propertyPath: m_Name
@@ -411,18 +406,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &794194048 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 20565848990687396, guid: 91862f57f7b4de74286b7210bba5a5fc,
-    type: 3}
-  m_PrefabInstance: {fileID: 595097019}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cec91870680d6041a4c36fffd5c87e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1614952880
 GameObject:
   m_ObjectHideFlags: 0

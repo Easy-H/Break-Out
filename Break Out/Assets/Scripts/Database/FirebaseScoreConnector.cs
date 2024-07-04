@@ -87,13 +87,12 @@ public class FirebaseScoreConnector : IDatabaseConnector<Score> {
             { idx.ToString(), Record }
         };
 
-        reference.UpdateChildrenAsync(updateValue);
+        //reference.UpdateChildrenAsync(updateValue);
     }
 
     public void GetAllRecord(CallbackMethod<IList<Score>> callback)
     {
         _allCallback.Add(callback);
-
         reference.GetValueAsync().ContinueWithOnMainThread(task => {
 
             if (task.IsFaulted)

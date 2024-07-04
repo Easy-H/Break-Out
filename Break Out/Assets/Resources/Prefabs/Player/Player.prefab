@@ -40,7 +40,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3271662891708891586}
-  - component: {fileID: 3271662891708891585}
   - component: {fileID: 5699865495839520275}
   - component: {fileID: 7085804861630226800}
   m_Layer: 10
@@ -69,27 +68,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &3271662891708891585
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3271662891708891598}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 100
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 6
 --- !u!114 &5699865495839520275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,24 +83,8 @@ MonoBehaviour:
   _stat:
     _maxHP: 5
     _nowHP: 5
-  _hpUI: {fileID: 0}
-  _damageEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5699865495839520275}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: CreateBall
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _gaugeUI: {fileID: 0}
   _dieAct: {fileID: 7085804861630226800}
-  _dieEffectKey: Eft_GameOver
   _ballCreatePos: {fileID: 274745537957799552}
   _maxX: 3.3
   _minX: -3.3

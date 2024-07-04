@@ -22,7 +22,11 @@ public class Character : MonoBehaviour
 
     public void GetDamaged(int amount) {
         _stat.GetDamage(amount);
-        _gaugeUI.SetGauge(_stat.GetHPRatio());
+
+        if (_gaugeUI)
+        {
+            _gaugeUI.SetGauge(_stat.GetHPRatio());
+        }
 
         if (_stat.IsAlive())
         {

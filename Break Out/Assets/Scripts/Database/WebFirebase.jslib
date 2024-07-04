@@ -1,6 +1,6 @@
 mergeInto(LibraryManager.library, {
 
-    OnInit: function(path, firebaseConfigValue) {
+    OnInit: function(firebaseConfigValue) {
         
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
@@ -8,24 +8,18 @@ mergeInto(LibraryManager.library, {
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-        console.log("OnInit");
-
         var firebaseConfig = JSON.parse(UTF8ToString(firebaseConfigValue));
-        console.log(firebaseConfig);
         
         firebaseApp = firebase.initializeApp(firebaseConfig);
         auth = firebaseApp.auth();
 
-        ref = firebase.database().ref(UTF8ToString(path));
-
-        console.log(ref);
-
     },
-    PostJSON: function(value, objectName, callback, fallback) {
+    PostJSON: function(path, value, objectName, callback, fallback) {
         var parsedObjectName = UTF8ToString(objectName);
         var parsedCallback = UTF8ToString(callback);
         var parsedFallback = UTF8ToString(fallback);
         
+        var ref = firebase.database().ref(UTF8ToString(path));
         var newPostKey = ref.push().key;
 
         var postData = JSON.parse(UTF8ToString(UTF8ToString(value)));
@@ -41,12 +35,11 @@ mergeInto(LibraryManager.library, {
         });;
 
     },
-    AddNewScore: function(userId, score) {
+    AddNewScore: function(path, userId, score) {
         var parsed1 = UTF8ToString(userId);
         var parsed2 = UTF8ToString(score);
         
-        firebase.database().ref("Leader").transaction((post) => {
-            console.log(post);
+        firebase.database().ref(UTF8ToString(path)).transaction((post) => {
             if (post) {
                 var list = [];
                 for (var key in post) {
@@ -74,30 +67,27 @@ mergeInto(LibraryManager.library, {
           });
 
     },
-    GetJSON: function(objectName, callback, fallback) {
+    GetJSON: function(path, objectName, callback, fallback) {
         
-        console.log("GetJSON");
-
         var parsedObjectName = UTF8ToString(objectName);
         var parsedCallback = UTF8ToString(callback);
         var parsedFallback = UTF8ToString(fallback);
+        
+        var ref = firebase.database().ref(UTF8ToString(path));
 
-        firebase.database().ref("Leader").get().then((snapshot) => {
+        ref.get().then((snapshot) => {
             if (snapshot.exists()) {
                 window.unityInstance.SendMessage(parsedObjectName, parsedCallback, JSON.stringify(snapshot));
-                console.log(JSON.stringify(snapshot));
             } else {
-                console.log("No data available");
             }
         }).catch((error) => {
             console.error(error);
         });
         
+        /*
         ref.on('value', (snapshot) => {
             window.unityInstance.SendMessage(parsedObjectName, parsedCallback, JSON.stringify(snapshot));
-            console.log(JSON.stringify(snapshot));
         });
-        /*
         */
 
 

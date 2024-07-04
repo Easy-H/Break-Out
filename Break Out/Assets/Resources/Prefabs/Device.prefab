@@ -125,21 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c712ce49548770143a925ed66d6f9387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _routineEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 20565848990687396}
-        m_TargetAssemblyTypeName: ObjectPool.ObjectPoolCreator, Assembly-CSharp
-        m_MethodName: Create
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _routineEvent: {fileID: 20565848990687396}
   _timeCycle: 50
   _spendTime: 50
 --- !u!114 &20565848990687396
@@ -159,6 +145,8 @@ MonoBehaviour:
   - {fileID: 8045739196815823220}
   - {fileID: 7869179953877142561}
   - {fileID: 2111374320727056727}
+  _serialTerm: 0
+  _serialCount: 1
   _parent: {fileID: 8045739195886366296}
 --- !u!1 &8045739195895880134
 GameObject:
