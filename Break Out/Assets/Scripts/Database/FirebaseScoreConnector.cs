@@ -3,6 +3,7 @@ using EHTool.DBKit;
 using Firebase.Database;
 using Firebase.Extensions;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class FirebaseScoreConnector : IDatabaseConnector<Score> {
 
@@ -100,6 +101,7 @@ public class FirebaseScoreConnector : IDatabaseConnector<Score> {
             }
             else if (task.IsCompleted)
             {
+                Debug.Log("Good");
                 IList<Score> data = new List<Score>();
 
                 if (task.Result.Value == null)
@@ -111,7 +113,10 @@ public class FirebaseScoreConnector : IDatabaseConnector<Score> {
 
                     for (int i = 0; i < temp.Count; i++)
                     {
-                        data.Add(Score.FromDictionary(temp[i] as Dictionary<string, object>));
+                        Score s = new Score();
+                        s.SetValueFromDictionary(temp[i] as Dictionary<string, object>);
+
+                        data.Add(s);
                     }
 
                 }

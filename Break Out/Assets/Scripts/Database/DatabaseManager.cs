@@ -2,10 +2,17 @@ using EHTool;
 using EHTool.DBKit;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Score : IDictionaryable<Score> {
+
     public string userId;
     public int score;
+
+    public Score() {
+        userId = "";
+        score = 0;
+    }
 
     public Score(string userId, int score)
     {
@@ -23,9 +30,10 @@ public class Score : IDictionaryable<Score> {
         return newScoreMap;
     }
 
-    public static Score FromDictionary(IDictionary<string, object> d)
+    public void SetValueFromDictionary(IDictionary<string, object> value)
     {
-        return new Score(d["userId"].ToString(), int.Parse(d["score"].ToString()));
+        userId = value["userId"].ToString();
+        score = int.Parse(value["score"].ToString());
     }
 }
 
@@ -34,7 +42,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>, IObservable<IList
     public int MaxScores = 20;
 
     private readonly ISet<IObserver<IList<Score>>> _observers = new HashSet<IObserver<IList<Score>>>();
-    private IDatabaseConnector<Score> _dbReader;
+    private IDatabaseConnector<Score> _dbConnector;
 
     public IDisposable Subscribe(IObserver<IList<Score>> observer)
     {
@@ -49,23 +57,23 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>, IObservable<IList
     protected override void OnCreate()
     {
 #if !UNITY_WEBGL || UNITY_EDITOR
-        _dbReader = new FirebaseScoreConnector();
+        _dbConnector = new FirebaseScoreConnector();
 #else
-        _dbReader = gameObject.AddComponent<WebGLFirebaseScoreConnector>();
+        _dbConnector = gameObject.AddComponent<WebGLFirebaseScoreConnector>();
 #endif
-        _dbReader.Connect("Leader");
+        _dbConnector.Connect("Leader");
 
     }
 
     public void AddScoreToLeaders(int score)
     {
-        _dbReader.AddRecord(new Score(PlayerManager.Instance.PlayerName, score));
+        _dbConnector.AddRecord(new Score(PlayerManager.Instance.PlayerName, score));
 
     }
 
     public void GetLeader()
     {
-        _dbReader.GetAllRecord(GetLeaderCallback);
+        _dbConnector.GetAllRecord(GetLeaderCallback);
 
     }
 

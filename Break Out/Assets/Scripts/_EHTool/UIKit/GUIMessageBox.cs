@@ -3,7 +3,7 @@ using System;
 using EHTool.LangKit;
 
 namespace EHTool.UIKit {
-    public class GUIMessageBox : GUIPopUp {
+    public class GUIMessageBox : GUICustomPopUp {
 
         [SerializeField] EHText _textField;
 

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using EHTool.UIKit;
 
-public class GUIStatisticsPopUp : GUIPopUp
+public class GUIStatisticsPopUp : GUICustomPopUp
 {
     [SerializeField] Text _ballCreateCount;
     [SerializeField] Text _ballOutCount;

@@ -4,8 +4,9 @@ using System.Collections.Generic;
 namespace EHTool.DBKit {
 
     public interface IDictionaryable<T> {
+
         IDictionary<string, object> ToDictionary();
-        static T FromDictionary(IDictionary<string, object> d) => throw new NotImplementedException();
+        void SetValueFromDictionary(IDictionary<string, object> value);
 
     }
 

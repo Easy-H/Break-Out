@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using EHTool.UIKit;
 
-public class GUISetting : GUIPopUp {
+public class GUISetting : GUICustomPopUp {
 
     [SerializeField] private AudioMixer _audioMixer;
     [SerializeField] private Slider _musicMasterSlider;

@@ -17,7 +17,7 @@ class Scoresort : IComparer<object> {
     }
 }
 
-public class GUILeaderBoard : GUIPopUp, IObserver<IList<Score>> {
+public class GUILeaderBoard : GUICustomPopUp, IObserver<IList<Score>> {
 
     [SerializeField] ScoreUnit[] _infors;
     [SerializeField] Image _loading;

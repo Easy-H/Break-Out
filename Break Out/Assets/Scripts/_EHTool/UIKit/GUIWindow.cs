@@ -29,7 +29,6 @@ namespace EHTool.UIKit {
             rect.offsetMin = Vector3.zero;
             rect.offsetMax = Vector3.one;
             rect.anchorMax = Vector2.one;
-            rect.position = Vector3.zero;
         }
 
         public virtual void Close()
