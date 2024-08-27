@@ -13,6 +13,8 @@ mergeInto(LibraryManager.library, {
         firebaseApp = firebase.initializeApp(firebaseConfig);
         auth = firebaseApp.auth();
 
+        console.log(firebaseConfig)
+
     },
     PostJSON: function(path, value, objectName, callback, fallback) {
         var parsedObjectName = UTF8ToString(objectName);
@@ -74,6 +76,8 @@ mergeInto(LibraryManager.library, {
         var parsedFallback = UTF8ToString(fallback);
         
         var ref = firebase.database().ref(UTF8ToString(path));
+
+        console.log(UTF8ToString(path));
 
         ref.get().then((snapshot) => {
             if (snapshot.exists()) {

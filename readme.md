@@ -4,7 +4,7 @@
 - [🎮 itch-io에서 플레이](https://easy-h.itch.io/superpongbros)
 
 ## 개발도구
-- Unity 2021.30.30f1
+- Unity 2022.3.42f1
 - Firebase
 
 ## 계획

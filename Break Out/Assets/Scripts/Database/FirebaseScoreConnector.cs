@@ -101,7 +101,6 @@ public class FirebaseScoreConnector : IDatabaseConnector<Score> {
             }
             else if (task.IsCompleted)
             {
-                Debug.Log("Good");
                 IList<Score> data = new List<Score>();
 
                 if (task.Result.Value == null)
