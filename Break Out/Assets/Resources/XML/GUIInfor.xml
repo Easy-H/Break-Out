@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <List>
-  <Element name="FullScreen_ScoringPlay"      path="Prefabs/GUI/GUI_Play_Scoring" />
-  <Element name="FullScreen_CharacterSelect"  path="Prefabs/GUI/GUI_CharacterSelect" />
+  <Element name="FullScreen_ScoringPlay"      path="Prefabs/GUI/FullScreen/GUI_Play_Scoring" />
+  <Element name="FullScreen_CharacterSelect"  path="Prefabs/GUI/FullScreen/GUI_CharacterSelect" />
 
   <Element name="PopUp_Title"                 path="Prefabs/GUI/PopUp/GUI_TitlePopUp" />
   <Element name="PopUp_Setting"               path="Prefabs/GUI/PopUp/GUI_Setting" />
