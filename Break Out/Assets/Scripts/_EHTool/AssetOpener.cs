@@ -15,6 +15,13 @@ namespace EHTool {
             return Instantiate(source);
         }
 
+        public static GameObject ImportGameObjectAsync(string path)
+        {
+            ResourceRequest retval = Resources.LoadAsync(path);
+            GameObject source = retval.asset as GameObject;
+            return Instantiate(source);
+        }
+
         public static string ReadTextAsset(string path) { 
             TextAsset retval = (TextAsset)Resources.Load(path, typeof(TextAsset));
 

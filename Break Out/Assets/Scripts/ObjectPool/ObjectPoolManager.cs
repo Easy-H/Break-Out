@@ -6,6 +6,8 @@ using System.Xml;
 using TMPro;
 using UnityEngine;
 using EHTool;
+using System.Threading;
+using System;
 
 namespace ObjectPool {
 
@@ -20,7 +22,7 @@ namespace ObjectPool {
         {
             _path = string.Empty;
             _pool = new Queue<GameObject>();
-            _min = 5;
+            _min = 3;
 
         }
         public Pool(string path, Transform parent)
@@ -36,20 +38,32 @@ namespace ObjectPool {
         {
             if (_pool.Count < _min)
             {
-                for (int i = _pool.Count; i < _min; i++)
-                {
-                    GameObject obj = AssetOpener.ImportGameObject(_path);
-                    obj.transform.SetParent(tr);
-                    obj.SetActive(false);
-                    obj.GetComponent<IPoolTarget>().SetParentPool(this);
-                    _pool.Enqueue(obj);
-                }
+                GameObject obj = AssetOpener.ImportGameObject(_path);
+                obj.transform.SetParent(tr);
+                obj.SetActive(false);
+                obj.GetComponent<IPoolTarget>().SetParentPool(this);
+                _pool.Enqueue(obj);
+
+                ObjectCreate();
             }
 
             GameObject target = _pool.Dequeue();
             target.SetActive(true);
 
             return target;
+        }
+
+        void ObjectCreate() {
+
+            for (int i = _pool.Count; i < _min; i++)
+            {
+                GameObject obj = AssetOpener.ImportGameObject(_path);
+                obj.transform.SetParent(tr);
+                obj.SetActive(false);
+                obj.GetComponent<IPoolTarget>().SetParentPool(this);
+                _pool.Enqueue(obj);
+            }
+
         }
 
         public void ReturnObject(GameObject obj)

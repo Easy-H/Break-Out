@@ -96,8 +96,8 @@ MonoBehaviour:
     y: 0
     width: 434.4
     height: 722.8
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -148,8 +148,8 @@ MonoBehaviour:
     y: 0
     width: 406.40002
     height: 722.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 48
+  controlID: 103
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -298,8 +298,8 @@ MonoBehaviour:
     y: 0
     width: 285.6
     height: 722.8
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -387,7 +387,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs/GUI/PopUp
+    - Assets/Resources/Data/PoolCreateData/Phase
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -395,16 +395,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Prefabs/GUI/PopUp
+  - Assets/Resources/Data/PoolCreateData/Phase
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\isaac\Documents\GitHub\Easy-H\Break-Out\Break Out
   m_LockTracker:
-    m_IsLocked: 1
+    m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 98630000
-    m_LastClickedID: 25496
-    m_ExpandedIDs: 00000000125c0000145c0000165c00008c630000926300009a630000
+    m_SelectedIDs: 468b0000
+    m_LastClickedID: 35654
+    m_ExpandedIDs: 00000000625c0000645c0000665c0000685c00006a5c00001a8800001c8800003e8b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -432,7 +432,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000125c0000145c0000165c0000
+    m_ExpandedIDs: 00000000625c0000645c0000665c0000685c00006a5c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -459,19 +459,19 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000165500001856000096550000985600004a560000d4570000fa200100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: PopUp
-      m_OriginalName: PopUp
+      m_Name: Pool_Phase_1
+      m_OriginalName: Pool_Phase_1
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 25496
+      m_UserData: 22392
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -576,18 +576,18 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c2c0fcff12c1fcff7ac5fcffaa0efdffbe0efdff5e51fdffbe53fdff4cfaffff22fbffff24fbffffba570000
+      m_ExpandedIDs: 0436ffff5636ffffc23affff644dffffb44dffff1c52ffff22fbffff24fbffffb0570000e2a700005ca9000080a90000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: box_Title
-        m_OriginalName: box_Title
+        m_Name: CreatePos
+        m_OriginalName: CreatePos
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -1460
+        m_UserData: 35404
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -951,7 +951,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 48, y: 48}
+      snapOffset: {x: 44.799988, y: 48}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: UnityEditor.SceneViewCameraOverlay
@@ -972,7 +972,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 0, y: 0, z: 20}
     speed: 2
-    m_Value: {x: 0.57614344, y: 0.42391485, z: 0.02588303}
+    m_Value: {x: 0, y: 0, z: 20}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 31
@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 9.394147
     speed: 2
-    m_Value: 6.805828
+    m_Value: 9.394147
   m_Ortho:
     m_Target: 1
     speed: 2

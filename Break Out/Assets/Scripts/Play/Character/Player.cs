@@ -7,8 +7,9 @@ public class Player : Character, IBallTarget {
 
     [SerializeField] Transform _ballCreatePos;
 
-    [SerializeField] float _maxX = 1;
-    [SerializeField] float _minX = -1;
+    [SerializeField] Vector2 _min;
+    [SerializeField] Vector2 _max;
+    [SerializeField] float _up;
 
     [SerializeField] int _goalBallCount;
     private int _nowBallCount;
@@ -20,14 +21,14 @@ public class Player : Character, IBallTarget {
     // Update is called once per frame
     void Update()
     {
-        SetPos(Camera.main.ScreenToWorldPoint(Input.mousePosition).x);
+        Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        SetPos(pos.x, pos.y + _up);
 
     }
 
-    public void SetPos(float xPos)
+    public void SetPos(float xPos, float yPos)
     {
-        xPos = Mathf.Clamp(xPos, _minX, _maxX);
-        transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(xPos, _min.x, _max.x), Mathf.Clamp(yPos, _min.y, _max.y), transform.position.z);
 
     }
 

@@ -17,5 +17,5 @@ MonoBehaviour:
   - Enemy_Solo_Cyan
   - Enemy_Dual_Magenta
   - Enemy_Dual_Magenta
-  _goalCreateCount: 3
+  _goalCreateCount: 4
   _createSound: {fileID: 0}

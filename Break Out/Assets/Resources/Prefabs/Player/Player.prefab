@@ -87,8 +87,9 @@ MonoBehaviour:
   _gaugeUI: {fileID: 0}
   _dieAct: {fileID: 7085804861630226800}
   _ballCreatePos: {fileID: 274745537957799552}
-  _maxX: 3.3
-  _minX: -3.3
+  _min: {x: -3.3, y: -8}
+  _max: {x: 3.3, y: 7.2}
+  _up: 1
   _goalBallCount: 1
   _ballCreateTime: 0.2
   _damageRatio: 1
