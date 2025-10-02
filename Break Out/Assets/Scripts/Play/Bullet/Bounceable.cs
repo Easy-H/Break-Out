@@ -14,7 +14,7 @@ public class Bounceable : Move
         if (!_rb)
             _rb = GetComponent<Rigidbody2D>();
 
-        _rb.velocity = dir.normalized * _power;
+        _rb.linearVelocity = dir.normalized * _power;
     }
 
     private void OnEnable()
@@ -25,14 +25,14 @@ public class Bounceable : Move
     protected override void DoMove()
     {
 
-        if (Mathf.Abs(Mathf.Atan2(_rb.velocity.y, _rb.velocity.x)) > valueMin
-            && Mathf.Abs(Mathf.Atan2(_rb.velocity.y, _rb.velocity.x)) < valueMax)
+        if (Mathf.Abs(Mathf.Atan2(_rb.linearVelocity.y, _rb.linearVelocity.x)) > valueMin
+            && Mathf.Abs(Mathf.Atan2(_rb.linearVelocity.y, _rb.linearVelocity.x)) < valueMax)
         {
-            SetDir(_rb.velocity);
+            SetDir(_rb.linearVelocity);
             return;
         }
 
-        SetDir(new Vector2(Mathf.Cos(0.5f) * Mathf.Sign(_rb.velocity.x), Mathf.Sin(0.5f) * Mathf.Sign(_rb.velocity.y)));
+        SetDir(new Vector2(Mathf.Cos(0.5f) * Mathf.Sign(_rb.linearVelocity.x), Mathf.Sin(0.5f) * Mathf.Sign(_rb.linearVelocity.y)));
 
     }
 

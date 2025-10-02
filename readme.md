@@ -4,7 +4,7 @@
 - [🎮 itch-io에서 플레이](https://easy-h.itch.io/superpongbros)
 
 ## 개발도구
-- Unity 2022.3.42f1
+- Unity 6000.0.58f1
 - Firebase
 
 ## 계획
@@ -16,14 +16,14 @@
     - [x] 적의 총알에 닿을 때 체력 감소
     - [x] 모든 ball을 떨어트렸을 때 체력 감소
     - [x] 체력 감소시 ball 추가
-- [x] 스코어 보드
-  - [x] 점수 Firebase와 연동
-    - [x] WebGL 빌드와 Firebase 연동
-    - [x] Android 앱과 Firebase 연동 
 - [x] 페이즈 시스템
   - [x] 페이즈에 따라 다른 적 출현
   - [ ] 페이즈 끝에 보스 적 출현
     - [ ] 보스 적 
+- [x] 스코어 보드
+  - [x] 점수 Firebase와 연동
+    - [x] WebGL 빌드와 Firebase 연동
+    - [x] Android 앱과 Firebase 연동 
 - [ ] 아이템
   - [ ] 체력 아이템
   - [ ] ball 추가
