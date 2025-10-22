@@ -1,16 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ObjectPool {
 
-    public interface IPoolTarget {
-        public void SetParentPool(Pool parent);
-        public void Return();
-    }
-
     public class PoolTarget : MonoBehaviour, IPoolTarget {
-        Pool _parent;
+        
+        private Pool _parent;
 
         public void SetParentPool(Pool parent)
         {

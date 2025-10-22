@@ -1,0 +1,9 @@
+{
+    "FullScreen_ScoringPlay": "Prefabs/GUI/FullScreen/GUI_Play_Scoring",
+    "FullScreen_CharacterSelect": "Prefabs/GUI/FullScreen/GUI_CharacterSelect",
+    "PopUp_Title": "Prefabs/GUI/PopUp/GUI_TitlePopUp",
+    "PopUp_Setting": "Prefabs/GUI/PopUp/GUI_Setting",
+    "PopUp_Statistics": "Prefabs/GUI/PopUp/GUI_StatisticsPopUp",
+    "PopUp_LeaderBoard": "Prefabs/GUI/PopUp/GUI_LeaderBoard",
+    "PopUp_Message": "Prefabs/GUI/PopUp/GUI_MessageBox"
+}

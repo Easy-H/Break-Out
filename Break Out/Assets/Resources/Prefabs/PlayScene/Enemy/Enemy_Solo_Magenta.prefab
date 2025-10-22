@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1008459463577777365, guid: ead22efe2b1f8dc428e0baad9ad828fe,
@@ -160,6 +161,13 @@ PrefabInstance:
       value: -0.0150000155
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8722877316774187876, guid: ead22efe2b1f8dc428e0baad9ad828fe,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5836108846906533028}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ead22efe2b1f8dc428e0baad9ad828fe, type: 3}
 --- !u!4 &5124274141485111580 stripped
 Transform:
@@ -172,12 +180,28 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 5124274141485111580}
     m_Modifications:
     - target: {fileID: 3021555694081779864, guid: 1a5f919bd4841ac469657cad7a623ca2,
         type: 3}
       propertyPath: _timeCycle
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021555694081779864, guid: 1a5f919bd4841ac469657cad7a623ca2,
+        type: 3}
+      propertyPath: _event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7832957236990307989}
+    - target: {fileID: 3021555694081779864, guid: 1a5f919bd4841ac469657cad7a623ca2,
+        type: 3}
+      propertyPath: _event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExecuteEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021555694081779864, guid: 1a5f919bd4841ac469657cad7a623ca2,
+        type: 3}
+      propertyPath: _event.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SerialEventExecutor, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3021555694081779865, guid: 1a5f919bd4841ac469657cad7a623ca2,
         type: 3}
@@ -256,4 +280,75 @@ PrefabInstance:
       value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3021555694081779871, guid: 1a5f919bd4841ac469657cad7a623ca2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7832957236990307989}
+    - targetCorrespondingSourceObject: {fileID: 3021555694081779871, guid: 1a5f919bd4841ac469657cad7a623ca2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2327671759225055554}
   m_SourcePrefab: {fileID: 100100000, guid: 1a5f919bd4841ac469657cad7a623ca2, type: 3}
+--- !u!1 &5836108846906533026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3021555694081779871, guid: 1a5f919bd4841ac469657cad7a623ca2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8723682443408526397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7832957236990307989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836108846906533026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde9ad6ebee7ba04d996d537ef9ba7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2327671759225055554}
+        m_TargetAssemblyTypeName: Creator, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _serialTerm: 0.2
+  _serialCount: 3
+--- !u!114 &2327671759225055554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836108846906533026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d614fdcefdfde4cae839035dca8f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _createData:
+    CreatePath:
+    - Bullet_Magenta
+    CreateCount: 1
+    CreateSound: {fileID: 0}
+  _createPos:
+  - {fileID: 5836108846906533028}
+--- !u!4 &5836108846906533028 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3021555694081779865, guid: 1a5f919bd4841ac469657cad7a623ca2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8723682443408526397}
+  m_PrefabAsset: {fileID: 0}

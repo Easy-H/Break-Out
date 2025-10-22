@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: Phase_4
   m_EditorClassIdentifier: 
   QuestData: killAllEnemy,10
-  CreatorData: {fileID: 11400000, guid: a3a06c8ad332275438af26b0b033e958, type: 2}
+  CreateData:
+    CreatePath:
+    - Enemy_Gray
+    - Enemy_Solo_Cyan
+    - Enemy_Dual_Magenta
+    - Enemy_Dual_Green
+    CreateCount: 5
+    CreateSound: {fileID: 0}
   TimeScale: 1

@@ -1,6 +1,3 @@
-using ObjectPool;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Pool_", menuName = "Scriptable Object/PoolCreateData")]

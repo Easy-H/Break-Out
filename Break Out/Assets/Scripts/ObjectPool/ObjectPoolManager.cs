@@ -1,84 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Xml;
-using TMPro;
 using UnityEngine;
-using EHTool;
-using System.Threading;
-using System;
+using EasyH.Unity;
+using EasyH;
 
 namespace ObjectPool {
 
-    public class Pool {
-        string _path;
-
-        Transform tr;
-        Queue<GameObject> _pool;
-        int _min;
-
-        public Pool()
-        {
-            _path = string.Empty;
-            _pool = new Queue<GameObject>();
-            _min = 3;
-
-        }
-        public Pool(string path, Transform parent)
-        {
-            tr = parent;
-            _path = path;
-            _pool = new Queue<GameObject>();
-            _min = 5;
-
-        }
-
-        public GameObject GetObject()
-        {
-            if (_pool.Count < _min)
-            {
-                GameObject obj = AssetOpener.ImportGameObject(_path);
-                obj.transform.SetParent(tr);
-                obj.SetActive(false);
-                obj.GetComponent<IPoolTarget>().SetParentPool(this);
-                _pool.Enqueue(obj);
-
-                ObjectCreate();
-            }
-
-            GameObject target = _pool.Dequeue();
-            target.SetActive(true);
-
-            return target;
-        }
-
-        void ObjectCreate() {
-
-            for (int i = _pool.Count; i < _min; i++)
-            {
-                GameObject obj = AssetOpener.ImportGameObject(_path);
-                obj.transform.SetParent(tr);
-                obj.SetActive(false);
-                obj.GetComponent<IPoolTarget>().SetParentPool(this);
-                _pool.Enqueue(obj);
-            }
-
-        }
-
-        public void ReturnObject(GameObject obj)
-        {
-            _pool.Enqueue(obj);
-            obj.transform.SetParent(tr);
-            obj.SetActive(false);
-        }
-
-    }
-
     public class ObjectPoolManager : MonoSingleton<ObjectPoolManager> {
 
-        Dictionary<string, Pool> _dic;
-        Transform _createdBudget;
+        private Dictionary<string, Pool> _dic;
+        private Transform _createdBudget;
 
         public void SetBudget(Transform tr) {
             _createdBudget = tr;
@@ -92,33 +22,20 @@ namespace ObjectPool {
 
         protected override void OnCreate()
         {
-            XmlDocument xmlDoc = AssetOpener.ReadXML("ObjectPoolTarget");
-
-            XmlNodeList nodes = xmlDoc.SelectNodes("List/Element");
-
             _dic = new Dictionary<string, Pool>();
+            
+            IDictionaryConnector<string, string> connector
+                = new XMLDictionaryConnector<string, string>();
 
-            for (int i = 0; i < nodes.Count; i++)
+            foreach (var v in connector.ReadData("ObjectPoolTarget"))
             {
-                PoolData poolData = new PoolData();
-                poolData.Read(nodes[i]);
-
-                _dic.Add(poolData.name, new Pool(poolData.path, gameObject.transform));
+                _dic.Add(v.Key,
+                    new Pool(v.Value, gameObject.transform));
             }
         }
-
-        class PoolData {
-            internal string name;
-            internal string path;
-
-            internal void Read(XmlNode node)
-            {
-                name = node.Attributes["name"].Value;
-                path = node.Attributes["path"].Value;
-            }
-        }
-
-        public GameObject GetGameObject(string key) {
+        
+        public GameObject GetGameObject(string key)
+        {
             return GetGameObject(_createdBudget, key);
         }
 
