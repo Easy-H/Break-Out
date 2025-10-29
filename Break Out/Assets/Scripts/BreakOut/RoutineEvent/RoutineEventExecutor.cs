@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,8 +5,8 @@ public class RoutineEventExecutor : MonoBehaviour {
 
     [SerializeField] private UnityEvent _event;
 
-    [SerializeField] float _timeCycle = 10f;
-    [SerializeField] float _spendTime = 0f;
+    [SerializeField] private float _timeCycle = 10f;
+    [SerializeField] private float _spendTime = 0f;
 
     private float _timeSpend;
 

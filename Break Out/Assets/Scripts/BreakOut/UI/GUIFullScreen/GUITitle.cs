@@ -7,20 +7,16 @@ using EasyH.Unity.UI;
 
 public class GUITitle : GUICustomFullScreen
 {
-    [SerializeField] TextMeshProUGUI _scoreView;
-    [SerializeField] GameObject _defaultView;
-
-    public override void Open()
-    {
-        base.Open();
-    }
-
+    [SerializeField] private TextMeshProUGUI _scoreView;
+    [SerializeField] private GameObject _defaultView;
+    
     public override void AddPopUp(IGUIPopUp popUp)
     {
         base.AddPopUp(popUp);
         _defaultView.SetActive(_nowPopUp == null);
 
     }
+
     public override void ClosePopUp(IGUIPopUp popUp)
     {
         base.ClosePopUp(popUp);

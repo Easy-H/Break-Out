@@ -8,8 +8,8 @@ public class GUICustomFullScreen : GUIWindow, IGUIFullScreen {
 
     [SerializeField] protected Player _player;
 
-    [SerializeField] Transform _inforLine;
-    [SerializeField] Transform _poolBudget;
+    [SerializeField] private Transform _inforLine;
+    [SerializeField] private Transform _poolBudget;
 
     private IList<IGUIPopUp> _popupUI;
     protected IGUIPopUp _nowPopUp;
