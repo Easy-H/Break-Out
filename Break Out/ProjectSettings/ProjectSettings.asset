@@ -852,7 +852,8 @@ PlayerSettings:
   webGLWebAssemblyBigInt: 0
   webGLCloseOnQuit: 0
   webWasm2023: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    WebGL: UNITY_PHYSICS_CUSTOM
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
