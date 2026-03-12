@@ -8,6 +8,7 @@
 /[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
+/GooglePackages/
 /[Mm]emoryCaptures/
 */_ExternalAsset/
 */_Firebase/Firebase/Plugins/x86_64/
